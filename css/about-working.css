@@ -1,0 +1,46 @@
+
+  .column {
+    padding: 5px;
+    overflow: hidden;
+    float: left;
+  }
+  
+  .image-container {
+    border: 2px solid #000000;
+    border-radius: 5px;
+    margin: 0 auto;
+    display: absolute;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+  
+  #reference-cbg {
+    font-size: 10px;
+    color: #707070;
+    margin: 0 0 0 0;
+}
+
+#reference-tutor {
+  font-size: 10px;
+  color: #707070;
+  margin: 0 0 0 0;
+}
+
+
+  .image-itself {
+  
+  }
+  
+  .row {
+    margin-bottom: 20px;
+  }
+  
+  .image-credit {
+    margin-right: 5px;
+    text-align: center;
+  }
+  
+  .exp {
+    margin: 0 0 0 0;
+  }

@@ -1,0 +1,749 @@
+{
+    "current": {
+        "coords": {
+            "lat": 43.5448,
+            "lng": -80.2482
+        },
+        "content": "<p>Guelph</p>",
+        "country": "Canada",
+        "continent": "NA"
+    },
+    "placesLived": [
+        {
+            "coords": {
+                "lat": 37.5665,
+                "lng": 126.9780
+            },
+            "iconImage": "placeLivedIcon",
+            "content": "<p>Seoul</p>",
+            "country": "South Korea",
+            "continent": "AS"
+        },{
+            "coords": {
+                "lat": 43.5448,
+                "lng": -80.2482
+            },
+            "iconImage": "placeLivedIcon",
+            "content": "<p>Guelph</p>",
+            "country": "Canada",
+            "continent": "NA"
+        },{
+            "coords": {
+                "lat": 37.3219,
+                "lng": 126.8309
+            },
+            "iconImage": "placeLivedIcon",
+            "content": "<p>Ansan</p>",
+            "country": "South Korea",
+            "continent": "AS"
+        },{
+            "coords": {
+                "lat": 43.4643,
+                "lng": -80.5204
+            },
+            "iconImage": "placeLivedIcon",
+            "content": "<p>Waterloo</p>",
+            "country": "Canada",
+            "continent": "NA"
+        },{
+            "coords": {
+                "lat": 43.4675,
+                "lng": -79.6877
+            },
+            "iconImage": "placeLivedIcon",
+            "content": "<p>Oakville</p>",
+            "country": "Canada",
+            "continent": "NA"
+        },{
+            "coords": {
+                "lat": 35.5384,
+                "lng": 129.3114
+            },
+            "iconImage": "placeLivedIcon",
+            "content": "<p>Ulsan</p>",
+            "country": "South Korea",
+            "continent": "AS"
+        },{
+            "coords": {
+                "lat": 35.1631,
+                "lng": 129.1636
+            },
+            "iconImage": "placeLivedIcon",
+            "content": "<p>Busan</p>",
+            "country": "South Korea",
+            "continent": "AS"
+        },{
+            "coords": {
+                "lat": 37.2636,
+                "lng": 127.0286
+            },
+            "iconImage": "placeLivedIcon",
+            "content": "<p>Suwon</p>",
+            "country": "South Korea",
+            "continent": "AS"
+        },{
+            "coords": {
+                "lat": 37.1995,
+                "lng": 126.8312
+            },
+            "iconImage": "placeLivedIcon",
+            "content": "<p>Hwaseong</p>",
+            "country": "South Korea",
+            "continent": "AS"
+        },{
+            "coords": {
+                "lat": 10.8231,
+                "lng": 106.6297
+            },
+            "iconImage": "placeLivedIcon",
+            "content": "<p>Ho Chi Minh City</p>",
+            "country": "Vietnam",
+            "continent": "AS"
+        },{
+            "coords": {
+                "lat": 3.1390,
+                "lng": 101.6869
+            },
+            "iconImage": "placeLivedIcon",
+            "content": "<p>Kuala Lumpur</p>",
+            "country": "Malaysia",
+            "continent": "AS"
+        },{
+            "coords": {
+                "lat": 30.0444,
+                "lng": 31.2357
+            },
+            "iconImage": "placeLivedIcon",
+            "content": "<p>Cairo</p>",
+            "country": "Egypt",
+            "continent": "AF"
+        },{
+            "coords": {
+                "lat": 57.1497,
+                "lng": -2.0943
+            },
+            "iconImage": "placeLivedIcon",
+            "content": "<p>Aberdeen</p>",
+            "country": "Scotland",
+            "continent": "EU"
+        },{
+            "coords": {
+                "lat": 44.2312,
+                "lng": -76.4860
+            },
+            "iconImage": "placeLivedIcon",
+            "content": "<p>Kingston</p>",
+            "country": "Canada",
+            "continent": "NA"
+        }
+    ],
+    "placesTraveled": [
+        {
+            "coords": {
+                "lat": 29.9081,
+                "lng": 31.1985
+            },
+            "iconImage": "placeTraveledIcon",
+            "content": "<p>Al Sorat Farm</p>",
+            "country": "Egypt",
+            "continent": "AF"
+        },{
+            "coords": {
+                "lat": 51.5074,
+                "lng": -0.1278
+            },
+            "iconImage": "placeTraveledIcon",
+            "content": "<p>London</p>",
+            "country": "England",
+            "continent": "EU"
+        },{
+            "coords": {
+                "lat": 43.0896,
+                "lng": -79.0849
+            },
+            "iconImage": "placeTraveledIcon",
+            "content": "<p>Niagara Falls</p>",
+            "country": "Canada",
+            "continent": "NA"
+        },{
+            "coords": {
+                "lat": 43.6532,
+                "lng": -79.3832
+            },
+            "iconImage": "placeTraveledIcon",
+            "content": "<p>Toronto</p>",
+            "country": "Canada",
+            "continent": "NA"
+        },{
+            "coords": {
+                "lat": 40.7128,
+                "lng": -74.0060
+            },
+            "iconImage": "placeTraveledIcon",
+            "content": "<p>New York</p>",
+            "country": "United States",
+            "continent": "NA"
+        },{
+            "coords": {
+                "lat": 39.9526,
+                "lng": -75.1652
+            },
+            "iconImage": "placeTraveledIcon",
+            "content": "<p>Philadelphia</p>",
+            "country": "United States",
+            "continent": "NA"
+        },{
+            "coords": {
+                "lat": 38.9072,
+                "lng": -77.0369
+            },
+            "iconImage": "placeTraveledIcon",
+            "content": "<p>Washington, D.C</p>",
+            "country": "United States",
+            "continent": "NA"
+        },{
+            "coords": {
+                "lat": 12.2388,
+                "lng": 109.1967
+            },
+            "iconImage": "placeTraveledIcon",
+            "content": "<p>Nha Trang</p>",
+            "country": "Vietnam",
+            "continent": "AS"
+        },{
+            "coords": {
+                "lat": 10.4114,
+                "lng": 107.1362
+            },
+            "iconImage": "placeTraveledIcon",
+            "content": "<p>Vũng Tàu</p>",
+            "country": "Vietnam",
+            "continent": "AS"
+        },{
+            "coords": {
+                "lat": 11.9404,
+                "lng": 108.4583
+            },
+            "iconImage": "placeTraveledIcon",
+            "content": "<p>Dalat</p>",
+            "country": "Vietnam",
+            "continent": "AS"
+        },{
+            "coords": {
+                "lat": 13.7563,
+                "lng": 100.5018
+            },
+            "iconImage": "placeTraveledIcon",
+            "content": "<p>Bangkok</p>",
+            "country": "Thailand",
+            "continent": "AS"
+        },{
+            "coords": {
+                "lat": 7.9519,
+                "lng": 98.3381
+            },
+            "iconImage": "placeTraveledIcon",
+            "content": "<p>Phuket</p>",
+            "country": "Thailand",
+            "continent": "AS"
+        },{
+            "coords": {
+                "lat": 14.5995,
+                "lng": 120.9842
+            },
+            "iconImage": "placeTraveledIcon",
+            "content": "<p>Manila</p>",
+            "country": "Philippines",
+            "continent": "AS"
+        },{
+            "coords": {
+                "lat": 35.6762,
+                "lng": 139.6503
+            },
+            "iconImage": "placeTraveledIcon",
+            "content": "<p>Tokyo</p>",
+            "country": "Japan",
+            "continent": "AS"
+        },{
+            "coords": {
+                "lat": 33.4996,
+                "lng": 126.5312
+            },
+            "iconImage": "placeTraveledIcon",
+            "content": "<p>Jeju</p>",
+            "country": "South Korea",
+            "continent": "AS"
+        },{
+            "coords": {
+                "lat": 29.9773,
+                "lng": 31.1325
+            },
+            "iconImage": "placeTraveledIcon",
+            "content": "<p>Giza</p>",
+            "country": "Egypt",
+            "continent": "AF"
+        },{
+            "coords": {
+                "lat": 29.6326,
+                "lng": 32.3300
+            },
+            "iconImage": "placeTraveledIcon",
+            "content": "<p>Ain Sokhna</p>",
+            "country": "Egypt",
+            "continent": "AF"
+        },{
+            "coords": {
+                "lat": 27.9158,
+                "lng": 34.3300
+            },
+            "iconImage": "placeTraveledIcon",
+            "content": "<p>Sharm El-Sheikh</p>",
+            "country": "Egypt",
+            "continent": "AF"
+        },{
+            "coords": {
+                "lat": 27.2579,
+                "lng": 33.8116
+            },
+            "iconImage": "placeTraveledIcon",
+            "content": "<p>Hurghada</p>",
+            "country": "Egypt",
+            "continent": "AF"
+        },{
+            "coords": {
+                "lat": 25.6872,
+                "lng": 32.6396
+            },
+            "iconImage": "placeTraveledIcon",
+            "content": "<p>Luxor</p>",
+            "country": "Egypt",
+            "continent": "AF"
+        },{
+            "coords": {
+                "lat": 24.0889,
+                "lng": 32.8998
+            },
+            "iconImage": "placeTraveledIcon",
+            "content": "<p>Aswan</p>",
+            "country": "Egypt",
+            "continent": "AF"
+        },{
+            "coords": {
+                "lat": 41.9028,
+                "lng": 12.4964
+            },
+            "iconImage": "placeTraveledIcon",
+            "content": "<p>Rome</p>",
+            "country": "Italy",
+            "continent": "EU"
+        },{
+            "coords": {
+                "lat": 48.8566,
+                "lng": 2.3522
+            },
+            "iconImage": "placeTraveledIcon",
+            "content": "<p>Paris</p>",
+            "country": "France",
+            "continent": "EU"
+        },{
+            "coords": {
+                "lat": 48.2082,
+                "lng": 16.3738
+            },
+            "iconImage": "placeTraveledIcon",
+            "content": "<p>Vienna</p>",
+            "country": "Austria",
+            "continent": "EU"
+        },{
+            "coords": {
+                "lat": 45.8150,
+                "lng": 15.9819
+            },
+            "iconImage": "placeTraveledIcon",
+            "content": "<p>Zagreb</p>",
+            "country": "Croatia",
+            "continent": "EU"
+        },{
+            "coords": {
+                "lat": 41.0082,
+                "lng": 28.9784
+            },
+            "iconImage": "placeTraveledIcon",
+            "content": "<p>Istanbul</p>",
+            "country": "Turkey",
+            "continent": "EU"
+        },{
+            "coords": {
+                "lat": 37.9137,
+                "lng": 29.1187
+            },
+            "iconImage": "placeTraveledIcon",
+            "content": "<p>Pamukkale</p>",
+            "country": "Turkey",
+            "continent": "EU"
+        },{
+            "coords": {
+                "lat": 38.3930,
+                "lng": 34.5113
+            },
+            "iconImage": "placeTraveledIcon",
+            "content": "<p>Cappadocia</p>",
+            "country": "Turkey",
+            "continent": "EU"
+        },{
+            "coords": {
+                "lat": 39.9334,
+                "lng": 32.8597
+            },
+            "iconImage": "placeTraveledIcon",
+            "content": "<p>Ankara</p>",
+            "country": "Turkey",
+            "continent": "EU"
+        },{
+            "coords": {
+                "lat": 48.1351,
+                "lng": 11.5820
+            },
+            "iconImage": "placeTraveledIcon",
+            "content": "<p>Munich</p>",
+            "country": "Germany",
+            "continent": "EU"
+        },{
+            "coords": {
+                "lat": 50.7374,
+                "lng": 7.0982
+            },
+            "iconImage": "placeTraveledIcon",
+            "content": "<p>Bonn</p>",
+            "country": "Germany",
+            "continent": "EU"
+        },{
+            "coords": {
+                "lat": 35.8714,
+                "lng": 128.6014
+            },
+            "iconImage": "placeTraveledIcon",
+            "content": "<p>Daegu</p>",
+            "country": "South Korea",
+            "continent": "AS"
+        },{
+            "coords": {
+                "lat": 35.8562,
+                "lng": 129.2247
+            },
+            "iconImage": "placeTraveledIcon",
+            "content": "<p>Gyeongju</p>",
+            "country": "South Korea",
+            "continent": "AS"
+        },{
+            "coords": {
+                "lat": 33.2541,
+                "lng": 126.5601
+            },
+            "iconImage": "placeTraveledIcon",
+            "content": "<p>Seogwipo</p>",
+            "country": "South Korea",
+            "continent": "AS"
+        },{
+            "coords": {
+                "lat": 34.8544,
+                "lng": 128.4332
+            },
+            "iconImage": "placeTraveledIcon",
+            "content": "<p>Tongyeong</p>",
+            "country": "South Korea",
+            "continent": "AS"
+        },{
+            "coords": {
+                "lat": 38.2070,
+                "lng": 128.5918
+            },
+            "iconImage": "placeTraveledIcon",
+            "content": "<p>Sokcho</p>",
+            "country": "South Korea",
+            "continent": "AS"
+        },{
+            "coords": {
+                "lat": 37.3705,
+                "lng": 128.3900
+            },
+            "iconImage": "placeTraveledIcon",
+            "content": "<p>Pyeongchang</p>",
+            "country": "South Korea",
+            "continent": "AS"
+        },{
+            "coords": {
+                "lat": 36.8151,
+                "lng": 127.1139
+            },
+            "iconImage": "placeTraveledIcon",
+            "content": "<p>Cheonan</p>",
+            "country": "South Korea",
+            "continent": "AS"
+        },{
+            "coords": {
+                "lat": 36.5684,
+                "lng": 128.7294
+            },
+            "iconImage": "placeTraveledIcon",
+            "content": "<p>Andong</p>",
+            "country": "South Korea",
+            "continent": "AS"
+        },{
+            "coords": {
+                "lat": 44.5024,
+                "lng": -80.3127
+            },
+            "iconImage": "placeTraveledIcon",
+            "content": "<p>Blue Mountain</p>",
+            "country": "South Korea",
+            "continent": "AS"
+        }
+    ],
+    "placesVisited": [
+        {
+            "coords": {
+                "lat": 24.4205,
+                "lng": 32.8818
+            },
+            "iconImage": "placeVisitedIcon",
+            "content": "<p>Markaz Deraw</p>",
+            "country": "Egypt",
+            "continent": "AF"
+        },{
+            "coords": {
+                "lat": 24.0252,
+                "lng": 32.8842
+            },
+            "iconImage": "placeVisitedIcon",
+            "content": "<p>Agilkia Island</p>",
+            "country": "Egypt",
+            "continent": "AF"
+        },{
+            "coords": {
+                "lat": 25.6207,
+                "lng": 32.5453
+            },
+            "iconImage": "placeVisitedIcon",
+            "content": "<p>Armant</p>",
+            "country": "Egypt",
+            "continent": "AF"
+        },{
+            "coords": {
+                "lat": 43.4516,
+                "lng": -80.4925
+            },
+            "iconImage": "placeVisitedIcon",
+            "content": "<p>Kitchener</p>",
+            "country": "Canada",
+            "continent": "NA"
+        },{
+            "coords": {
+                "lat": 55.9533,
+                "lng": -3.1883
+            },
+            "iconImage": "placeVisitedIcon",
+            "content": "<p>Edinburgh</p>",
+            "country": "Scotland",
+            "continent": "EU"
+        },{
+            "coords": {
+                "lat": 37.6152,
+                "lng": 126.7156
+            },
+            "iconImage": "placeVisitedIcon",
+            "content": "<p>Gimpo</p>",
+            "country": "South Korea",
+            "continent": "AS"
+        },{
+            "coords": {
+                "lat": 45.4215,
+                "lng": -75.6972
+            },
+            "iconImage": "placeVisitedIcon",
+            "content": "<p>Ottawa</p>",
+            "country": "Canada",
+            "continent": "NA"
+        },{
+            "coords": {
+                "lat": 49.1666,
+                "lng": -123.1336
+            },
+            "iconImage": "placeVisitedIcon",
+            "content": "<p>Richmond, BC</p>",
+            "country": "Canada",
+            "continent": "NA"
+        },{
+            "coords": {
+                "lat": 43.5890,
+                "lng": -79.6441
+            },
+            "iconImage": "placeVisitedIcon",
+            "content": "<p>Mississauga</p>",
+            "country": "Canada",
+            "continent": "NA"
+        },{
+            "coords": {
+                "lat": 43.5183,
+                "lng": -79.8774
+            },
+            "iconImage": "placeVisitedIcon",
+            "content": "<p>Milton</p>",
+            "country": "Canada",
+            "continent": "NA"
+        },{
+            "coords": {
+                "lat": 43.7764,
+                "lng": -79.2318
+            },
+            "iconImage": "placeVisitedIcon",
+            "content": "<p>Scarborough</p>",
+            "country": "Canada",
+            "continent": "NA"
+        },{
+            "coords": {
+                "lat": 30.0074,
+                "lng": 31.4913
+            },
+            "iconImage": "placeVisitedIcon",
+            "content": "<p>New Cairo City</p>",
+            "country": "Egypt",
+            "continent": "AF"
+        },{
+            "coords": {
+                "lat": 30.1123,
+                "lng": 31.3439
+            },
+            "iconImage": "placeVisitedIcon",
+            "content": "<p>Heliopolis</p>",
+            "country": "Egypt",
+            "continent": "AF"
+        },{
+            "coords": {
+                "lat": 29.9908,
+                "lng": 31.4071
+            },
+            "iconImage": "placeVisitedIcon",
+            "content": "<p>Katameya</p>",
+            "country": "Egypt",
+            "continent": "AF"
+        },{
+            "coords": {
+                "lat": 24.4539,
+                "lng": 54.3773
+            },
+            "iconImage": "placeVisitedIcon",
+            "content": "<p>Abu Dhabi</p>",
+            "country": "United Arab Emirates",
+            "continent": "AS"
+        },{
+            "coords": {
+                "lat": 25.3548,
+                "lng": 51.1839
+            },
+            "iconImage": "placeVisitedIcon",
+            "content": "<p>Qatar</p>",
+            "country": "Qatar",
+            "continent": "AS"
+        },{
+            "coords": {
+                "lat": 51.7520,
+                "lng": -1.2577
+            },
+            "iconImage": "placeVisitedIcon",
+            "content": "<p>Oxford</p>",
+            "country": "England",
+            "continent": "EU"
+        },{
+            "coords": {
+                "lat": 37.4563,
+                "lng": 126.7052
+            },
+            "iconImage": "placeVisitedIcon",
+            "content": "<p>Incheon</p>",
+            "country": "South Korea",
+            "continent": "AS"
+        },{
+            "coords": {
+                "lat": 37.2411,
+                "lng": 127.1776
+            },
+            "iconImage": "placeVisitedIcon",
+            "content": "<p>Yongin</p>",
+            "country": "South Korea",
+            "continent": "AS"
+        },{
+            "coords": {
+                "lat": 37.1498,
+                "lng": 127.0772
+            },
+            "iconImage": "placeVisitedIcon",
+            "content": "<p>Osan</p>",
+            "country": "South Korea",
+            "continent": "AS"
+        },{
+            "coords": {
+                "lat": 37.3422,
+                "lng": 127.9202
+            },
+            "iconImage": "placeVisitedIcon",
+            "content": "<p>Wonju</p>",
+            "country": "South Korea",
+            "continent": "AS"
+        },{
+            "coords": {
+                "lat": 36.3504,
+                "lng": 127.3845
+            },
+            "iconImage": "placeVisitedIcon",
+            "content": "<p>Daejeon</p>",
+            "country": "South Korea",
+            "continent": "AS"
+        },{
+            "coords": {
+                "lat": 40.3573,
+                "lng": -74.6672
+            },
+            "iconImage": "placeVisitedIcon",
+            "content": "<p>Princeton</p>",
+            "country": "United States",
+            "continent": "NA"
+        },{
+            "coords": {
+                "lat": 43.7814,
+                "lng": -79.4149
+            },
+            "iconImage": "placeVisitedIcon",
+            "content": "<p>Finch</p>",
+            "country": "Canada",
+            "continent": "NA"
+        },{
+            "coords": {
+                "lat": 36.9921,
+                "lng": 127.1129
+            },
+            "iconImage": "placeVisitedIcon",
+            "content": "<p>Pyeongtaek</p>",
+            "country": "South Korea",
+            "continent": "AS"
+        },{
+            "coords": {
+                "lat": 37.4785,
+                "lng": 126.8643
+            },
+            "iconImage": "placeVisitedIcon",
+            "content": "<p>Gwangmyeong</p>",
+            "country": "South Korea",
+            "continent": "AS"
+        },{
+            "coords": {
+                "lat": 37.3617,
+                "lng": 126.9352
+            },
+            "iconImage": "placeVisitedIcon",
+            "content": "<p>Gunpo</p>",
+            "country": "South Korea",
+            "continent": "AS"
+        }
+    ]
+}

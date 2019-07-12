@@ -1,0 +1,154 @@
+.jumbotron {
+    -webkit-box-shadow: 0px 0px 32px 6px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0px 0px 32px 6px rgba(0,0,0,0.1);
+    box-shadow: 0px 0px 32px 6px rgba(0,0,0,0.1);
+    background: linear-gradient(to right, rgb(210, 210, 210), black);
+    position: absolute!important;
+    height: 400px;
+    width: 100%;
+    border-bottom: 1px solid #000000;
+}
+
+.jumbotron-blank {
+    height: 400px;
+}
+
+.jumbotron-content {
+    left: 50%;
+    margin-left: -60px;
+    top: 40%;
+    margin-top: -50px;
+    height: auto;
+    width: 120px;
+    position: absolute;
+    background-color: #ffffff;
+    border-radius: 10px;
+    text-align: center;
+    border: 2px solid #000000;
+    transition-duration: 0.2s;
+    -webkit-transition-duration: 0.2s;
+}
+
+.my-face {
+    margin-top: 5px;
+    border-radius: 100%;
+    border: 3px solid #000000;
+}
+
+.jumbotron-below {
+    height:65px;
+    transition-duration: 0.2s;
+    -webkit-transition-duration: 0.2s;
+}
+
+.jumbotron-below > h3 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    transition-delay: 0.2s;
+    -webkit-transition-delay: 0.2s;
+}
+
+.jumbotron-below > h4 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    transition-delay: 0.2s;
+    -webkit-transition-delay: 0.2s;
+}
+
+#click-me {
+    margin-top: 5px;
+    border: 1px solid #000000;
+}
+
+.main-contents {
+    margin: 0 auto;
+}
+
+
+.particles-container {
+    width:100%;
+    height:100%;
+}
+
+.quote-box {
+    margin: 0 auto;
+    width: 90%;
+    height: auto;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+/*
+@media only screen and (min-width: 420px) {
+    .quote-box {height: 80px;}
+}
+*/
+.quote-container {
+    text-align: center;
+}
+
+#quote-generate {
+    font-style: italic;
+}
+
+.intro-paragraph {
+    text-align: center;
+}
+
+#outer-box-holder {
+    height: auto;
+    background-color:#ffffff;
+}
+
+#inner-box-holder {
+    background-color:#ffffff;
+    margin: auto;
+    height: 45px;
+    margin-top: 3px;
+    width: 130px;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    overflow: hidden;
+    text-align:center;
+}
+
+.users-chart-container {
+    width: 100%;
+    height: 300px;
+    border: 2px solid #000000;
+    margin: 0 auto;
+    border-radius: 5px;
+    
+}
+
+.users-chart-buttons {
+    margin-top: 5px;
+    width: 200px;
+    height: 50px;
+    border: 1px solid #000000;
+    margin: 5px auto;
+    border-radius: 3px;
+    
+}
+
+.skill-chart {
+    width: 100%;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    height: 300px;
+    margin: 5px auto;
+    overflow: scroll;
+    text-align: center;
+}
+/*
+.bar {
+    
+}
+
+.bar:hover {
+    fill: rgb(17, 0, 255);
+}
+
+*/
