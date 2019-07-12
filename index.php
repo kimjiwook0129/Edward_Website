@@ -145,13 +145,26 @@ if (!$conn->connect_error) { // when database is connected
                                 function getRandomInt(max) {
                                     return Math.floor(Math.random() * max);
                                 }
-                                var ran_index = getRandomInt(data.quotes.length);
-                                $("#quote-generate").text("\"" + data.quotes[ran_index].quote + "\" -" + data.quotes[ran_index].by).fadeIn();
+                                var quote_kr_index = getRandomInt(data.quotes_kor.length),
+                                    quote_en_index = getRandomInt(data.quotes.length);
+
+                                if ($("#lang-setting").is(':checked')) { // Shoot Korean quotes
+                                    $("#quote-generate").text("\"" + data.quotes_kor[quote_kr_index].quote + "\" -" + data.quotes_kor[quote_en_index].by).fadeIn();
+                                } else { // Shoot English quotes
+                                    $("#quote-generate").text("\"" + data.quotes[quote_en_index].quote + "\" -" + data.quotes[quote_en_index].by).fadeIn();
+                                }
                                 window.setInterval(function() {
-                                    ran_index = getRandomInt(data.quotes.length);
-                                    $("#quote-generate").fadeOut(function() {
-                                        $(this).text("\"" + data.quotes[ran_index].quote + "\" -" + data.quotes[ran_index].by).fadeIn();
-                                    });
+                                    if ($("#lang-setting").is(':checked')) { // Shoot Korean quotes
+                                        quote_kr_index = getRandomInt(data.quotes_kor.length);
+                                        $("#quote-generate").fadeOut(function() {
+                                            $(this).text("\"" + data.quotes_kor[quote_kr_index].quote + "\" -" + data.quotes_kor[quote_kr_index].by).fadeIn();
+                                        });
+                                    } else { // Shoot English quotes
+                                        quote_en_index = getRandomInt(data.quotes.length);
+                                        $("#quote-generate").fadeOut(function() {
+                                            $(this).text("\"" + data.quotes[quote_en_index].quote + "\" -" + data.quotes[quote_en_index].by).fadeIn();
+                                        });
+                                    }
                                 }, 7000);
                             }).catch(function (error) {
                                 console.log(error);
