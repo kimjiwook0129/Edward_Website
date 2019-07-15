@@ -15,13 +15,13 @@ $conn = new mysqli($servername, $username, $password, $database); // connection 
 
 if (!$conn->connect_error) { // when database is connected
     $sql_count = "SELECT * FROM $tb_count";
-    $sql_day = "SELECT * FROM $tb_day WHERE `id` = (SELECT max(id) FROM $tb_day)"; // last row only (most recent)
-    $sql_month = "SELECT * FROM $tb_month WHERE `id` = (SELECT max(id) FROM $tb_month)";
-    $sql_year = "SELECT * FROM $tb_year WHERE `id` = (SELECT max(id) FROM $tb_year)";
+    $sql_recent_day = "SELECT * FROM $tb_day WHERE `id` = (SELECT max(id) FROM $tb_day)"; // last row only (most recent)
+    $sql_recent_month = "SELECT * FROM $tb_month WHERE `id` = (SELECT max(id) FROM $tb_month)";
+    $sql_recent_year = "SELECT * FROM $tb_year WHERE `id` = (SELECT max(id) FROM $tb_year)";
     $find_counts = $conn->query($sql_count);
-    $find_day = $conn->query($sql_day);
-    $find_month = $conn->query($sql_month);
-    $find_year = $conn->query($sql_year);
+    $find_day = $conn->query($sql_recent_day);
+    $find_month = $conn->query($sql_recent_month);
+    $find_year = $conn->query($sql_recent_year);
     
     $count_row = mysqli_fetch_assoc($find_counts);
     $day_row = mysqli_fetch_assoc($find_day);
@@ -29,53 +29,104 @@ if (!$conn->connect_error) { // when database is connected
     $year_row = mysqli_fetch_assoc($find_year);
     
     $past_date = $count_row['last_date'];
-        $present_date = date("Y-m-d"); // ex. '2019-07-04' = July 4, 2019
+    $present_date = date("Y-m-d"); // ex. '2019-07-04' = July 4, 2019
         
-        $past_year = substr($past_date, 0, 4); // type: string
-        $present_year = substr($present_date, 0, 4);
-        $past_month = substr($past_date, 5, -3);
-        $present_month = substr($present_date, 5, -3);
-        $past_day = substr($past_date, 8, 10);
-        $present_day = substr($present_date, 8, 10);
-        
-        $day_id_store = $day_row['id'];
-        $month_id_store = $month_row['id'];
-        $year_id_store = $year_row['id'];
+    $past_year = substr($past_date, 0, 4); // type: string
+    $present_year = substr($present_date, 0, 4);
+    $past_month = substr($past_date, 5, -3);
+    $present_month = substr($present_date, 5, -3);
+    $past_day = substr($past_date, 8, 10);
+    $present_day = substr($present_date, 8, 10);
+    
+    $day_id_store = $day_row['id'];
+    $month_id_store = $month_row['id'];
+    $year_id_store = $year_row['id'];
 
-        if ($present_date != $past_date) { // only when present and past dates are different
-            $day_count = $count_row['day_count'];
-            ++$day_id_store;
-            $month_count = $count_row['month_count'];
-            ++$month_id_store;
-            $year_count = $count_row['year_count'];
-            ++$year_id_store;
+    if ($present_date != $past_date) { // only when present and past dates are different
+        $day_count = $count_row['day_count'];
+        ++$day_id_store;
+        $month_count = $count_row['month_count'];
+        ++$month_id_store;
+        $year_count = $count_row['year_count'];
+        ++$year_id_store;
 
-            $conn->query("INSERT INTO $tb_day(`id`, `date`, `count`) VALUES ($day_id_store,'{$present_date}',$day_count)");
-            $count_row['day_count'] = 0;
+        $conn->query("INSERT INTO $tb_day(`id`, `date`, `count`) VALUES ($day_id_store,'{$present_date}',$day_count)");
+        $count_row['day_count'] = 0;
 
-            if ($past_year != $present_year) {
-                $conn->query("INSERT INTO $tb_year(`id`, `date`, `count`) VALUES ($year_id_store,'{$present_date}',$year_count)");
-                $count_row['year_count'] = 0;
-            } 
-            if ($past_month != $present_month || $past_year != $present_year) {
-                $conn->query("INSERT INTO $tb_month(`id`, `date`, `count`) VALUES ($month_id_store,'{$present_date}',$month_count)");
-                $count_row['month_count'] = 0;
-            }
-            $conn->query("UPDATE $tb_count SET `last_date` = '{$present_date}'");
+        if ($past_year != $present_year) {
+            $conn->query("INSERT INTO $tb_year(`id`, `date`, `count`) VALUES ($year_id_store,'{$present_date}',$year_count)");
+            $count_row['year_count'] = 0;
+        } 
+        if ($past_month != $present_month || $past_year != $present_year) {
+            $conn->query("INSERT INTO $tb_month(`id`, `date`, `count`) VALUES ($month_id_store,'{$present_date}',$month_count)");
+            $count_row['month_count'] = 0;
         }
+        $conn->query("UPDATE $tb_count SET `last_date` = '{$present_date}'");
+    }
         
-        $counts = array($count_row['day_count'], $count_row['month_count'], $count_row['year_count'],$count_row['total_count']);
-        for ($x = 0; $x < 4; $x++) ++$counts[$x]; // $counts contains updated values
+    $counts = array($count_row['day_count'], $count_row['month_count'], $count_row['year_count'],$count_row['total_count']);
+    for ($x = 0; $x < 4; $x++) ++$counts[$x]; // $counts contains updated values
 
-        // Updating counts in the last row of each record for day, month, year
-        $conn->query("UPDATE $tb_day SET `count` = $counts[0] WHERE `id` = $day_id_store");
-        $conn->query("UPDATE $tb_month SET `count` = $counts[1] WHERE `id` = $month_id_store");
-        $conn->query("UPDATE $tb_year SET `count` = $counts[2] WHERE `id` = $year_id_store");
+    // Updating counts in the last row of each record for day, month, year
+    $conn->query("UPDATE $tb_day SET `count` = $counts[0] WHERE `id` = $day_id_store");
+    $conn->query("UPDATE $tb_month SET `count` = $counts[1] WHERE `id` = $month_id_store");
+    $conn->query("UPDATE $tb_year SET `count` = $counts[2] WHERE `id` = $year_id_store");
 
-        // Updating the realtime values for day, month, year, total
-        $conn->query("UPDATE $tb_count SET `total_count` = $counts[3], `day_count` = $counts[0], `month_count` = $counts[1], `year_count` = $counts[2]");
+    // Updating the realtime values for day, month, year, total
+    $conn->query("UPDATE $tb_count SET `total_count` = $counts[3], `day_count` = $counts[0], `month_count` = $counts[1], `year_count` = $counts[2]");
 
     // Data from record tables -> JSON
+    $json_file = 'json/counts.json';
+    $json_contents = "{\"counts_day\": {";
+
+    $last_row = $conn->query("SELECT * FROM $tb_day WHERE `id` = (SELECT max(id) FROM $tb_day)");
+    
+    $day_rows_length = mysqli_fetch_assoc($last_row);
+    $day_length = $day_rows_length['id'];
+    for ($x = 0; $x < $day_length; $x++) {
+        
+        $sql_day = "SELECT * FROM $tb_day WHERE `id` = $x + 1";
+        $find_day = $conn->query($sql_day);
+        $day_row = mysqli_fetch_assoc($find_day);
+        
+        if ($x == $day_length - 1) $json_contents = $json_contents . "\"" . "{$day_row['date']}" . "\": " . "{$day_row['count']}";
+        else $json_contents = $json_contents . "\"" . "{$day_row['date']}" . "\": " . "{$day_row['count']}" . ",";
+        
+    }
+    $json_contents = $json_contents . "}, \"counts_month\": {";
+
+    $last_row = $conn->query("SELECT * FROM $tb_month WHERE `id` = (SELECT max(id) FROM $tb_month)");
+    
+    $month_rows_length = mysqli_fetch_assoc($last_row);
+    $month_length = $month_rows_length['id'];
+    for ($x = 0; $x < $month_length; $x++) {
+            
+        $sql_month = "SELECT * FROM $tb_month WHERE `id` = $x + 1";
+        $find_month = $conn->query($sql_month);
+        $month_row = mysqli_fetch_assoc($find_month);
+            
+        if ($x == $month_length - 1) $json_contents = $json_contents . "\"" . "{$month_row['date']}" . "\": " . "{$month_row['count']}";
+        else $json_contents = $json_contents . "\"" . "{$month_row['date']}" . "\": " . "{$month_row['count']}" . ",";
+            
+    }
+    $json_contents = $json_contents . "}, \"counts_year\": {";
+    $last_row = $conn->query("SELECT * FROM $tb_year WHERE `id` = (SELECT max(id) FROM $tb_year)");
+    
+    $year_rows_length = mysqli_fetch_assoc($last_row);
+    $year_length = $year_rows_length['id'];
+    for ($x = 0; $x < $year_length; $x++) {
+            
+        $sql_year = "SELECT * FROM $tb_year WHERE `id` = $x + 1";
+        $find_year = $conn->query($sql_year);
+        $year_row = mysqli_fetch_assoc($find_year);
+            
+        if ($x == $year_length - 1) $json_contents = $json_contents . "\"" . "{$year_row['date']}" . "\": " . "{$year_row['count']}";
+        else $json_contents = $json_contents . "\"" . "{$year_row['date']}" . "\": " . "{$year_row['count']}" . ",";
+            
+    }
+
+    $json_contents = $json_contents . "}}";
+    file_put_contents($json_file, $json_contents);
 }
 ?>
 
@@ -217,8 +268,8 @@ if (!$conn->connect_error) { // when database is connected
                         $("#visits-total").text(array_visits[3]);
                     </script>
                     <div class="container" style="margin-top: 10px;">
-                        <div class="users-chart-container">
-                            visits chart
+                        <div class="skill-chart">
+                            <svg class="visits-chart"></svg>
                         </div>
                         <div class="users-chart-buttons">
                             visits chart buttons (by Day/Month/Year)
@@ -238,6 +289,7 @@ if (!$conn->connect_error) { // when database is connected
                 <br>
                 <footer class="footer-container"></footer>
                 <script src="./common.js"></script>
+                <script src="./index_visit_charts.js"></script>
                 <script src="./index_lang_charts.js"></script>
                 <script src="./index_tool_charts.js"></script>
                 <script src="./common_lang.js"></script>
