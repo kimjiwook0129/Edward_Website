@@ -125,13 +125,19 @@
 
 .users-chart-buttons {
     margin-top: 5px;
-    width: 200px;
-    height: 50px;
+    width: 252px;
+    height: 60px;
     border: 1px solid #000000;
     margin: 5px auto;
     border-radius: 3px;
-    
+    text-align:center;
 }
+
+#generateButtons {
+    margin-top: 2px;
+}
+
+
 
 .skill-chart {
     width: 100%;
@@ -142,13 +148,3 @@
     overflow: scroll;
     text-align: center;
 }
-/*
-.bar {
-    
-}
-
-.bar:hover {
-    fill: rgb(17, 0, 255);
-}
-
-*/

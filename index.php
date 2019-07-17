@@ -78,55 +78,42 @@ if (!$conn->connect_error) { // when database is connected
     // Data from record tables -> JSON
     $json_file = 'json/counts.json';
     $json_contents = "{\"counts_day\": {";
-
-    $last_row = $conn->query("SELECT * FROM $tb_day WHERE `id` = (SELECT max(id) FROM $tb_day)");
-    
+    $last_row = $conn->query($sql_recent_day);
     $day_rows_length = mysqli_fetch_assoc($last_row);
     $day_length = $day_rows_length['id'];
-    for ($x = 0; $x < $day_length; $x++) {
-        
-        $sql_day = "SELECT * FROM $tb_day WHERE `id` = $x + 1";
+    for ($x = 1; $x <= $day_length; $x++) {
+        $sql_day = "SELECT * FROM $tb_day WHERE `id` = $x";
         $find_day = $conn->query($sql_day);
         $day_row = mysqli_fetch_assoc($find_day);
-        
-        if ($x == $day_length - 1) $json_contents = $json_contents . "\"" . "{$day_row['date']}" . "\": " . "{$day_row['count']}";
-        else $json_contents = $json_contents . "\"" . "{$day_row['date']}" . "\": " . "{$day_row['count']}" . ",";
-        
+        $json_contents .= "\"{$day_row['date']}\": {$day_row['count']}";
+        if ($x < $day_length) $json_contents .= ",";
     }
-    $json_contents = $json_contents . "}, \"counts_month\": {";
 
-    $last_row = $conn->query("SELECT * FROM $tb_month WHERE `id` = (SELECT max(id) FROM $tb_month)");
-    
+    $json_contents .= "}, \"counts_month\": {";
+    $last_row = $conn->query($sql_recent_month);
     $month_rows_length = mysqli_fetch_assoc($last_row);
     $month_length = $month_rows_length['id'];
-    for ($x = 0; $x < $month_length; $x++) {
-            
-        $sql_month = "SELECT * FROM $tb_month WHERE `id` = $x + 1";
+    for ($x = 1; $x <= $month_length; $x++) {
+        $sql_month = "SELECT * FROM $tb_month WHERE `id` = $x";
         $find_month = $conn->query($sql_month);
         $month_row = mysqli_fetch_assoc($find_month);
-            
-        if ($x == $month_length - 1) $json_contents = $json_contents . "\"" . "{$month_row['date']}" . "\": " . "{$month_row['count']}";
-        else $json_contents = $json_contents . "\"" . "{$month_row['date']}" . "\": " . "{$month_row['count']}" . ",";
-            
-    }
-    $json_contents = $json_contents . "}, \"counts_year\": {";
-    $last_row = $conn->query("SELECT * FROM $tb_year WHERE `id` = (SELECT max(id) FROM $tb_year)");
-    
-    $year_rows_length = mysqli_fetch_assoc($last_row);
-    $year_length = $year_rows_length['id'];
-    for ($x = 0; $x < $year_length; $x++) {
-            
-        $sql_year = "SELECT * FROM $tb_year WHERE `id` = $x + 1";
-        $find_year = $conn->query($sql_year);
-        $year_row = mysqli_fetch_assoc($find_year);
-            
-        if ($x == $year_length - 1) $json_contents = $json_contents . "\"" . "{$year_row['date']}" . "\": " . "{$year_row['count']}";
-        else $json_contents = $json_contents . "\"" . "{$year_row['date']}" . "\": " . "{$year_row['count']}" . ",";
-            
+        $json_contents .= "\"{$month_row['date']}\": {$month_row['count']}";
+        if ($x < $month_length) $json_contents .= ",";
     }
 
-    $json_contents = $json_contents . "}}";
-    file_put_contents($json_file, $json_contents);
+    $json_contents .= "}, \"counts_year\": {";
+    $last_row = $conn->query($sql_recent_year);
+    $year_rows_length = mysqli_fetch_assoc($last_row);
+    $year_length = $year_rows_length['id'];
+    for ($x = 1; $x <= $year_length; $x++) {
+        $sql_year = "SELECT * FROM $tb_year WHERE `id` = $x";
+        $find_year = $conn->query($sql_year);
+        $year_row = mysqli_fetch_assoc($find_year);
+        $json_contents .= "\"{$year_row['date']}\": {$year_row['count']}";
+        if ($x < $year_length) $json_contents .= ",";
+    }
+    $json_contents .= "}}";
+    file_put_contents($json_file, $json_contents); // sql database to json file
 }
 ?>
 
@@ -189,39 +176,6 @@ if (!$conn->connect_error) { // when database is connected
                             <h4 id="quote-generate"></h4>
                         </div>
                     </div>
-                    <script>
-                        fetch('json/quotes.json').then((response) => {
-                            return response.json();
-                            }).then((data) => {
-                                function getRandomInt(max) {
-                                    return Math.floor(Math.random() * max);
-                                }
-                                var quote_kr_index = getRandomInt(data.quotes_kor.length),
-                                    quote_en_index = getRandomInt(data.quotes.length);
-
-                                if ($("#lang-setting").is(':checked')) { // Shoot Korean quotes
-                                    $("#quote-generate").text("\"" + data.quotes_kor[quote_kr_index].quote + "\" -" + data.quotes_kor[quote_en_index].by).fadeIn();
-                                } else { // Shoot English quotes
-                                    $("#quote-generate").text("\"" + data.quotes[quote_en_index].quote + "\" -" + data.quotes[quote_en_index].by).fadeIn();
-                                }
-                                window.setInterval(function() {
-                                    if ($("#lang-setting").is(':checked')) { // Shoot Korean quotes
-                                        quote_kr_index = getRandomInt(data.quotes_kor.length);
-                                        $("#quote-generate").fadeOut(function() {
-                                            $(this).text("\"" + data.quotes_kor[quote_kr_index].quote + "\" -" + data.quotes_kor[quote_kr_index].by).fadeIn();
-                                        });
-                                    } else { // Shoot English quotes
-                                        quote_en_index = getRandomInt(data.quotes.length);
-                                        $("#quote-generate").fadeOut(function() {
-                                            $(this).text("\"" + data.quotes[quote_en_index].quote + "\" -" + data.quotes[quote_en_index].by).fadeIn();
-                                        });
-                                    }
-                                }, 7000);
-                            }).catch(function (error) {
-                                console.log(error);
-                            });
-                    </script>
-                    
                     <div class="container" style="margin-top: 10px;">
                         <div class="row">
                             <div class="col-sm-6" id="outer-box-holder" style="display: flex;">
@@ -252,14 +206,17 @@ if (!$conn->connect_error) { // when database is connected
                                             <?php echo "{$counts[2]}"?>,
                                             <?php echo "{$counts[3]}"?>];
                         const len = array_visits.length,
-                            mil = 1000000,
-                            kilo = 1000;
+                            kilo = 1000,
+                            mil = kilo * kilo,
+                            bil = kilo * mil;
                         
                         for (var i = 0; i < len; i++) {
-                            if (array_visits[i] >= mil) {
-                                array_visits[i] = ((array_visits[i] / mil).toFixed(3)).toString().concat(" M");
+                            if (array_visits[i] >= bil) {
+                                array_visits[i] = (array_visits[i] / bil).toFixed(2).toString().concat(" B");
+                            } else if (array_visits[i] >= mil) {
+                                array_visits[i] = (array_visits[i] / mil).toFixed(2).toString().concat(" M");
                             } else if (array_visits[i] >= kilo) {
-                                array_visits[i] = ((array_visits[i] / kilo).toFixed(3)).toString().concat(" K");
+                                array_visits[i] = (array_visits[i] / kilo).toFixed(2).toString().concat(" K");
                             }
                         }
                         $("#visits-today").text(array_visits[0]);
@@ -272,7 +229,9 @@ if (!$conn->connect_error) { // when database is connected
                             <svg class="visits-chart"></svg>
                         </div>
                         <div class="users-chart-buttons">
-                            visits chart buttons (by Day/Month/Year)
+                            <button id="generateButtons" onclick="generateVisit(0)" type="button" class="btn btn-default generateButtons"><h4>Daily</h4></button>
+                            <button id="generateButtons" onclick="generateVisit(1)" type="button" class="btn btn-default"><h4>Monthly</h4></button>
+                            <button id="generateButtons" onclick="generateVisit(2)" type="button" class="btn btn-default"><h4>Yearly</h4></button>
                         </div>
                     </div>
                     <div class="container" style="margin-top: 10px;">
@@ -289,6 +248,7 @@ if (!$conn->connect_error) { // when database is connected
                 <br>
                 <footer class="footer-container"></footer>
                 <script src="./common.js"></script>
+                <script src="./index_quotes.js"></script>
                 <script src="./index_visit_charts.js"></script>
                 <script src="./index_lang_charts.js"></script>
                 <script src="./index_tool_charts.js"></script>

@@ -156,3 +156,12 @@ input:checked + .slider:before {
     margin: 0px 5px 0px 5px;
 }
 
+.image-credit {
+    margin-right: 5px;
+    text-align: center;
+}
+
+.video-credit {
+    margin-right: 5px;
+    text-align: center;
+}

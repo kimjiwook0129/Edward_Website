@@ -89,9 +89,6 @@ $par = $(".active").parent();
 $chi = $(li).append($(a).text("Projects").attr("href", "projects.html").attr("id","projects-button"));
 $par.append($chi);
 
-$chi = $(li).append($(a).text("Contact").attr("href", "contact.html").attr("id","contact-button"));
-$par.append($chi);
-
 // Footer
 
 $(".footer-container").append($(div).addClass("top-options"));

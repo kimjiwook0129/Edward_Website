@@ -15,7 +15,6 @@ $("#lang-setting").on('change', function() {
         $("#parttime-button").text("이력서");
         $("#coop-button").text("코업");
         $("#projects-button").text("프로젝트");
-        $("#contact-button").text("연락처");
     } else { // From Korean to English
         $("#lang-label").text("EN(US)");
         $("#home-button").text("Home");
@@ -32,6 +31,5 @@ $("#lang-setting").on('change', function() {
         $("#parttime-button").text("Part-time Résumé");
         $("#coop-button").text("Co-op Résumé");
         $("#projects-button").text("Projects");
-        $("#contact-button").text("Contact");
     }
 });

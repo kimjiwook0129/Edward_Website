@@ -1,34 +1,63 @@
 fetch('json/counts.json').then((response) => {
     return response.json();
 }).then((data) => {
-    var parsedData = parseData(data);
+    var parsedData = parseData(data, 0);
     drawChart(parsedData);
 }).catch(function (error) {
     console.log(error);
 });
 
-function parseData(data) {
+function generateVisit(para) {
+    d3.select("#delete-me-to-reset").remove();
+    fetch('json/counts.json').then((response) => {
+        return response.json();
+    }).then((data) => {
+        var parsedData = parseData(data, para);
+        drawChart(parsedData);
+    }).catch(function (error) {
+        console.log(error);
+    });
+}
+
+function parseData(data, para = 0) {
     var arr = [];
-    for (var i in data.counts_day) {
-        arr.push({
-            date: new Date(i), //date
-            value: +data.counts_day[i] //convert string to number
-        });
+    if (para == 0) {
+        for (var i in data.counts_day) {
+            arr.push({
+                date: new Date(i), //date
+                value: +data.counts_day[i] //convert string to number
+            });
+        }
+    } else if (para == 1) {
+        for (var i in data.counts_month) {
+            arr.push({
+                date: new Date(i), //date
+                value: +data.counts_month[i] //convert string to number
+            });
+        }
+    } else {
+        for (var i in data.counts_year) {
+            arr.push({
+                date: new Date(i), //date
+                value: +data.counts_year[i] //convert string to number
+            });
+        }
     }
     return arr;
 }
 
 function drawChart(data) {
-    var svgWidth = 1000, svgHeight = 270;
-var margin = { top: 20, right: 20, bottom: 30, left: 50 };
-var width = svgWidth - margin.left - margin.right;
-var height = svgHeight - margin.top - margin.bottom;
+    var svgWidth = 1100, svgHeight = 270;
+    var margin = { top: 20, right: 20, bottom: 30, left: 50 };
+    var width = svgWidth - margin.left - margin.right;
+    var height = svgHeight - margin.top - margin.bottom;
 
     var svg = d3.select('.visits-chart')
         .attr("width", svgWidth)
         .attr("height", svgHeight);
     
 var g = svg.append("g")
+    .attr("id","delete-me-to-reset")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 var x = d3.scaleTime()
