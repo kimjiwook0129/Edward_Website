@@ -1,7 +1,11 @@
-## Status ##
+## Project [프로젝트] ##
+
+This is both my personal website and porfolio. [이 프로젝트는 제 개인 웹사이트 겸 포트폴리오 입니다.]
+
+## Status [현황] ##
 
 1. Domain [도메인]: "www.edwardjiwookkim.com"
-2. Hosted by [서버 호스팅]: Hostinger
+2. Hosted by [서버 호스팅]: Hostinger (~ June 2023)
 
 ## Notes on CDNs & npm packages [CDN 사용과 npm 패키지 관련] ##
 
@@ -13,4 +17,6 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 
-3. 
+## Author [저작자]
+
+* **Edward Jiwook Kim [김지욱]** - *Initial work* - (https://github.com/j533kim)

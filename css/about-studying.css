@@ -1,5 +1,6 @@
 .dashboard {
   height: auto;
+  margin-top: 10px;
 }
 
 .pie-chart {
@@ -51,4 +52,13 @@
   font-size: 10px;
   color: #707070;
   margin: 0 0 0 0;
+}
+
+.skill-chart {
+  width: 100%;
+  border: 2px solid #000000;
+  border-radius: 5px;
+  margin: 5px auto;
+  overflow: scroll;
+  text-align: center;
 }

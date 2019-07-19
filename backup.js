@@ -49,22 +49,13 @@ var x = d3.scaleLinear()
     .rangeRound([0, width]);
 
 var y = d3.scaleLinear()
-    .rangeRound([height, 0])
-
-var y2 = d3.scaleLinear()
     .rangeRound([height, 0]);
 
 var line = d3.line()
     .x(function(d) { return x(d.term)})
     .y(function(d) { return y(d.value)})
-    x.domain([0.9,8.5]);
-    y.domain([2,4.3]);
-
-var line2 = d3.line()
-    .x(function(d) { return x(d.term)})
-    .y(function(d) { return y2(d.value)})
-    x.domain([0.9, 8.5])
-    y2.domain([2.1,4]);
+    x.domain(d3.extent(dataHigh, function(d) { return d.term }));
+    y.domain(d3.extent(dataHigh, function(d) { return d.value }));
 
 // x-axis
 g.append("g")
@@ -72,29 +63,27 @@ g.append("g")
     .attr("transform", "translate(0," + height + ")")
     .append("text")
     .attr("fill", "#000")
-    .attr("transform", "translate(40, 15)")
+    .attr("transform", "translate(-10, 5)")
     .attr("dy", "0.71em")
     .attr("text-anchor", "end")
     .text("Term");
 
 g.append("g")
     .call(d3.axisLeft(y))
-    .style("color","blue")
     .append("text")
-    .attr("fill", "blue")
+    .attr("fill", "#000")
     .attr("transform", "rotate(-90)")
     .attr("y", 6)
     .attr("dy", "0.71em")
     .attr("text-anchor", "end")
-    .text("4.3 Scale");
+    .text("GPA 4.3 Scale");
 
-g.append("g")
-    .call(d3.axisRight(y2))
-    .style("color","red")
+g.append("g") //
+    .call(d3.axisRight(y))
     .attr("transform", "translate(530, 0)")
     .append("text")
-    .attr("fill", "red")
-    .attr("transform", "translate(20, 0) rotate(-90)")
+    .attr("fill", "#000")
+    .attr("transform", "translate(-20, 60) rotate(-90)")
     .attr("y", 6)
     .attr("dy", "0.71em")
     .attr("text-anchor", "end")
@@ -116,7 +105,7 @@ g.append("path")
     .attr("stroke-linejoin", "round")
     .attr("stroke-linecap", "round")
     .attr("stroke-width", 1.5)
-    .attr("d", line2);
+    .attr("d", line);
 
 
 

@@ -33,7 +33,7 @@
             "gpa": 4.13
         }
     ],
-    "University": [
+    "University": [ 
         {
             "term": 1,
             "gpa": 3.46
@@ -49,22 +49,6 @@
         {
             "term": 4,
             "gpa": 3.12
-        },
-        {
-            "term": 5,
-            "gpa": 0
-        },
-        {
-            "term": 6,
-            "gpa": 0
-        },
-        {
-            "term": 7,
-            "gpa": 0
-        },
-        {
-            "term": 8,
-            "gpa": 0
         }
     ]
 }

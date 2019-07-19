@@ -180,21 +180,21 @@ if (!$conn->connect_error) { // when database is connected
                         <div class="row">
                             <div class="col-sm-6" id="outer-box-holder" style="display: flex;">
                                 <div id="inner-box-holder">
-                                    <p style="margin-bottom: 0;"><b>Visits Today</b></p>
+                                    <b><p id="visit-today" style="margin-bottom: 0;">Visits Today</p></b>
                                     <p id="visits-today">0</p>
                                 </div>
                                 <div id="inner-box-holder">
-                                    <p style="margin-bottom: 0;"><b>Visits this Month</b></p>
+                                    <b><p id="visit-month" style="margin-bottom: 0;">Visits this Month</p></b>
                                     <p id="visits-month">0</p>
                                 </div>
                             </div>
                             <div class="col-sm-6" id="outer-box-holder" style="display: flex;">
                                 <div id="inner-box-holder">
-                                    <p style="margin-bottom: 0;"><b>Visits this Year</b></p>
+                                    <b><p id="visit-year" style="margin-bottom: 0;">Visits this Year</p></b>
                                     <p id="visits-year">0</p>
                                 </div>
                                 <div id="inner-box-holder">
-                                    <p style="margin-bottom: 0;"><b>Visits Total</b></p>
+                                    <b><p id="visit-total" style="margin-bottom: 0;">Visits Total</p></b>
                                     <p id="visits-total">0</p>
                                 </div>
                             </div>
@@ -253,6 +253,7 @@ if (!$conn->connect_error) { // when database is connected
                 <script src="./index_lang_charts.js"></script>
                 <script src="./index_tool_charts.js"></script>
                 <script src="./common_lang.js"></script>
+                <script src="./index-translate.js"></script>
             </div>
         </div>
     </body>

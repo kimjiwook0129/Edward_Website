@@ -140,13 +140,74 @@
     "placesTraveled": [
         {
             "coords": {
+                "lat": 43.1840,
+                "lng": 16.5993
+            },
+            "iconImage": "placeTraveledIcon",
+            "content": "<p>Starigrad</p>",
+            "country": "Croatia",
+            "continent": "EU",
+            "description": "hiking"
+        },{
+            "coords": {
+                "lat": 44.3437,
+                "lng": 15.4840
+            },
+            "iconImage": "placeTraveledIcon",
+            "content": "<p>Zadar</p>",
+            "country": "Croatia",
+            "continent": "EU",
+            "description": "Paklenica National Park (rock climbing)"
+        },{
+            "coords": {
+                "lat": 44.2007,
+                "lng": 15.6811
+            },
+            "iconImage": "placeTraveledIcon",
+            "content": "<p>Obrovac</p>",
+            "country": "Croatia",
+            "continent": "EU",
+            "description": "River and Castle view (lunch)"
+        },{
+            "coords": {
+                "lat": 44.2039,
+                "lng": 15.3470
+            },
+            "iconImage": "placeTraveledIcon",
+            "content": "<p>Visocane</p>",
+            "country": "Croatia",
+            "continent": "EU",
+            "description": "River Canyon (great image me: dabbing) &  camping"
+        },{
+            "coords": {
+                "lat": 45.4450,
+                "lng": 15.5028
+            },
+            "iconImage": "placeTraveledIcon",
+            "content": "<p>Duga Resa</p>",
+            "country": "Croatia",
+            "continent": "EU",
+            "description": "First hotel: & kayaking"
+        },{
+            "coords": {
+                "lat": 45.3452,
+                "lng": 19.0010
+            },
+            "iconImage": "placeTraveledIcon",
+            "content": "<p>Vukovar</p>",
+            "country": "Croatia",
+            "continent": "EU",
+            "description": "War Museum"
+        },{
+            "coords": {
                 "lat": 29.9081,
                 "lng": 31.1985
             },
             "iconImage": "placeTraveledIcon",
-            "content": "<p>Al Sorat Farm</p>",
+            "content": "<p>Abu Gorab</p>",
             "country": "Egypt",
-            "continent": "AF"
+            "continent": "AF",
+            "description": "Al Sorat Farm"
         },{
             "coords": {
                 "lat": 51.5074,
@@ -280,6 +341,15 @@
             },
             "iconImage": "placeTraveledIcon",
             "content": "<p>Giza</p>",
+            "country": "Egypt",
+            "continent": "AF"
+        },{
+            "coords": {
+                "lat": 28.3850,
+                "lng": 28.9085
+            },
+            "iconImage": "placeTraveledIcon",
+            "content": "<p>Bahariya Oasis</p>",
             "country": "Egypt",
             "continent": "AF"
         },{
