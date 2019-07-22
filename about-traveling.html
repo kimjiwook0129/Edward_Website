@@ -29,7 +29,7 @@
                                     <img id="icon"src='http://maps.google.com/mapfiles/ms/icons/red-dot.png'>
                                 </div>
                                 <div id="icon-instruct">
-                                    <p style="margin-bottom:0;"><b>Current Location</b></p>
+                                    <b><p id="CL" style="margin-bottom:0;">Current Location</p></b>
                                 </div>
                             </div>
                             <div class="col-sm-3" style="text-align: center;">
@@ -37,7 +37,7 @@
                                     <img id="icon"src='http://maps.google.com/mapfiles/ms/icons/green-dot.png'>
                                 </div>
                                 <div id="icon-instruct">
-                                    <p style="margin-bottom:0;"><b>Place Lived</b></p>
+                                    <b><p id="PL" style="margin-bottom:0;">Place Lived</p></b>
                                 </div>
                             </div>
                             <div class="col-sm-3" style="text-align: center;">
@@ -45,7 +45,7 @@
                                     <img id="icon"src='http://maps.google.com/mapfiles/ms/icons/blue-dot.png'>
                                 </div>
                                 <div id="icon-instruct">
-                                    <p style="margin-bottom:0;"><b>Place Traveled</b></p>
+                                    <b><p id="PT" style="margin-bottom:0;">Place Traveled</p></b>
                                 </div>
                             </div>
                             <div class="col-sm-3" style="text-align: center;">
@@ -53,7 +53,7 @@
                                     <img id="icon"src='http://maps.google.com/mapfiles/ms/icons/yellow-dot.png'>
                                 </div>
                                 <div id="icon-instruct">
-                                    <p style="margin-bottom:0;"><b>Place Visited</b></p>
+                                    <b><p id="PV" style="margin-bottom:0;">Place Visited</p></b>
                                 </div>
                             </div>
                         </div>
@@ -63,7 +63,7 @@
                 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPzgr8J19VMbYnPpb4arHfMKyAkmzK1nQ&callback=initMap" async defer>
                 </script>
                 <div class="main-contents">
-                    <h2 style="text-align:center;"><b>So far, I have been to...</b></h2>
+                    <h2 id="so-far-statement" style="text-align:center;">So far, I have been to...</h2>
                     <div class="container">
                         <div class="row">
                             <div class="col-sm-4" id="outer-box-holder">
@@ -73,7 +73,7 @@
                                     </div>
                                     <div class="box-text">
                                         <div id="continent-count"><h2 class="num"></h2></div>
-                                        <h2>CONTINENTS</h2>
+                                        <h2 id="continents-text">CONTINENTS</h2>
                                         <div>Icons made by 
                                             <a href="https://www.freepik.com/" title="Freepik">
                                                 Freepik
@@ -95,7 +95,7 @@
                                     </div>
                                     <div class="box-text">
                                         <div id="country-count"><h2 class="num"></h2></div>
-                                        <h2>COUNTRIES</h2>
+                                        <h2 id="countries-text">COUNTRIES</h2>
                                         <div>Icons made by
                                             <a href="https://www.freepik.com/" title="Freepik">
                                                 Freepik
@@ -117,7 +117,7 @@
                                     </div>
                                     <div class="box-text" style="overflow: hidden;">
                                         <div id="city-count"><h2 class="num"></h2></div>
-                                        <h2>CITIES</h2>
+                                        <h2 id="cities-text">CITIES</h2>
                                         <div>Icons made by
                                             <a href="https://www.flaticon.com/authors/recep-kutuk" title="Recep Kutuk">
                                                 Recep Kutuk
@@ -172,6 +172,7 @@
                 <footer class="footer-container"></footer>
                 <script src="./common.js"></script>
                 <script src="./common_lang.js"></script>
+                <script src="./about-traveling-translate.js"></script>
             </div>
         </div>
     </body>

@@ -140,6 +140,28 @@
     "placesTraveled": [
         {
             "coords": {
+                "lat": 41.9029,
+                "lng": 12.4534
+            },
+            "iconImage": "placeTraveledIcon",
+            "content": "<p>Vatican City</p>",
+            "country": "Vatican City",
+            "continent": "EU",
+            "description": "castles"
+        },
+        {
+            "coords": {
+                "lat": 57.4778,
+                "lng": -4.2247
+            },
+            "iconImage": "placeTraveledIcon",
+            "content": "<p>Inverness</p>",
+            "country": "Scotland",
+            "continent": "EU",
+            "description": "castles"
+        },
+        {
+            "coords": {
                 "lat": 43.1840,
                 "lng": 16.5993
             },
@@ -725,6 +747,7 @@
             "country": "England",
             "continent": "EU"
         },{
+  
             "coords": {
                 "lat": 37.4563,
                 "lng": 126.7052
