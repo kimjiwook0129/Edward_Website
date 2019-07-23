@@ -4,7 +4,7 @@ error_reporting(0); // removes all PHP errors (localhost: no access to database)
 $servername = "localhost";
 $database = "u440028312_users";
 $username = "u440028312_kimji";
-$password = "Rlawldnr7!";
+$password = "c23QNk0PiBpgDf6";
 
 $tb_count = "user_count"; // tables in the database
 $tb_day = "day_record";
