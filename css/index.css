@@ -148,3 +148,13 @@
     overflow: scroll;
     text-align: center;
 }
+
+.skill-temp-chart {
+    width: 100%;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    height: 900px;
+    margin: 5px auto;
+    overflow: scroll;
+    text-align: center;
+}

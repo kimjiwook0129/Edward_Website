@@ -1,10 +1,21 @@
 <?php
 error_reporting(0); // removes all PHP errors (localhost: no access to database)
 
-$servername = "localhost";
-$database = "u440028312_users";
-$username = "u440028312_kimji";
-$password = "c23QNk0PiBpgDf6";
+$servernameFile = fopen("servername.txt", "r");
+$servername = fread($servernameFile, filesize("servername.txt"));
+fclose($servernameFile);
+
+$databaseFile = fopen("database.txt", "r");
+$database = fread($databaseFile, filesize("database.txt"));
+fclose($databaseFile);
+
+$usernameFile = fopen("username.txt", "r");
+$username = fread($usernameFile, filesize("username.txt"));
+fclose($usernameFile);
+
+$passwordFile = fopen("password.txt", "r");
+$password = fread($passwordFile,filesize("password.txt"));
+fclose($passwordFile);
 
 $tb_count = "user_count"; // tables in the database
 $tb_day = "day_record";
@@ -235,14 +246,18 @@ if (!$conn->connect_error) { // when database is connected
                         </div>
                     </div>
                     <div class="container" style="margin-top: 10px;">
-                        <div class="skill-chart">
-                            <svg width="920" height="270" id="language-chart"></svg>
-                        </div>        
-                    </div>
-                    <div class="container" style="margin-top: 10px;">
-                        <div class="skill-chart">
-                            <svg width="920" height="270" id="tool-chart"></svg>
-                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="skill-chart">
+                                    <svg width="920" height="270" id="language-chart"></svg>
+                                </div>  
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="skill-temp-chart">
+                                    <svg width="300" height="800" id="tool-chart"></svg>
+                                </div>
+                            </div>
+                        </div>  
                     </div>
                 </div>
                 <br>

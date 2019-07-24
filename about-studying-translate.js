@@ -42,7 +42,7 @@ $("#lang-setting").on('change', function() {
         $("#c1").text("Senior Mathematics Department Award 수상 [2017년 5월]");
         $("#c2").text("Cayley Mathematics Contest Certificate of Distinction 수상 [2015 4월]");
         $("#c3").text("2017년 졸업생 Top Ten Scholar Award 수상 [2016년 5월, 2017년 5월]");
-        $("#c4").text("수강한 IB, AP 전 과목 만점 (IB HL Phys 7, IB HL Math 7, AP Stats 7, 등) [2017년 6월]");
+        $("#c4").text("수강한 IB, AP 전 과목 만점 (IB HL Phys 7, IB HL Math 7, AP Stats 5, 등) [2017년 6월]");
         $("#c5").text("미국 대학수학능력시험 New SAT 1500점 [2016년 12월]");
         $("#c6").text("CAC Varsity Dance [2014년 11월 - 2015년 2월, 2015년 11월 - 2016년 2월]");
         $("#c7").text("CAC Cross-Country [2014년 9월 - 2014년 11월, 2015년 9월 - 2015년 11월]");
@@ -120,7 +120,7 @@ $("#lang-setting").on('change', function() {
         $("#c1").text("Received Senior Mathematics Department Award at CAC Awards Night [May 2017]");
         $("#c2").text("Received Cayley Mathematics Contest Certificate of Distinction (University of Waterloo) [Apr 2015]");
         $("#c3").text("Received Top Ten Scholar Award Class of 2017 at CAC Awards Night [May 2016, May 2017]");
-        $("#c4").text("Scored full marks in all IB, AP courses taken (IB HL Phys 7, IB HL Math 7, AP Stats 7, etc) [Jun 2017]");
+        $("#c4").text("Scored full marks in all IB, AP courses taken (IB HL Phys 7, IB HL Math 7, AP Stats 5, etc) [Jun 2017]");
         $("#c5").text("Scored 1500 in the new Scholastic Aptitude Test (SAT) [Dec 2016]");
         $("#c6").text("CAC Varsity Dance [Nov 2014 - Feb 2015, Nov 2015 - Feb 2016]");
         $("#c7").text("CAC Cross-Country [Sep 2014 – Nov 2014, Sep 2015 – Nov 2015]");

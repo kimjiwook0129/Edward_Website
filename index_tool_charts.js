@@ -12,8 +12,8 @@ var dataset_tool = [{tool: "Adobe Photoshop", value: 4},
 var svg = d3.select("#tool-chart"),
     margin = 40,
     marginHori = 50,
-    width = 890 - marginHori,
-    height = 270 - margin;
+    width = 300 - marginHori,
+    height = 900 - margin;
         
 var xScale = d3.scaleBand().range([0, width]).padding(0.5),
     yScale = d3.scaleLinear().range([height, 0]);
@@ -23,7 +23,7 @@ var g = svg.append("g")
         
 xScale.domain(dataset_tool.map(function(d) { return d.tool; }));
 yScale.domain([0, d3.max(dataset_tool, function(d) { return d.value; })]);
-
+/*
 g.append("g")
     .attr("transform", "translate(0," + height + ")")
     .call(d3.axisBottom(xScale))
@@ -72,3 +72,4 @@ $(".tool-bar").hover(function(obj, i) {
 }, function() {
     $(this).css("fill", "rgb(255, 89, 89)");
 });
+*/
