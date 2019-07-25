@@ -236,7 +236,7 @@ if (!$conn->connect_error) { // when database is connected
                         $("#visits-total").text(array_visits[3]);
                     </script>
                     <div class="container" style="margin-top: 10px;">
-                        <div class="skill-chart">
+                        <div class="visit-chart">
                             <svg class="visits-chart"></svg>
                         </div>
                         <div class="users-chart-buttons">
@@ -249,12 +249,18 @@ if (!$conn->connect_error) { // when database is connected
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="skill-chart">
-                                    <svg width="920" height="270" id="language-chart"></svg>
+                                    <svg width="100%" height="100%" id="language-chart">
+                                        <text x="10" y="15" font-family="sans-serif" font-size="18px" font-weight="bold" fill="black">Language Proficiency</text>
+                                        <text id="langNum" x="0" y="0" font-family="sans-serif" font-size="12px" fill="blue"></text>
+                                    </svg>
                                 </div>  
                             </div>
                             <div class="col-sm-6">
-                                <div class="skill-temp-chart">
-                                    <svg width="300" height="800" id="tool-chart"></svg>
+                                <div class="skill-chart">
+                                    <svg width="100%" height="100%" id="tool-chart">
+                                        <text x="10" y="15" font-family="sans-serif" font-size="18px" font-weight="bold" fill="black">Software Proficiency</text>
+                                        <text id="toolNum" x="0" y="0" font-family="sans-serif" font-size="12px" fill="red"></text>
+                                    </svg>
                                 </div>
                             </div>
                         </div>  

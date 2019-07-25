@@ -137,24 +137,22 @@
     margin-top: 2px;
 }
 
-
-
-.skill-chart {
+.visit-chart {
     width: 100%;
     border: 2px solid #000000;
     border-radius: 5px;
     height: 300px;
     margin: 5px auto;
-    overflow: scroll;
     text-align: center;
+    overflow: scroll;
+
 }
 
-.skill-temp-chart {
+.skill-chart {
     width: 100%;
     border: 2px solid #000000;
     border-radius: 5px;
-    height: 900px;
+    height: 500px;
     margin: 5px auto;
-    overflow: scroll;
     text-align: center;
 }

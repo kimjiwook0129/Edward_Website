@@ -502,6 +502,16 @@
             "continent": "EU"
         },{
             "coords": {
+                "lat": 38.0695,
+                "lng": 128.1707
+            },
+            "iconImage": "placeTraveledIcon",
+            "content": "<p>Inje</p>",
+            "country": "South Korea",
+            "continent": "AS",
+            "description": "Seorak Mountain"
+        },{
+            "coords": {
                 "lat": 50.7374,
                 "lng": 7.0982
             },
@@ -593,6 +603,16 @@
         }
     ],
     "placesVisited": [
+        {
+            "coords": {
+                "lat": 37.6970,
+                "lng": 127.8887
+            },
+            "iconImage": "placeVisitedIcon",
+            "content": "<p>Hongcheon</p>",
+            "country": "South Korea",
+            "continent": "AS"
+        },
         {
             "coords": {
                 "lat": 24.4205,
