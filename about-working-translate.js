@@ -50,7 +50,7 @@ $("#lang-setting").on('change', function() {
         $(tT + ".1").text("개인 과외");
         $organization = $(b).text(org_kr);
         $(tT + ".1").prepend($organization);
-        $(tT + ".2").text("2017년 1월 - 2018년 4월");
+        $(tT + ".2").text("2016년 11월 - 2018년 4월");
         $duration = $(b).text(dur_kr);
         $(tT + ".2").prepend($duration);
         $(tT + ".3").text("이집트 카이로 | 캐나다 온타리오 워털루");
@@ -103,7 +103,7 @@ $("#lang-setting").on('change', function() {
         $(tT + ".1").text("Self-employed");
         $organization = $(b).text(org);
         $(tT + ".1").prepend($organization);
-        $(tT + ".2").text("Jan 2017 - Apr 2018");
+        $(tT + ".2").text("Nov 2016 - Apr 2018");
         $duration = $(b).text(dur);
         $(tT + ".2").prepend($duration);
         $(tT + ".3").text("Cairo, Egypt | Waterloo, ON, Canada");

@@ -159,7 +159,7 @@ if (!$conn->connect_error) { // when database is connected
                     <div class="jumbotron-content">
                         <img class="my-face" src="./images/face.png" alt="Edward's face" height="90" width="90">
                         <div class="jumbotron-below">
-                            <button id="click-me" onclick="infoUp()"type="button" class="btn btn-default"><h4>Click Me!</h4></button>
+                            <button id="click-me" onclick="infoUp()"type="button" class="btn btn-default"><h4 id="clickMeText">Click Me!</h4></button>
                         </div>
                     </div>
                     <div class="particles-container">
@@ -175,9 +175,21 @@ if (!$conn->connect_error) { // when database is connected
                         $(".jumbotron-content").css("margin-left","-130px");
                         $(".jumbotron-below").css("height","80px");
                         setTimeout(function() {
-                            $(".jumbotron-below").append("<h3>Edward Jiwook Kim</h3>");
-                            $(".jumbotron-below").append("<h4>Welcome to my website,</h4>");
-                            $(".jumbotron-below").append("<h4>You'll find more about me here!</h4>");
+                            if ($("#lang-setting").is(':checked')) {
+                                $text1 = $("<h3></h3>").attr("id", "clickText1").text("에드워드, 김지욱");
+                                $text2 = $("<h4></h4>").attr("id", "clickText2").text("안녕하세요? 이곳에선 저에 대해서");
+                                $text3 = $("<h4></h4>").attr("id", "clickText3").text("더 자세히 아실 수 있어요!");
+                                $(".jumbotron-below").append($text1);
+                                $(".jumbotron-below").append($text2);
+                                $(".jumbotron-below").append($text3);
+                            } else {
+                                $text1 = $("<h3></h3>").attr("id", "clickText1").text("Edward Jiwook Kim");
+                                $text2 = $("<h4></h4>").attr("id", "clickText2").text("Welcome to my website,");
+                                $text3 = $("<h4></h4>").attr("id", "clickText3").text("You'll find more about me here!");
+                                $(".jumbotron-below").append($text1);
+                                $(".jumbotron-below").append($text2);
+                                $(".jumbotron-below").append($text3);
+                            }
                         }, 100); // millisecond
                     }
                 </script>
@@ -237,12 +249,12 @@ if (!$conn->connect_error) { // when database is connected
                     </script>
                     <div class="container" style="margin-top: 10px;">
                         <div class="visit-chart">
-                            <svg class="visits-chart"></svg>
+                            <svg width="1100px" height="270px" id="visit-chart" class="visits-chart"></svg>
                         </div>
-                        <div class="users-chart-buttons">
-                            <button id="generateButtons" onclick="generateVisit(0)" type="button" class="btn btn-default generateButtons"><h4>Daily</h4></button>
-                            <button id="generateButtons" onclick="generateVisit(1)" type="button" class="btn btn-default"><h4>Monthly</h4></button>
-                            <button id="generateButtons" onclick="generateVisit(2)" type="button" class="btn btn-default"><h4>Yearly</h4></button>
+                        <div class="users-chart-buttons" style="width: 218px; margin-top: 20px;">
+                            <button id="dayButton" style="margin-top:2px"onclick="generateVisit(0)" type="button" class="btn btn-default"><h4>Day</h4></button>
+                            <button id="monthButton" style="margin-top:2px"onclick="generateVisit(1)" type="button" class="btn btn-default"><h4>Month</h4></button>
+                            <button id="yearButton" style="margin-top:2px"onclick="generateVisit(2)" type="button" class="btn btn-default"><h4>Year</h4></button>
                         </div>
                     </div>
                     <div class="container" style="margin-top: 10px;">

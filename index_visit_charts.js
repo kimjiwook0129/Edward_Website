@@ -12,6 +12,8 @@ function generateVisit(para) {
     fetch('json/counts.json').then((response) => {
         return response.json();
     }).then((data) => {
+        dataGlobal = data;
+        paraGlobal = para;
         var parsedData = parseData(data, para);
         drawChart(parsedData);
     }).catch(function (error) {
@@ -47,8 +49,15 @@ function parseData(data, para = 0) {
 }
 
 function drawChart(data) {
-    var svgWidth = 1100, svgHeight = 270;
-    var margin = { top: 20, right: 20, bottom: 30, left: 50 };
+    d3.select("#visit-chart").selectAll("g").remove();
+    var svgWidth = $("#visit-chart").width(),
+        svgHeight = $("#visit-chart").height(),
+        margin = {
+            top: 20,
+            right: 10,
+            bottom: 30,
+            left: 50
+        };
     var width = svgWidth - margin.left - margin.right;
     var height = svgHeight - margin.top - margin.bottom;
 
@@ -56,9 +65,9 @@ function drawChart(data) {
         .attr("width", svgWidth)
         .attr("height", svgHeight);
     
-var g = svg.append("g")
-    .attr("id","delete-me-to-reset")
-    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    var g = svg.append("g")
+        .attr("id","delete-me-to-reset")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
 var x = d3.scaleTime()
     .rangeRound([0, width]);
@@ -97,4 +106,3 @@ g.append("path")
     .attr("stroke-width", 1.5)
     .attr("d", line);
 }
-

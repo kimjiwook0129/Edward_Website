@@ -15,7 +15,7 @@ $("#lang-setting").on('change', function() {
         // UW
         $title = $(b).text("워털루 대학교");
         $(wT + ".schoolTitle").text("").append($title);
-        $(wT + ".1").text("2017년 9월 7일 - 2019년 8월 23일");
+        $(wT + ".1").text("2017년 9월 7일 - 재학중");
         $duration = $(b).text(dur_kr);
         $(wT + ".1").prepend($duration);
         $(wT + ".2").text("캐나다 온타리오 워털루");
@@ -94,7 +94,7 @@ $("#lang-setting").on('change', function() {
 
         // UW
         $(wT + ".schoolTitle").text("University of Waterloo");
-        $(wT + ".1").text("Sep 7, 2017 - Aug 23, 2019");
+        $(wT + ".1").text("Sep 7, 2017 - Current");
         $duration = $(b).text(dur);
         $(wT + ".1").prepend($duration);
         $(wT + ".2").text("Waterloo, ON, Canada");
