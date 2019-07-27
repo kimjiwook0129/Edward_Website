@@ -129,6 +129,12 @@ input:checked + .slider:before {
     margin: 0 0 0 0;
 }
 
+#reference_total {
+    font-size: 10px;
+    color: #707070;
+    margin: 0 0 0 0;
+}
+
 .footer-container {
     overflow: hidden;
     background-color: #000000;

@@ -1,35 +1,63 @@
+const bN = "-button",
+    hF = "href",
+    K = "kor",
+    E = "eng";
+
+function translateKorean() {
+    $("#lang-label").text("한국어");
+    $("#home" + bN).text("홈");
+    $("#background" + bN).text("배경");
+    $temp = $(span).addClass("caret");
+    $("#background" + bN).append($temp);
+    $("#working" + bN).text("경력");
+    $("#traveling" + bN).text("여행");
+    $("#studying" + bN).text("학력");
+    $("#résumé" + bN).text("이력서");
+    $temp = $(span).addClass("caret");
+    $("#résumé" + bN).append($temp);
+    $("#fulltime" + bN).text("이력서");
+    $("#parttime" + bN).text("이력서");
+    $("#coop" + bN).text("코업");
+    $("#projects" + bN).text("프로젝트");
+    $("#reference_total").text("* 모든 이미지/아이콘은 저작자의 허가를 받거나 서비스 이용약관에 따라 사용되었음을 밝힙니다.");
+    $("#working" + bN).attr(hf, $("#working" + bN).attr(hf).slice(0, -3) + K);
+    $("#traveling" + bN).attr(hf, $("#traveling" + bN).attr(hf).slice(0, -3) + K);
+    $("#studying" + bN).attr(hf, $("#studying" + bN).attr(hf).slice(0, -3) + K);
+    $("#edward-logo").attr(hf, $("#edward-logo").attr(hf).slice(0, -3) + K);
+    $("#home" + bN).attr(hf, $("#home" + bN).attr(hf).slice(0, -3) + K);
+    $("#projects" + bN).attr(hf, $("#projects" + bN).attr(hf).slice(0, -3) + K);
+}
+
+if (window.location.href.slice(-3) == K) {
+    $("#lang-setting").prop("checked", true);
+    translateKorean();
+}
+
 $("#lang-setting").on('change', function() {
     if ($(this).is(':checked')) { // From English to Korean
-        $("#lang-label").text("한국어");
-        $("#home-button").text("홈");
-        $("#background-button").text("배경");
-        $temp = $(span).addClass("caret");
-        $("#background-button").append($temp);
-        $("#working-button").text("경력");
-        $("#traveling-button").text("여행");
-        $("#studying-button").text("학력");
-        $("#résumé-button").text("이력서");
-        $temp = $(span).addClass("caret");
-        $("#résumé-button").append($temp);
-        $("#fulltime-button").text("이력서");
-        $("#parttime-button").text("이력서");
-        $("#coop-button").text("코업");
-        $("#projects-button").text("프로젝트");
+        translateKorean();
     } else { // From Korean to English
         $("#lang-label").text("EN(US)");
-        $("#home-button").text("Home");
-        $("#background-button").text("Backgrounds");
+        $("#home" + bN).text("Home");
+        $("#background" + bN).text("Backgrounds");
         $temp = $(span).addClass("caret");
-        $("#background-button").append($temp);
-        $("#working-button").text("Working Background");
-        $("#traveling-button").text("Traveling Background");
-        $("#studying-button").text("Studying Background");
-        $("#résumé-button").text("Résumé");
+        $("#background" + bN).append($temp);
+        $("#working" + bN).text("Working Background");
+        $("#traveling" + bN).text("Traveling Background");
+        $("#studying" + bN).text("Studying Background");
+        $("#résumé" + bN).text("Résumé");
         $temp = $(span).addClass("caret");
-        $("#résumé-button").append($temp);
-        $("#fulltime-button").text("Full-time Résumé");
-        $("#parttime-button").text("Part-time Résumé");
-        $("#coop-button").text("Co-op Résumé");
-        $("#projects-button").text("Projects");
+        $("#résumé" + bN).append($temp);
+        $("#fulltime" + bN).text("Full-time Résumé");
+        $("#parttime" + bN).text("Part-time Résumé");
+        $("#coop" + bN).text("Co-op Résumé");
+        $("#projects" + bN).text("Projects");
+        $("#reference_total").text("* All image/icons have been used under each copyright owner's Terms of Service and permitted to be used.");
+        $("#working" + bN).attr(hf, $("#working" + bN).attr(hf).slice(0, -3) + E);
+        $("#traveling" + bN).attr(hf, $("#traveling" + bN).attr(hf).slice(0, -3) + E);
+        $("#studying" + bN).attr(hf, $("#studying" + bN).attr(hf).slice(0, -3) + E);
+        $("#edward-logo").attr(hf, $("#edward-logo").attr(hf).slice(0, -3) + E);
+        $("#home" + bN).attr(hf, $("#home" + bN).attr(hf).slice(0, -3) + E);
+        $("#projects" + bN).attr(hf, $("#projects" + bN).attr(hf).slice(0, -3) + E);
     }
 });

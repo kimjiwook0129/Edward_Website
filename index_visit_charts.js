@@ -12,8 +12,6 @@ function generateVisit(para) {
     fetch('json/counts.json').then((response) => {
         return response.json();
     }).then((data) => {
-        dataGlobal = data;
-        paraGlobal = para;
         var parsedData = parseData(data, para);
         drawChart(parsedData);
     }).catch(function (error) {

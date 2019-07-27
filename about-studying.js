@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function(event) {
+/*document.addEventListener("DOMContentLoaded", function(event) {
     fetch('./json/gpa.json').then(function(response) {
         return response.json();
     }).then(function(data) {
@@ -71,60 +71,54 @@ g.append("path")
     .attr("stroke-width", 1.5)
     .attr("d", line);
 }
-
-
-
-////
-
-
-
+*/
 
 var num = 2,
     dae_num = 2;
 window.setInterval(function() {
-    var source_code_waterloo = "./images/schools/waterloo_" + num.toString() + ".jpg",
-        source_code_cac = "./images/schools/cac_" + num.toString() + ".jpg",
-        source_code_pureun = "./images/schools/pureun_" + num.toString() + ".jpg",
-        source_code_ishcmc = "./images/schools/ishcmc_" + num.toString() + ".jpg",
-        source_code_sis = "./images/schools/sis_" + num.toString() + ".jpg",
-        source_code_daepyong = "./images/schools/daepyong_" + dae_num.toString() + ".jpg";
+    const default_credit = "Map data © ",
+        you = "Yousef Shabana",
+        cairoC = "Cairo American College",
+        goo = " Google | ",
+        s = "src",
+        i = "-image",
+        j = ".jpg",
+        direct = "./images/schools/";
+
+    var src_waterloo = direct + "waterloo_" + dae_num.toString() + j,
+        src_cac = direct + "cac_" + dae_num.toString() + j,
+        src_pureun = direct + "pureun_" + num.toString() + j,
+        src_ishcmc = direct + "ishcmc_" + num.toString() + j,
+        src_sis = direct + "sis_" + num.toString() + j,
+        src_daepyong = direct + "daepyong_" + dae_num.toString() + j;
     
-    $("#waterloo-image").fadeOut(function() {
-        $(this).attr("src", source_code_waterloo).fadeIn();
+    $("#waterloo" + i).fadeOut(function() {
+        $(this).attr(s, src_waterloo).fadeIn();
     });
     
-    $("#cac-image").fadeOut(function() {
-        $(this).attr("src", source_code_cac).fadeIn();
+    $("#cac" + i).fadeOut(function() {
+        $(this).attr(s, src_cac).fadeIn();
     });
 
     $("#reference-cairo").fadeOut(function() {
-        const default_credit = "Map data © ";
-        switch(num) {
-            case 2:
-                $(this).text(default_credit.concat("2015 Google | Yousef Shabana")).fadeIn();              
-                break;
-            case 3:
-                $(this).text(default_credit.concat("2017 Google | Cairo American College")).fadeIn();
-                break;
-            default:
-                $(this).text(default_credit.concat("2016 Google | Yousef Shabana")).fadeIn();
-        }
+        if (dae_num == 2) $(this).text(default_credit.concat("2016" + goo + you)).fadeIn();
+        else $(this).text(default_credit.concat("2015" + goo + cairoC)).fadeIn();
     });
     
-    $("#pureun-image").fadeOut(function() {
-        $(this).attr("src", source_code_pureun).fadeIn();
+    $("#pureun" + i).fadeOut(function() {
+        $(this).attr(s, src_pureun).fadeIn();
     });
-    $("#ishcmc-image").fadeOut(function() {
-        $(this).attr("src", source_code_ishcmc).fadeIn();
+    $("#ishcmc" + i).fadeOut(function() {
+        $(this).attr(s, src_ishcmc).fadeIn();
     });
-    $("#sis-image").fadeOut(function() {
-        $(this).attr("src", source_code_sis).fadeIn();
+    $("#sis" + i).fadeOut(function() {
+        $(this).attr(s, src_sis).fadeIn();
     });
-    $("#daepyong-image").fadeOut(function() {
-        $(this).attr("src", source_code_daepyong).fadeIn();
+    $("#daepyong" + i).fadeOut(function() {
+        $(this).attr(s, src_daepyong).fadeIn();
     });
-    num = num + 1;
-    dae_num = dae_num + 1;
+    num++;
+    dae_num++;
     if (num == 4) num = 1;
     if (dae_num == 3) dae_num = 1;
 }, 8000);

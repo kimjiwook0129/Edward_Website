@@ -228,20 +228,17 @@ if (!$conn->connect_error) { // when database is connected
                                             <?php echo "{$counts[1]}"?>,
                                             <?php echo "{$counts[2]}"?>,
                                             <?php echo "{$counts[3]}"?>];
-                        const len = array_visits.length,
-                            kilo = 1000,
+                        const kilo = 1000,
                             mil = kilo * kilo,
                             bil = kilo * mil;
                         
-                        for (var i = 0; i < len; i++) {
-                            if (array_visits[i] >= bil) {
-                                array_visits[i] = (array_visits[i] / bil).toFixed(2).toString().concat(" B");
-                            } else if (array_visits[i] >= mil) {
-                                array_visits[i] = (array_visits[i] / mil).toFixed(2).toString().concat(" M");
-                            } else if (array_visits[i] >= kilo) {
-                                array_visits[i] = (array_visits[i] / kilo).toFixed(2).toString().concat(" K");
-                            }
-                        }
+                        array_visits = array_visits.map(function(n) {
+                            if (n >= bil) return (n / bil).toFixed(2).toString().concat(" B");
+                            else if (n >= mil) return (n / mil).toFixed(2).toString().concat(" M");
+                            else if (n >= kilo) return (n / kilo).toFixed(2).toString().concat(" K");
+                            return n;
+                        });
+                        
                         $("#visits-today").text(array_visits[0]);
                         $("#visits-month").text(array_visits[1]);
                         $("#visits-year").text(array_visits[2]);
@@ -283,8 +280,7 @@ if (!$conn->connect_error) { // when database is connected
                 <script src="./common.js"></script>
                 <script src="./index_quotes.js"></script>
                 <script src="./index_visit_charts.js"></script>
-                <script src="./index_lang_charts.js"></script>
-                <script src="./index_tool_charts.js"></script>
+                <script src="./index_charts.js"></script>
                 <script src="./common_lang.js"></script>
                 <script src="./index-translate.js"></script>
             </div>

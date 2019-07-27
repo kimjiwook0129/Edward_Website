@@ -4,27 +4,33 @@ fetch('json/quotes.json').then((response) => {
     function getRandomInt(max) {
         return Math.floor(Math.random() * max);
     }
-    var quote_kr_index = getRandomInt(data.quotes_kor.length),
-        quote_en_index = getRandomInt(data.quotes.length);
+    const genId = "#quote-generate",
+        langId = "#lang-setting",
+        length_kr = data.quotes_kor.length,
+        length_en = data.quotes.length;
 
-    if ($("#lang-setting").is(':checked')) { // Shoot Korean quotes
-        $("#quote-generate").text("\"" + data.quotes_kor[quote_kr_index].quote + "\" -" + data.quotes_kor[quote_kr_index].by).fadeIn();
-    } else { // Shoot English quotes
-        $("#quote-generate").text("\"" + data.quotes[quote_en_index].quote + "\" -" + data.quotes[quote_en_index].by).fadeIn();
-    }
+    var index_kr = getRandomInt(length_kr),
+        index_en = getRandomInt(length_en),
+        timeInterval = 7000;
+
+    // Shoot Korean quotes
+    if ($(langId).is(':checked')) $(genId).text("\"" + data.quotes_kor[index_kr].quote + "\" -" + data.quotes_kor[index_kr].by).fadeIn();
+    // Shoot English quotes
+    else $(genId).text("\"" + data.quotes[index_en].quote + "\" -" + data.quotes[index_en].by).fadeIn();
+
     window.setInterval(function() {
-        if ($("#lang-setting").is(':checked')) { // Shoot Korean quotes
-            quote_kr_index = getRandomInt(data.quotes_kor.length);
-            $("#quote-generate").fadeOut(function() {
-                $(this).text("\"" + data.quotes_kor[quote_kr_index].quote + "\" -" + data.quotes_kor[quote_kr_index].by).fadeIn();
+        if ($(langId).is(':checked')) { // Shoot Korean quotes
+            index_kr = getRandomInt(length_kr);
+            $(genId).fadeOut(function() {
+                $(this).text("\"" + data.quotes_kor[index_kr].quote + "\" -" + data.quotes_kor[index_kr].by).fadeIn();
             });
         } else { // Shoot English quotes
-            quote_en_index = getRandomInt(data.quotes.length);
-            $("#quote-generate").fadeOut(function() {
-                $(this).text("\"" + data.quotes[quote_en_index].quote + "\" -" + data.quotes[quote_en_index].by).fadeIn();
+            index_en = getRandomInt(length_en);
+            $(genId).fadeOut(function() {
+                $(this).text("\"" + data.quotes[index_en].quote + "\" -" + data.quotes[index_en].by).fadeIn();
             });
         }
-    }, 7000);
+    }, timeInterval);
 }).catch(function (error) {
     console.log(error);
 });

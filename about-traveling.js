@@ -3,9 +3,7 @@
 // yellow flag = visited
 // default flag = current location
     
-const placeLivedIcon = 'http://maps.google.com/mapfiles/ms/icons/green-dot.png',
-    placeTraveledIcon = 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
-    placeVisitedIcon = 'http://maps.google.com/mapfiles/ms/icons/yellow-dot.png';
+const icons = ['http://maps.google.com/mapfiles/ms/icons/green-dot.png','http://maps.google.com/mapfiles/ms/icons/blue-dot.png','http://maps.google.com/mapfiles/ms/icons/yellow-dot.png'];
 
 function initMap() {
     fetch('json/locations.json').then((response) => {
@@ -20,28 +18,22 @@ function initMap() {
         var markers = [],
             continent_arr = [],
             country_arr = [];
-        
+
         markers.push(data.current);
-        for (var i in data.placesLived) {
-            data.placesLived[i].iconImage = placeLivedIcon;
-            markers.push(data.placesLived[i]);
-        } 
-        for (var i in data.placesTraveled) {
-            data.placesTraveled[i].iconImage = placeTraveledIcon;
-            markers.push(data.placesTraveled[i]);
+
+        for (var i = 0; i < 3; ++i) {
+            if (i == 0) dataTemp = data.placesLived;
+            else if (i == 1) dataTemp = data.placesTraveled;
+            else dataTemp = data.placesVisited;
+            dataTemp.forEach(function(l) {
+                l.iconImage = icons[i];
+                markers.push(l);
+                if (!(continent_arr.includes(l.continent))) continent_arr.push(l.continent);
+                if (!(country_arr.includes(l.country))) country_arr.push(l.country);
+            });
         }
-        for (var i in data.placesVisited) {
-            data.placesVisited[i].iconImage = placeVisitedIcon;
-            markers.push(data.placesVisited[i]);
-        }
-        for (i in markers) {
-            if (!(continent_arr.includes(markers[i].continent))) continent_arr.push(markers[i].continent);
-            if (!(country_arr.includes(markers[i].country))) country_arr.push(markers[i].country);
-        }
-    
-        for (var i = 0; i < markers.length; i++) addMarker(markers[i]);
-        
-        function addMarker(props){
+
+        markers.forEach(function(props) {
             var marker = new google.maps.Marker({
                 position:props.coords,
                 map:map
@@ -61,8 +53,8 @@ function initMap() {
                     }, 1000);
                 });
             }
-        }
-    
+        });
+
         $("#continent-count").find('.num').text(continent_arr.length);
         $("#country-count").find('.num').text(country_arr.length);
         const city_num = 10 * Math.round((markers.length / 10) + 0.5);

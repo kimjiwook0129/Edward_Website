@@ -1,51 +1,37 @@
-var num = 2,
-    cbg_num = 2,
-    sheridan_num = 2;
+var num = 2;
 const default_credit = "Map data © ";
 window.setInterval(function() {
-    var source_code_waterloo = "./images/schools/waterloo_" + num.toString() + ".jpg",
-        source_code_cbg = "./images/companies/cbg_" + cbg_num.toString() + ".jpg",
-        source_code_sheridan = "./images/companies/sheridan_" + sheridan_num.toString() + ".jpg";
+    var src_tutor = "./images/companies/tutor_" + num.toString() + ".jpg",
+        src_cbg = "./images/companies/cbg_" + num.toString() + ".jpg",
+        src_sheridan = "./images/companies/sheridan_" + num.toString() + ".jpg";
     
     $("#tutor-image").fadeOut(function() {
-        $(this).attr("src", source_code_waterloo).fadeIn();
+        $(this).attr("src", src_tutor).fadeIn();
     });
 
     $("#reference-tutor").fadeOut(function() {
-        switch(num) {
-            // put some random images of Egypt
-            case 2:
-                $(this).text().fadeIn();              
-                break;
-            case 3:
-                $(this).text(default_credit.concat("2017 Google | Cairo American College")).fadeIn();
-                break;
-            default:
-                $(this).text(default_credit.concat("2016 Google | Yousef Shabana")).fadeIn();
-        }
+        var p = "Photo by © ",
+            q = " on Unsplash";
+        if (num == 2) $(this).text(p + "John Moeses Bauan" + q).fadeIn(); 
+        else $(this).text(p + "Oscar Nord" + q).fadeIn(); 
     });
 
     $("#cbg-image").fadeOut(function() {
-        $(this).attr("src", source_code_cbg).fadeIn();
+        $(this).attr("src", src_cbg).fadeIn();
     });
 
     $("#sheridan-image").fadeOut(function() {
-        $(this).attr("src", source_code_sheridan).fadeIn();
+        $(this).attr("src", src_sheridan).fadeIn();
     });
 
     $("#reference-sheridan").fadeOut(function() {
-        if (sheridan_num == 2) {
-            $(this).text(default_credit.concat("2016 Google | Sheridan College")).fadeIn();
+        var p = " Google | Sheridan College";
+        if (num == 2) {
+            $(this).text(default_credit.concat("2016" + p)).fadeIn();
         } else {
-            $(this).text(default_credit.concat("2012 Google | Sheridan College")).fadeIn();
+            $(this).text(default_credit.concat("2012" + p)).fadeIn();
         }
     });
-
-
     num++;
-    cbg_num++;
-    sheridan_num++;
-    if (cbg_num == 3) cbg_num = 1;
-    if (num == 4) num = 1;
-    if (sheridan_num == 3) sheridan_num = 1;
+    if (num == 3) num = 1;
 }, 8000);

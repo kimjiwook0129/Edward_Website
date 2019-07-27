@@ -21,7 +21,7 @@ $par = $chi;
 for (var i = 0; i < 3; i++) $par.append($(span).addClass("icon-bar"));
 
 $par = $(".navbar-header");
-$chi = $(a).text("EDWARD").addClass("navbar-brand").attr("id","edward-logo").attr("href","index.php");
+$chi = $(a).text("EDWARD").addClass("navbar-brand").attr("id","edward-logo").attr("href","index.php?lang=eng");
 $par.append($chi);
 
 $par = $(".container-fluid");
@@ -37,7 +37,7 @@ $chi = $(li).addClass("active");
 $par.append($chi);
 
 $par = $chi;
-$chi = $(a).text("Home").attr("href","index.php").attr("id","home-button");
+$chi = $(a).text("Home").attr("href","index.php?lang=eng").attr("id","home-button");
 $par.append($chi);
 
 $par = $par.parent();
@@ -57,9 +57,10 @@ $chi = $(ul).addClass("dropdown-menu");
 $par.append($chi);
 
 $par = $chi;
-$par.append($(li).append($(a).text("Working Background").attr("href","about-working.html").attr("id","working-button")));
-$par.append($(li).append($(a).text("Traveling Background").attr("href","about-traveling.html").attr("id","traveling-button")));
-$par.append($(li).append($(a).text("Educational Background").attr("href","about-studying.html").attr("id", "studying-button")));
+
+$par.append($(li).append($(a).text("Working Background").attr("href","about-working.html?lang=eng").attr("id","working-button")));
+$par.append($(li).append($(a).text("Traveling Background").attr("href","about-traveling.html?lang=eng").attr("id","traveling-button")));
+$par.append($(li).append($(a).text("Educational Background").attr("href","about-studying.html?lang=eng").attr("id", "studying-button")));
 
 $par = $(".active").parent();
 $chi = $(li).addClass("dropdown");
@@ -75,18 +76,21 @@ $chi = $(ul).addClass("dropdown-menu");
 $par.append($chi);
 
 $par = $chi;
+/*
 $chi = $(li);
 $par.append($chi);
 $chi.append($(a).text("Full-time Résumé").attr("href","documents/résumé/fulltime.pdf").attr("target","_blank").attr("id","fulltime-button"));
+
 $chi = $(li);
 $par.append($chi);
 $chi.append($(a).text("Part-time Résumé").attr("href","documents/résumé/fulltime.pdf").attr("target","_blank").attr("id", "parttime-button"));
+*/
 $chi = $(li);
 $par.append($chi);
 $chi.append($(a).text("Co-op Résumé").attr("href","documents/résumé/fulltime.pdf").attr("target","_blank").attr("id", "coop-button"));
 
 $par = $(".active").parent();
-$chi = $(li).append($(a).text("Projects").attr("href", "projects.html").attr("id","projects-button"));
+$chi = $(li).append($(a).text("Projects").attr("href", "projects.html?lang=eng").attr("id","projects-button"));
 $par.append($chi);
 
 // Footer
@@ -100,11 +104,14 @@ $par.append($chi);
 
 $par = $(div).addClass("bottom-options");
 $(".footer-container").append($par);
-$par.append($(a).addClass("fa fa-facebook transparent_icon").attr("href","https://www.facebook.com/jiwook.kim.7773").attr("target","_blank"));
-$par.append($(a).addClass("fa fa-instagram transparent_icon").attr("href","https://www.instagram.com/kimjiwook129/").attr("target","_blank"));
-$par.append($(a).addClass("fa fa-linkedin transparent_icon").attr("href","https://www.linkedin.com/in/jiwook-kim/").attr("target","_blank"));
-$par.append($(a).addClass("fa fa-youtube transparent_icon").attr("href","https://www.youtube.com/channel/UCRbFENcMzbCHXQEdVBYKfFA?view_as=subscriber").attr("target","_blank"));
-$par.append($(a).addClass("fa fa-github transparent_icon").attr("href","https://github.com/j533kim").attr("target","_blank"));
+
+const fa = "fa fa-",
+    tIcon = " transparent_icon";
+$par.append($(a).addClass(fa + "facebook" + tIcon).attr("href","https://www.facebook.com/jiwook.kim.7773").attr("target","_blank"));
+$par.append($(a).addClass(fa + "instagram" + tIcon).attr("href","https://www.instagram.com/kimjiwook129/").attr("target","_blank"));
+$par.append($(a).addClass(fa + "linkedin" + tIcon).attr("href","https://www.linkedin.com/in/jiwook-kim/").attr("target","_blank"));
+$par.append($(a).addClass(fa + "youtube" + tIcon).attr("href","https://www.youtube.com/channel/UCRbFENcMzbCHXQEdVBYKfFA?view_as=subscriber").attr("target","_blank"));
+$par.append($(a).addClass(fa + "github" + tIcon).attr("href","https://github.com/j533kim").attr("target","_blank"));
 
 
 
@@ -117,7 +124,7 @@ $par = $chi;
 $chi = $("<input>").attr("type", "checkbox").attr("id", "lang-setting");
 $par.append($chi);
 
-$chi = $("<span></span>").addClass("slider round");
+$chi = $(span).addClass("slider round");
 $par.append($chi);
 
 $par = $("body");
@@ -126,3 +133,4 @@ $temp = $(p).attr("id","lang-label").text("EN(US)");
 $chi.append($temp);
 $par.append($chi);
 
+$("#reference_total").text("* All image/icons have been used under each copyright owner's Terms of Service and permitted to be used.");
