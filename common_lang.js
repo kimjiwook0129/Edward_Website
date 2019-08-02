@@ -20,12 +20,12 @@ function translateKorean() {
     $("#coop" + bN).text("코업");
     $("#projects" + bN).text("프로젝트");
     $("#reference_total").text("* 모든 이미지/아이콘은 저작자의 허가를 받거나 서비스 이용약관에 따라 사용되었음을 밝힙니다.");
-    $("#working" + bN).attr(hf, $("#working" + bN).attr(hf).slice(0, -3) + K);
-    $("#traveling" + bN).attr(hf, $("#traveling" + bN).attr(hf).slice(0, -3) + K);
-    $("#studying" + bN).attr(hf, $("#studying" + bN).attr(hf).slice(0, -3) + K);
-    $("#edward-logo").attr(hf, $("#edward-logo").attr(hf).slice(0, -3) + K);
-    $("#home" + bN).attr(hf, $("#home" + bN).attr(hf).slice(0, -3) + K);
-    $("#projects" + bN).attr(hf, $("#projects" + bN).attr(hf).slice(0, -3) + K);
+    $("#working" + bN).attr(hF, $("#working" + bN).attr(hF).slice(0, -3) + K);
+    $("#traveling" + bN).attr(hF, $("#traveling" + bN).attr(hF).slice(0, -3) + K);
+    $("#studying" + bN).attr(hF, $("#studying" + bN).attr(hF).slice(0, -3) + K);
+    $("#edward-logo").attr(hF, $("#edward-logo").attr(hF).slice(0, -3) + K);
+    $("#home" + bN).attr(hF, $("#home" + bN).attr(hF).slice(0, -3) + K);
+    $("#projects" + bN).attr(hF, $("#projects" + bN).attr(hF).slice(0, -3) + K);
 }
 
 if (window.location.href.slice(-3) == K) {
@@ -53,11 +53,11 @@ $("#lang-setting").on('change', function() {
         $("#coop" + bN).text("Co-op Résumé");
         $("#projects" + bN).text("Projects");
         $("#reference_total").text("* All image/icons have been used under each copyright owner's Terms of Service and permitted to be used.");
-        $("#working" + bN).attr(hf, $("#working" + bN).attr(hf).slice(0, -3) + E);
-        $("#traveling" + bN).attr(hf, $("#traveling" + bN).attr(hf).slice(0, -3) + E);
-        $("#studying" + bN).attr(hf, $("#studying" + bN).attr(hf).slice(0, -3) + E);
-        $("#edward-logo").attr(hf, $("#edward-logo").attr(hf).slice(0, -3) + E);
-        $("#home" + bN).attr(hf, $("#home" + bN).attr(hf).slice(0, -3) + E);
-        $("#projects" + bN).attr(hf, $("#projects" + bN).attr(hf).slice(0, -3) + E);
+        $("#working" + bN).attr(hF, $("#working" + bN).attr(hF).slice(0, -3) + E);
+        $("#traveling" + bN).attr(hF, $("#traveling" + bN).attr(hF).slice(0, -3) + E);
+        $("#studying" + bN).attr(hF, $("#studying" + bN).attr(hF).slice(0, -3) + E);
+        $("#edward-logo").attr(hF, $("#edward-logo").attr(hF).slice(0, -3) + E);
+        $("#home" + bN).attr(hF, $("#home" + bN).attr(hF).slice(0, -3) + E);
+        $("#projects" + bN).attr(hF, $("#projects" + bN).attr(hF).slice(0, -3) + E);
     }
 });
