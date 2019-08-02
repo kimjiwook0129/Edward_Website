@@ -124,7 +124,7 @@ if (!$conn->connect_error) { // when database is connected
         if ($x < $year_length) $json_contents .= ",";
     }
     $json_contents .= "}}";
-    file_put_contents($json_file, $json_contents); // sql database to json file
+    file_put_contents($json_file, $json_contents); // sql database to json
 }
 ?>
 
