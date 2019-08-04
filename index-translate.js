@@ -11,6 +11,12 @@ function translate_korean() {
     $("#monthButton > h4").text("월별");
     $("#yearButton > h4").text("연별");
     $(".users-chart-buttons").width("190px");
+    $("#lang-prof-text").text("언어 숙달도").css("font-weight", "bold");
+    $("#tool-prof-text").text("소프트웨어/도구 숙달도").css("font-weight", "bold");
+    $("#lang-x-axis-text").text("숙달도");
+    $("#tool-x-axis-text").text("숙달도");
+    $("#lang-y-axis-text").text("언어");
+    $("#tool-y-axis-text").text("소프트웨어/도구");
 }
 
 if (window.location.href.slice(-3) == "kor") {
@@ -33,5 +39,11 @@ $("#lang-setting").on('change', function() {
         $("#dayButton > h4").text("Day");
         $("#monthButton > h4").text("Month");
         $("#yearButton > h4").text("Year");
+        $("#lang-prof-text").text("Language Proficiency").css("font-weight", "bold");
+        $("#tool-prof-text").text("Software/Tool Proficiency").css("font-weight", "bold");
+        $("#lang-x-axis-text").text("Proficiency");
+        $("#tool-x-axis-text").text("Proficiency");
+        $("#lang-y-axis-text").text("Language");
+        $("#tool-y-axis-text").text("Software/Tool");
     }
 });

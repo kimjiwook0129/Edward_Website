@@ -258,16 +258,20 @@ if (!$conn->connect_error) { // when database is connected
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="skill-chart">
+                                    <div>
+                                        <h4 id="lang-prof-text"><b>Language Proficiency</b></h4>
+                                    </div>
                                     <svg width="100%" height="100%" id="language-chart">
-                                        <text x="10" y="15" font-family="sans-serif" font-size="18px" font-weight="bold" fill="black">Language Proficiency</text>
                                         <text id="langNum" x="0" y="0" font-family="sans-serif" font-size="12px" fill="blue"></text>
                                     </svg>
                                 </div>  
                             </div>
                             <div class="col-sm-6">
                                 <div class="skill-chart">
+                                    <div>
+                                        <h4 id="tool-prof-text"><b>Software/Tool Proficiency</b></h4>
+                                    </div>
                                     <svg width="100%" height="100%" id="tool-chart">
-                                        <text x="10" y="15" font-family="sans-serif" font-size="18px" font-weight="bold" fill="black">Software Proficiency</text>
                                         <text id="toolNum" x="0" y="0" font-family="sans-serif" font-size="12px" fill="red"></text>
                                     </svg>
                                 </div>

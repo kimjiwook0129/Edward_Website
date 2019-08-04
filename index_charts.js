@@ -11,12 +11,15 @@ const dataset_lang = [{lang: "C", value: 3.5},
                 {lang: "R", value: 1},
                 {lang: "Scheme", value: 3},
                 {lang: "SQL", value: 3},
+                {lang: "Swift", value: 1.5},
                 {lang: "XML", value: 1}]
     dataset_tool = [{tool: "Adobe Photoshop", value: 4},
+                {tool: "Android Studio", value: 1.5},
                 {tool: "Figma", value: 4},
                 {tool: "Google Apps/API", value: 5},
                 {tool: "Git", value: 2.5},
                 {tool: "InVisionApp", value: 3.5},
+                {tool: "JIRA", value: 1.5},
                 {tool: "Microsoft Office", value: 4},
                 {tool: "MySQL", value: 2},
                 {tool: "phpMyAdmin", value: 3.5},
@@ -29,8 +32,8 @@ const dataset_lang = [{lang: "C", value: 3.5},
     toolColor = "rgb(255, 100, 100)",
     toolColorHover = "rgb(255,0,0)",
     margin = {
-        top: 20,
-        left: 100,
+        top: 17,
+        left: 90,
         right: 40,
         bottom: 10
     },
@@ -41,7 +44,7 @@ function drawLangChart() {
     var svg = d3.select(l),
     
     width = $(l).width() - margin.left - margin.right,
-    height = $(l).height() - margin.top - margin.bottom;
+    height = $(l).height() - margin.top - margin.bottom - 50;
 
     var xScale = d3.scaleLinear().range([0, width]),
         yScale = d3.scaleBand().range([0, height]).padding(0.6);
@@ -69,7 +72,8 @@ function drawLangChart() {
         .attr("x", width + 35)
         .attr("text-anchor", "end")
         .attr("stroke", "black")
-        .text("Proficiency");
+        .text("Proficiency")
+        .attr("id", "lang-x-axis-text");
 
     g.append("g")
         .call(d3.axisLeft(yScale))
@@ -78,7 +82,8 @@ function drawLangChart() {
         .attr("x", -20)
         .attr("text-anchor", "end")
         .attr("stroke", "black")
-        .text("Language");
+        .text("Language")
+        .attr("id", "lang-y-axis-text");
 
     g.selectAll(".bar")
         .data(dataset_lang)
@@ -110,7 +115,7 @@ function drawToolChart() {
     var svg = d3.select(t),
     
     width = $(t).width() - margin.left - margin.right,
-    height = $(t).height() - margin.top - margin.bottom;
+    height = $(t).height() - margin.top - margin.bottom - 50;
 
     var xScale = d3.scaleLinear().range([0, width]),
         yScale = d3.scaleBand().range([0, height]).padding(0.6);
@@ -138,7 +143,8 @@ function drawToolChart() {
         .attr("x", width + 35)
         .attr("text-anchor", "end")
         .attr("stroke", "black")
-        .text("Proficiency");
+        .text("Proficiency")
+        .attr("id", "tool-x-axis-text");
 
     g.append("g")
         .call(d3.axisLeft(yScale))
@@ -147,7 +153,8 @@ function drawToolChart() {
         .attr("x", -20)
         .attr("text-anchor", "end")
         .attr("stroke", "black")
-        .text("Software");
+        .text("Software/Tool")
+        .attr("id", "tool-y-axis-text");
 
     g.selectAll(".bar")
         .data(dataset_tool)
@@ -180,6 +187,12 @@ $( window ).resize(function() {
     d3.select(t).selectAll("g").remove();
     drawLangChart();
     drawToolChart();
+    if (window.location.href.slice(-3) == "kor") {
+        $("#lang-x-axis-text").text("숙달도");
+        $("#tool-x-axis-text").text("숙달도");
+        $("#lang-y-axis-text").text("언어");
+        $("#tool-y-axis-text").text("소프트웨어/도구");
+    }
 });
 
 drawLangChart();

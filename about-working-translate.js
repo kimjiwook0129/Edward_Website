@@ -25,6 +25,7 @@ function translate_korean() {
         $("#c1").text("Google Apps/API를 활용해 DNA 바코드 데이터 워크플로우 시각화를 위한 계기판 개발 및 업무 보고서 작성");
         $("#c2").text("Barcode Of Life Data (BOLD) 시스템 분류학 DNA 자료 수집");
         $("#c3").text("High-throughput Sequencing(HTS) 기구를 기반으로 한 multiplex 위주 플렛폼 mBRAVE 파일 업로더 UI 개선");
+        $("#c4").text("mBRAVE 파일 메타데이터 인증 절차 오류 제거 및 처리 방식 개선");
 
         // sheridan
         $title = $(b).text("컴퓨터 수학 조교");
@@ -87,7 +88,8 @@ $("#lang-setting").on('change', function() {
         $(cT + ".3").prepend($region);
         $("#c1").text("Visualized DNA barcode data workflow by deploying a dashboard using Google Apps/APIs");
         $("#c2").text("Retrieved Barcode Of Life Data (BOLD) System's taxonomy data of DNA-based species");
-        $("#c3").text("Improved the files upload UI of mBRAVE, platform for the multiplex based on high-throughput sequencing (HTS) instruments");
+        $("#c3").text("Improved the files uploader UI of mBRAVE, platform for the multiplex based on high-throughput sequencing (HTS) instruments");
+        $("#c4").text("Debugged files metadata validation process and upgraded error handling ability of mBRAVE");
 
         // sheridan
         $(sT + ".positionTitle").text("Computer Mathematics Learning Assistant");
