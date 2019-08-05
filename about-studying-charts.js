@@ -118,12 +118,6 @@ g.append("path")
     .attr("stroke-width", 1.5)
     .attr("d", line2);
 
-
-
-
-
-
-
 // legends
 svg.append("circle").attr("cx",220).attr("cy",380).attr("r", 5).style("fill", "blue");
 svg.append("text").attr("x", 230).attr("y", 381).text("High School GPA").style("font-size", "10px").attr("alignment-baseline","middle");
