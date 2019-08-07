@@ -40,11 +40,13 @@ const dataset_lang = [{lang: "C", value: 3.5},
     l = "#language-chart",
     t = "#tool-chart";
 
-function drawLangChart() {
-    var svg = d3.select(l),
-    
-    width = $(l).width() - margin.left - margin.right,
-    height = $(l).height() - margin.top - margin.bottom - 50;
+function drawProficiencyChart(para) {
+    var svg = d3.select(para),
+
+        width = $(para).width() - margin.left - margin.right,
+        height = $(para).height() - margin.top - margin.bottom - 50,
+
+        dataSets = para == l ? dataset_lang : dataset_tool;
 
     var xScale = d3.scaleLinear().range([0, width]),
         yScale = d3.scaleBand().range([0, height]).padding(0.6);
@@ -52,13 +54,15 @@ function drawLangChart() {
     var g = svg.append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-    xScale.domain([0.1, d3.max(dataset_lang, function(d) {
+    xScale.domain([0.1, d3.max(dataSets, function(d) {
         return d.value;
     })]);
 
-    yScale.domain(dataset_lang.map(function(d) {
-        return d.lang;
+    yScale.domain(dataSets.map(function(d) {
+        return para == l ? d.lang : d.tool;
     }));
+
+    var idName = para == l ? "lang-x-axis-text" : "tool-x-axis-text";
 
     g.append("g")
         .attr("transform", "translate(0," + margin.top + ")")
@@ -73,8 +77,10 @@ function drawLangChart() {
         .attr("text-anchor", "end")
         .attr("stroke", "black")
         .text("Proficiency")
-        .attr("id", "lang-x-axis-text");
+        .attr("id", idName);
 
+    idName = para == l ? "lang-y-axis-text" : "tool-y-axis-text";
+    var yAxisName = para == l ? "Language" : "Software/Tool"
     g.append("g")
         .call(d3.axisLeft(yScale))
         .append("text")
@@ -82,111 +88,45 @@ function drawLangChart() {
         .attr("x", -20)
         .attr("text-anchor", "end")
         .attr("stroke", "black")
-        .text("Language")
-        .attr("id", "lang-y-axis-text");
+        .text(yAxisName)
+        .attr("id", idName);
 
+    idName = para == l ? "lang-bar" : "tool-bar";
+    var theColor = para == l ? langColor : toolColor;
+    var theHoverColor = para == l ? langColorHover : toolColorHover;
     g.selectAll(".bar")
-        .data(dataset_lang)
+        .data(dataSets)
         .enter().append("rect")
-        .attr("class", "lang-bar")
+        .attr("class", idName)
         .attr("x", 1)
         .attr("y", function(d) {
-            return yScale(d.lang);
+            return para == l ? yScale(d.lang) : yScale(d.tool);
         })
         .attr("width", function(d) {
             return xScale(d.value);
         })
         .attr("height", yScale.bandwidth())
-        .attr("fill", langColor);
+        .attr("fill", theColor);
 
-    $(".lang-bar").hover(function(obj, i) {
-        $(this).css("fill", langColorHover);
-        var index = $(l + " rect").index($(this)),
+    var someIDs = para == l ? "#langNum" : "#toolNum";
+
+    $("." + idName).hover(function(obj, i) {
+        $(this).css("fill", theHoverColor);
+        var index = $(para + " rect").index($(this)),
             x_dist = Number($(this).attr("width")) + margin.left + 5,
             y_dist = Number($(this).attr("y")) + margin.top + $(this).attr("height") / 2 + 4;
-        $("#langNum").attr("x", x_dist).attr("y", y_dist).text(dataset_lang[index].value);
+        $(someIDs).attr("x", x_dist).attr("y", y_dist).text(dataSets[index].value);
     }, function() {
-        $(this).css("fill", langColor);
-        $("#langNum").text("");
+        $(this).css("fill", theColor);
+        $(someIDs).text("");
     });
 }
 
-function drawToolChart() {
-    var svg = d3.select(t),
-    
-    width = $(t).width() - margin.left - margin.right,
-    height = $(t).height() - margin.top - margin.bottom - 50;
-
-    var xScale = d3.scaleLinear().range([0, width]),
-        yScale = d3.scaleBand().range([0, height]).padding(0.6);
-
-    var g = svg.append("g")
-        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-    xScale.domain([0.1, d3.max(dataset_tool, function(d) {
-        return d.value;
-    })]);
-
-    yScale.domain(dataset_tool.map(function(d) {
-        return d.tool;
-    }));
-
-    g.append("g")
-        .attr("transform", "translate(0," + margin.top + ")")
-        .call(d3.axisTop(xScale).tickFormat(function(d) {
-            return d;
-        })
-        .ticks(10))
-        .append("text")
-        .attr("dy", "-5.1em")
-        .attr("y", margin.top + 10)
-        .attr("x", width + 35)
-        .attr("text-anchor", "end")
-        .attr("stroke", "black")
-        .text("Proficiency")
-        .attr("id", "tool-x-axis-text");
-
-    g.append("g")
-        .call(d3.axisLeft(yScale))
-        .append("text")
-        .attr("y", margin.top)
-        .attr("x", -20)
-        .attr("text-anchor", "end")
-        .attr("stroke", "black")
-        .text("Software/Tool")
-        .attr("id", "tool-y-axis-text");
-
-    g.selectAll(".bar")
-        .data(dataset_tool)
-        .enter().append("rect")
-        .attr("class", "tool-bar")
-        .attr("x", 1)
-        .attr("y", function(d) {
-            return yScale(d.tool);
-        })
-        .attr("width", function(d) {
-            return xScale(d.value);
-        })
-        .attr("height", yScale.bandwidth())
-        .attr("fill", toolColor);
-
-    $(".tool-bar").hover(function(obj, i) {
-        $(this).css("fill", toolColorHover);
-        var index = $(t + " rect").index($(this)),
-            x_dist = Number($(this).attr("width")) + margin.left + 5,
-            y_dist = Number($(this).attr("y")) + margin.top + $(this).attr("height") / 2 + 3.5;
-        $("#toolNum").attr("x", x_dist).attr("y", y_dist).text(dataset_tool[index].value);
-    }, function() {
-        $(this).css("fill", toolColor);
-        $("#toolNum").text("");
-    });
-}
-
-$( window ).resize(function() {
+$(window).resize(function() {
     d3.select(l).selectAll("g").remove();
     d3.select(t).selectAll("g").remove();
-    drawLangChart();
-    drawToolChart();
+    drawProficiencyChart(l);
+    drawProficiencyChart(t);
     if (window.location.href.slice(-3) == "kor") {
         $("#lang-x-axis-text").text("숙달도");
         $("#tool-x-axis-text").text("숙달도");
@@ -195,5 +135,5 @@ $( window ).resize(function() {
     }
 });
 
-drawLangChart();
-drawToolChart();
+drawProficiencyChart(l);
+drawProficiencyChart(t);

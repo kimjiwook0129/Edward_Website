@@ -22,12 +22,14 @@ fetch('json/quotes.json').then((response) => {
             quo = data.quotes_kor[index].quote;
             who = data.quotes_kor[index].by;
         }
-        if (fadeInTo == 0) { // when first generating quote
-            $(genId).text("\"" + quo + "\" -" + who).fadeIn();
-        } else { // when replacing with other quote
-            $(genId).fadeOut(function() {
-                $(this).text("\"" + quo + "\" -" + who).fadeIn();
-            });
+        switch (fadeInTo) { 
+            case 0: // when first generating quote
+                $(genId).text("\"" + quo + "\" -" + who).fadeIn();
+                break;
+            default: // when replacing with other quote
+                $(genId).fadeOut(function() {
+                    $(this).text("\"" + quo + "\" -" + who).fadeIn();
+                });
         }
     }
 

@@ -88,7 +88,6 @@ function translate_Korean() {
 
 }
 
-
 if (window.location.href.slice(-3) == "kor") {
     translate_Korean()
 }

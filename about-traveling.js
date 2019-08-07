@@ -41,7 +41,7 @@ function initMap() {
     
             if(props.iconImage) marker.setIcon(props.iconImage);
             
-            if(props.content){
+            if(props.content) {
                 var infoWindow = new google.maps.InfoWindow({
                     content:props.content
                 });
