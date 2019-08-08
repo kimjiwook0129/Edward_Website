@@ -39,7 +39,7 @@ function drawChart(data) {
     var svgWidth = $("#visit-chart").width(),
         svgHeight = $("#visit-chart").height(),
         margin = {
-            top: 20,
+            top: 0,
             right: 10,
             bottom: 30,
             left: 50

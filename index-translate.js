@@ -13,6 +13,7 @@ function translate_korean() {
     $(".users-chart-buttons").width("190px");
     $("#lang-prof-text").text("언어 숙달도").css("font-weight", "bold");
     $("#tool-prof-text").text("소프트웨어/도구 숙달도").css("font-weight", "bold");
+    $("#visit-chart-text").text("일일 방문자 추세").css("font-weight", "bold");
     $("#lang-x-axis-text").text("숙달도");
     $("#tool-x-axis-text").text("숙달도");
     $("#lang-y-axis-text").text("언어");
@@ -41,6 +42,7 @@ $("#lang-setting").on('change', function() {
         $("#yearButton > h4").text("Year");
         $("#lang-prof-text").text("Language Proficiency").css("font-weight", "bold");
         $("#tool-prof-text").text("Software/Tool Proficiency").css("font-weight", "bold");
+        $("#visit-chart-text").text("Daily Visiter Trend").css("font-weight", "bold");
         $("#lang-x-axis-text").text("Proficiency");
         $("#tool-x-axis-text").text("Proficiency");
         $("#lang-y-axis-text").text("Language");

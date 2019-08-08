@@ -76,15 +76,6 @@ if (!$conn->connect_error) { // when database is connected
     }
         
     $counts = array($count_row['day_count'], $count_row['month_count'], $count_row['year_count'],$count_row['total_count']);
-    for ($x = 0; $x < 4; $x++) ++$counts[$x]; // $counts contains updated values
-
-    // Updating counts in the last row of each record for day, month, year
-    $conn->query("UPDATE $tb_day SET `count` = $counts[0] WHERE `id` = $day_id_store");
-    $conn->query("UPDATE $tb_month SET `count` = $counts[1] WHERE `id` = $month_id_store");
-    $conn->query("UPDATE $tb_year SET `count` = $counts[2] WHERE `id` = $year_id_store");
-
-    // Updating the realtime values for day, month, year, total
-    $conn->query("UPDATE $tb_count SET `total_count` = $counts[3], `day_count` = $counts[0], `month_count` = $counts[1], `year_count` = $counts[2]");
 
     // Data from record tables -> JSON
     $json_file = 'json/counts.json';
@@ -201,28 +192,113 @@ if (!$conn->connect_error) { // when database is connected
                     </div>
                     <div class="container" style="margin-top: 10px;">
                         <div class="row">
-                            <div class="col-sm-6" id="outer-box-holder" style="display: flex;">
-                                <div id="inner-box-holder">
+                            <div class="col-xs-6 col-sm-3" id="outer-box-holder">
+                                <div id="inner-box-holder" class="theBox">
+                                    <div class="box-icon-holder">
+                                        <img style="margin: 0 auto; margin-top: 15%; width:70%; height: 70%;"src='images/today.png'>
+                                    </div>
+                                    <div class="box-text">
                                     <b><p id="visit-today" style="margin-bottom: 0;">Visits Today</p></b>
-                                    <p id="visits-today">0</p>
+                                    <b><p id="visits-today">0</p></b>
+                                        <div class="credit-box" style="display:none;">Icons made by
+                                            <a href="https://www.flaticon.com/authors/freepik" title="Freepik">
+                                                Freepik
+                                            </a><br>from
+                                            <a href="https://www.flaticon.com/" title="Flaticon">
+                                                www.flaticon.com
+                                            </a><br>is licensed by
+                                            <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">
+                                                CC 3.0 BY
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div id="inner-box-holder">
+                            </div> 
+                            <div class="col-xs-6 col-sm-3" id="outer-box-holder">
+                                <div id="inner-box-holder" class="theBox">
+                                    <div class="box-icon-holder">
+                                        <img style="margin: 0 auto; margin-top: 15%; width:70%; height: 70%;" src='images/month.png'>
+                                    </div>
+                                    <div class="box-text">
                                     <b><p id="visit-month" style="margin-bottom: 0;">Visits this Month</p></b>
-                                    <p id="visits-month">0</p>
+                                    <b><p id="visits-month">0</p></b>
+                                        <div class="credit-box" style="display:none;">Icons made by
+                                            <a href="https://www.flaticon.com/authors/freepik" title="Freepik">
+                                                Freepik
+                                            </a><br>from
+                                            <a href="https://www.flaticon.com/" title="Flaticon">
+                                                www.flaticon.com
+                                            </a><br>is licensed by
+                                            <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">
+                                                CC 3.0 BY
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-sm-6" id="outer-box-holder" style="display: flex;">
-                                <div id="inner-box-holder">
-                                    <b><p id="visit-year" style="margin-bottom: 0;">Visits this Year</p></b>
-                                    <p id="visits-year">0</p>
+                            <div class="col-xs-6 col-sm-3" id="outer-box-holder">
+                                <div id="inner-box-holder" class="theBox">
+                                    <div class="box-icon-holder">
+                                        <img style="margin: 0 auto; margin-top: 15%; width:70%; height: 70%;"src='images/year.png'>
+                                    </div>
+                                    <div class="box-text">
+                                        <b><p id="visit-year" style="margin-bottom: 0;">Visits this Year</p></b>
+                                        <b><p id="visits-year">0</p></b>
+                                        <div class="credit-box" style="display:none;">Icons made by
+                                            <a href="https://www.flaticon.com/authors/freepik" title="Freepik">
+                                                Freepik
+                                            </a><br>from
+                                            <a href="https://www.flaticon.com/" title="Flaticon">
+                                                www.flaticon.com
+                                            </a><br>is licensed by
+                                            <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">
+                                                CC 3.0 BY
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div id="inner-box-holder">
+                            </div>
+                            <div class="col-xs-6 col-sm-3" id="outer-box-holder">
+                                <div id="inner-box-holder" class="theBox">
+                                    <div class="box-icon-holder">
+                                        <img style="margin: 0 auto; margin-top: 15%; width:70%; height: 70%;"src='images/total.png'>
+                                    </div>
+                                    <div class="box-text" style="overflow: hidden;">
                                     <b><p id="visit-total" style="margin-bottom: 0;">Visits Total</p></b>
-                                    <p id="visits-total">0</p>
+                                    <b><p id="visits-total">0</p></b>
+                                        <div class="credit-box" style="display:none;">Icons made by
+                                            <a href="https://www.flaticon.com/authors/freepik" title="Freepik">
+                                                Freepik
+                                            </a><br>from
+                                            <a href="https://www.flaticon.com/" title="Flaticon">
+                                                www.flaticon.com
+                                            </a><br>is licensed by
+                                            <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">
+                                                CC 3.0 BY
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <script>
+                        $(".box-icon-holder").hover(function(obj, i) {
+                            $(".theBox").css('transition-delay','0s');
+                            $(".theBox").css('-webkit-transition-delay','0s');
+                            $(".theBox").css('height',200);
+                            $(".box-text").css('height',180);
+                            $(".credit-box").css("display", "");
+                            $(".box-text").css('transition-delay','0s');
+                            $(".box-text").css('-webkit-transition-delay','0s');
+                        }, function() {
+                            $(".theBox").css('height',130);
+                            $(".box-text").css('height',120);
+                            $(".box-text").css('transition-delay','1.2s');
+                            $(".box-text").css('-webkit-transition-delay','1.2s');
+                            $(".credit-box").css("display", "none");
+                        });
+                    </script>
                     <script>
                         var array_visits = [<?php echo "{$counts[0]}"?>,
                                             <?php echo "{$counts[1]}"?>,
@@ -243,16 +319,49 @@ if (!$conn->connect_error) { // when database is connected
                         $("#visits-month").text(array_visits[1]);
                         $("#visits-year").text(array_visits[2]);
                         $("#visits-total").text(array_visits[3]);
+
+                        const t0 = performance.now();
+                        var t1;
+                        var loopPointer = setInterval(function() {
+                            t1 = performance.now();
+                            if (t1 - t0 >= 3000) { // only update counts when online for at least 3 seconds
+                                $.ajax({
+                                    url: 'index_count_update.php',
+                                    success: function(data) {
+                                        var dataArray = data.split(".");
+                                        dataArray = dataArray.map(function(n) {
+                                            if (n >= bil) return (n / bil).toFixed(2).toString().concat(" B");
+                                            else if (n >= mil) return (n / mil).toFixed(2).toString().concat(" M");
+                                            else if (n >= kilo) return (n / kilo).toFixed(2).toString().concat(" K");
+                                            return n;
+                                        });
+                                        if (dataArray[0] == "") {
+                                            dataArray = dataArray.map(function(n) {
+                                                return 0;
+                                            });
+                                        }
+                                        $("#visits-today").text(dataArray[0]);
+                                        $("#visits-month").text(dataArray[1]);
+                                        $("#visits-year").text(dataArray[2]);
+                                        $("#visits-total").text(dataArray[3]);
+                                    }
+                                });
+                                clearInterval(loopPointer);
+                            }
+                        }, 1000);
                     </script>
                     <div class="container" style="margin-top: 10px;">
                         <div class="visit-chart">
-                            <svg width="1100px" height="270px" id="visit-chart" class="visits-chart"></svg>
+                            <div>
+                                <h4 id="visit-chart-text"><b>Daily Visiter Trend</b></h4>
+                            </div>
+                            <svg width="1100px" height="230px" id="visit-chart" class="visits-chart"></svg>
                         </div>
-                        <div class="users-chart-buttons" style="width: 218px; margin-top: 20px;">
+                        <!--<div class="users-chart-buttons" style="width: 218px; margin-top: 20px;">
                             <button id="dayButton" style="margin-top:2px"onclick="generateVisit(0)" type="button" class="btn btn-default"><h4>Day</h4></button>
                             <button id="monthButton" style="margin-top:2px"onclick="generateVisit(1)" type="button" class="btn btn-default"><h4>Month</h4></button>
                             <button id="yearButton" style="margin-top:2px"onclick="generateVisit(2)" type="button" class="btn btn-default"><h4>Year</h4></button>
-                        </div>
+                        </div>-->
                     </div>
                     <div class="container" style="margin-top: 10px;">
                         <div class="row">
@@ -291,4 +400,5 @@ if (!$conn->connect_error) { // when database is connected
         </div>
     </body>
 </html>
+
 

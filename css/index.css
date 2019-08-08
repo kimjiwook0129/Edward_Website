@@ -97,6 +97,27 @@
     text-align: center;
 }
 
+
+
+#icon-holder {
+    height: 20px;
+    display: inline-block;
+    top: 0;
+    margin:0;
+}
+
+#icon {
+    width: 16px;
+    height: 16px;
+    margin:0;
+    display: inline-block;
+}
+
+#icon-instruct {
+    height: 20px;
+    display: inline-block;
+}
+
 #outer-box-holder {
     height: auto;
     background-color:#ffffff;
@@ -105,14 +126,57 @@
 #inner-box-holder {
     background-color:#ffffff;
     margin: auto;
-    height: 45px;
-    margin-top: 3px;
-    width: 130px;
+    height: 130px;
+    margin-top: 15px;
+    width: 100%;
     border: 2px solid #000000;
     border-radius: 5px;
     overflow: hidden;
     text-align:center;
+    -webkit-transition-duration:0.05s;
+    transition-duration:0.05s;
 }
+
+
+.box-icon-holder {
+    height: 75px;
+    width: 75px;
+    left: 50%;
+    margin-left: -40px;
+    margin-top: 5px;
+    position: absolute;
+    text-align: center;
+    border-radius: 100%;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+}
+
+.box-icon-holder:hover {
+    background-color: #9c9c9c;
+    -webkit-transition-duration: 0.2s;
+    transition-duration: 0.2s;
+}
+
+.box-text {
+    width: 280px;
+    left: 50%;
+    margin-left: -140px;
+    text-align:center;
+    margin-top:80px;
+    height:120px;
+    overflow: hidden;
+    position: absolute;
+    -webkit-transition-duration:0.05s;
+    transition-duration:0.05s;
+}
+
+
+
+
+
+
+
+/**/
 
 .users-chart-container {
     width: 100%;
