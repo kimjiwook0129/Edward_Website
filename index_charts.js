@@ -42,13 +42,10 @@ const dataset_lang = [{lang: "C", value: 3.5},
 
 function drawProficiencyChart(para) {
     var svg = d3.select(para),
-
         width = $(para).width() - margin.left - margin.right,
         height = $(para).height() - margin.top - margin.bottom - 50,
-
-        dataSets = para == l ? dataset_lang : dataset_tool;
-
-    var xScale = d3.scaleLinear().range([0, width]),
+        dataSets = para == l ? dataset_lang : dataset_tool,
+        xScale = d3.scaleLinear().range([0, width]),
         yScale = d3.scaleBand().range([0, height]).padding(0.6);
 
     var g = svg.append("g")
@@ -80,7 +77,7 @@ function drawProficiencyChart(para) {
         .attr("id", idName);
 
     idName = para == l ? "lang-y-axis-text" : "tool-y-axis-text";
-    var yAxisName = para == l ? "Language" : "Software/Tool"
+    var yAxisName = para == l ? "Language" : "Software/Tool";
     g.append("g")
         .call(d3.axisLeft(yScale))
         .append("text")

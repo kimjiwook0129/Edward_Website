@@ -206,7 +206,7 @@ if (!$conn->connect_error) { // when database is connected
                                     <div class="box-text">
                                     <b><p id="visit-today" style="margin-bottom: 0;">Visits Today</p></b>
                                     <b><p id="visits-today">0</p></b>
-                                        <div class="credit-box" style="display:none;">Icons made by
+                                        <div class="credit-box" style="display:none; font-size:12px">Icons made by
                                             <a href="https://www.flaticon.com/authors/freepik" title="Freepik">
                                                 Freepik
                                             </a><br>from
@@ -228,7 +228,7 @@ if (!$conn->connect_error) { // when database is connected
                                     <div class="box-text">
                                     <b><p id="visit-month" style="margin-bottom: 0;">Visits this Month</p></b>
                                     <b><p id="visits-month">0</p></b>
-                                        <div class="credit-box" style="display:none;">Icons made by
+                                        <div class="credit-box" style="display:none; font-size:12px">Icons made by
                                             <a href="https://www.flaticon.com/authors/freepik" title="Freepik">
                                                 Freepik
                                             </a><br>from
@@ -250,7 +250,7 @@ if (!$conn->connect_error) { // when database is connected
                                     <div class="box-text">
                                         <b><p id="visit-year" style="margin-bottom: 0;">Visits this Year</p></b>
                                         <b><p id="visits-year">0</p></b>
-                                        <div class="credit-box" style="display:none;">Icons made by
+                                        <div class="credit-box" style="display:none; font-size:12px">Icons made by
                                             <a href="https://www.flaticon.com/authors/freepik" title="Freepik">
                                                 Freepik
                                             </a><br>from
@@ -272,7 +272,7 @@ if (!$conn->connect_error) { // when database is connected
                                     <div class="box-text" style="overflow: hidden;">
                                     <b><p id="visit-total" style="margin-bottom: 0;">Visits Total</p></b>
                                     <b><p id="visits-total">0</p></b>
-                                        <div class="credit-box" style="display:none;">Icons made by
+                                        <div class="credit-box" style="display:none; font-size:12px">Icons made by
                                             <a href="https://www.flaticon.com/authors/freepik" title="Freepik">
                                                 Freepik
                                             </a><br>from

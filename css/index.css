@@ -158,9 +158,9 @@
 }
 
 .box-text {
-    width: 280px;
+    width: 140px;
     left: 50%;
-    margin-left: -140px;
+    margin-left: -70px;
     text-align:center;
     margin-top:80px;
     height:120px;
@@ -169,14 +169,6 @@
     -webkit-transition-duration:0.05s;
     transition-duration:0.05s;
 }
-
-
-
-
-
-
-
-/**/
 
 .users-chart-container {
     width: 100%;

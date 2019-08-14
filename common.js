@@ -4,7 +4,11 @@ const div = "<div></div>",
     button = "<button></button>",
     a = "<a></a>",
     span = "<span></span>",
-    p = "<p></p>";
+    p = "<p></p>",
+    label = "<label></label>",
+    input = "<input>",
+    fa = "fa fa-",
+    tIcon = " transparent_icon";
 
 // Navbar
 
@@ -105,23 +109,22 @@ $par.append($chi);
 $par = $(div).addClass("bottom-options");
 $(".footer-container").append($par);
 
-const fa = "fa fa-",
-    tIcon = " transparent_icon";
-$par.append($(a).addClass(fa + "facebook" + tIcon).attr("href","https://www.facebook.com/jiwook.kim.7773").attr("target","_blank"));
-$par.append($(a).addClass(fa + "instagram" + tIcon).attr("href","https://www.instagram.com/kimjiwook129/").attr("target","_blank"));
-$par.append($(a).addClass(fa + "linkedin" + tIcon).attr("href","https://www.linkedin.com/in/jiwook-kim/").attr("target","_blank"));
-$par.append($(a).addClass(fa + "youtube" + tIcon).attr("href","https://www.youtube.com/channel/UCRbFENcMzbCHXQEdVBYKfFA?view_as=subscriber").attr("target","_blank"));
-$par.append($(a).addClass(fa + "github" + tIcon).attr("href","https://github.com/j533kim").attr("target","_blank"));
-
-
+function mediaLink(parent, host, link) {
+    parent.append($(a).addClass(fa + host + tIcon).attr("href",link).attr("target","_blank"));
+}
+mediaLink($par, "facebook", "https://www.facebook.com/jiwook.kim.7773");
+mediaLink($par, "instagram", "https://www.instagram.com/kimjiwook129/");
+mediaLink($par, "linkedin", "https://www.linkedin.com/in/jiwook-kim/");
+mediaLink($par, "youtube", "https://www.youtube.com/channel/UCRbFENcMzbCHXQEdVBYKfFA?view_as=subscriber");
+mediaLink($par, "github", "https://github.com/j533kim");
 
 // language slider
 $par = $("body");
-$chi = $("<label></label>").addClass("switch").css("text-align", "center");
+$chi = $(label).addClass("switch").css("text-align", "center");
 $par.append($chi);
 
 $par = $chi;
-$chi = $("<input>").attr("type", "checkbox").attr("id", "lang-setting");
+$chi = $(input).attr("type", "checkbox").attr("id", "lang-setting");
 $par.append($chi);
 
 $chi = $(span).addClass("slider round");
