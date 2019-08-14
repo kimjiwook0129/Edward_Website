@@ -54,23 +54,29 @@ if (!$conn->connect_error) { // when database is connected
     $year_id_store = $year_row['id'];
 
     if ($present_date != $past_date) { // only when present and past dates are different
-        $day_count = $count_row['day_count'];
         ++$day_id_store;
-        $month_count = $count_row['month_count'];
-        ++$month_id_store;
-        $year_count = $count_row['year_count'];
-        ++$year_id_store;
-
+        $day_count = $count_row['day_count'];
         $conn->query("INSERT INTO $tb_day(`id`, `date`, `count`) VALUES ($day_id_store,'{$present_date}',$day_count)");
         $count_row['day_count'] = 0;
+        $conn->query("UPDATE $tb_day SET `count` = 0 WHERE `id` = $day_id_store");
+        $conn->query("UPDATE $tb_count SET `day_count` = 0");
+        
 
         if ($past_year != $present_year) {
+            ++$year_id_store;
+            $year_count = $count_row['year_count'];
             $conn->query("INSERT INTO $tb_year(`id`, `date`, `count`) VALUES ($year_id_store,'{$present_date}',$year_count)");
             $count_row['year_count'] = 0;
+            $conn->query("UPDATE $tb_year SET `count` = 0 WHERE `id` = $year_id_store");
+            $conn->query("UPDATE $tb_count SET `year_count` = 0");
         } 
         if ($past_month != $present_month || $past_year != $present_year) {
+            ++$month_id_store;
+            $month_count = $count_row['month_count'];
             $conn->query("INSERT INTO $tb_month(`id`, `date`, `count`) VALUES ($month_id_store,'{$present_date}',$month_count)");
             $count_row['month_count'] = 0;
+            $conn->query("UPDATE $tb_month SET `count` = 0 WHERE `id` = $month_id_store");
+            $conn->query("UPDATE $tb_count SET `month_count` = 0");
         }
         $conn->query("UPDATE $tb_count SET `last_date` = '{$present_date}'");
     }
