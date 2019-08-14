@@ -106,16 +106,21 @@ function drawProficiencyChart(para) {
         .attr("fill", theColor);
 
     var someIDs = para == l ? "#langNum" : "#toolNum";
+    var curY;
 
     $("." + idName).hover(function(obj, i) {
-        $(this).css("fill", theHoverColor);
+        curY = d3.select(this).attr("y");
+        var colorTransition = d3.select(this).transition();
+        colorTransition.style("fill", theHoverColor).attr("y", curY - 2).duration(50);
         var index = $(para + " rect").index($(this)),
             x_dist = Number($(this).attr("width")) + margin.left + 5,
-            y_dist = Number($(this).attr("y")) + margin.top + $(this).attr("height") / 2 + 4;
-        $(someIDs).attr("x", x_dist).attr("y", y_dist).text(dataSets[index].value);
+            y_dist = Number($(this).attr("y")) + margin.top + $(this).attr("height") / 2 + 2;
+        var textTransition = d3.select(someIDs).transition();
+        textTransition.attr("x", x_dist).attr("y", y_dist).text(dataSets[index].value).style("font-weight","bold");
     }, function() {
-        $(this).css("fill", theColor);
-        $(someIDs).text("");
+        $(someIDs).attr("x", 0).attr("y", 0).text("");
+        var colorTransition = d3.select(this).transition();
+        colorTransition.style("fill", theColor).attr("y", curY).duration(50);
     });
 }
 

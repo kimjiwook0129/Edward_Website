@@ -123,6 +123,46 @@
     ],
     "quotes_kor": [
         {
+            "quote":"당신이 남에게 복수하고 나면 잠깐 좋은 심정이 될지 모르지만, 당신이 남을 용서하고 나 면 영원히 기쁜 심정이 될 것이다.",
+            "by":"탈무드"
+        },
+        {
+            "quote":"짧은 인생은 시간의 낭비에 의해 더욱 짧아진다.",
+            "by":"S. 존슨"
+        },
+        {
+            "quote":"승자는 시간을 관리하며 살고, 패자는 시간에 끌려 산다.",
+            "by":"J. 하비스"
+        },
+        {
+            "quote":"그대의 하루하루를 그대의 마지막 날이라고 생각하라.",
+            "by":"호라티우스"
+        },
+        {
+            "quote":"오늘이라는 날은 두번 다시 오지 않는다는 것을 잊지 말라.",
+            "by":"단테"
+        },
+        {
+            "quote":"일은 그것이 쓰일 수 있는 시간이 있는 만큼 팽창한다.",
+            "by":"파킨스"
+        },
+        {
+            "quote":"성공은 결과이지 목적은 아니다.",
+            "by":"G. 플로베르"
+        },
+        {
+            "quote":"배우고 때때로 익히면, 또한 즐겁지 아니한가?",
+            "by":"공자"
+        },
+        {
+            "quote":"가장 유능한 사람은 가장 배움에 힘쓰는 사람이다.",
+            "by":"괴테"
+        },
+        {
+            "quote":"인간은 복수할 때 그 원수와 동등하게 된다. 그러나 용서할 때에는 원수보다 위에 있다.",
+            "by":"F. 베이컨"
+        },
+        {
             "quote":"고개 숙이지 마십시오. 세상을 똑바로 정면으로 바라보십시오.",
             "by":"헬렌 켈러"
         },
@@ -230,6 +270,7 @@
     "sources": [
         "http://wisdomquotes.com/life-quotes/",
         "http://www.heartsaying.com/archives/3974",
-        "https://theartofbusiness.tistory.com/entry/%E6%95%85-%EC%A0%95%EC%A3%BC%EC%98%81-%ED%9A%8C%EC%9E%A5-%EC%96%B4%EB%A1%9D-%EB%AA%85%EC%96%B8-%EC%A2%8B%EC%9D%80%EC%83%9D%EA%B0%81-%EC%A2%8B%EC%9D%80%EA%B8%80"
+        "https://theartofbusiness.tistory.com/entry/%E6%95%85-%EC%A0%95%EC%A3%BC%EC%98%81-%ED%9A%8C%EC%9E%A5-%EC%96%B4%EB%A1%9D-%EB%AA%85%EC%96%B8-%EC%A2%8B%EC%9D%80%EC%83%9D%EA%B0%81-%EC%A2%8B%EC%9D%80%EA%B8%80",
+        "https://www.shoseo.ac.kr/ver3/major/common/notice_view.asp?board_code=gdepart_news&scholar=220&idx=66596&Page=6&SearchOpt=&SearchVal="
     ]
 }
