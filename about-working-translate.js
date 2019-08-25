@@ -16,7 +16,7 @@ function translate_korean() {
         $(cT + ".1").text("생물다양성 유전체학 센터, 구웰프 대학 소속");
         $organization = $(b).text(org_kr);
         $(cT + ".1").prepend($organization);
-        $(cT + ".2").text("2019년 5월 6일 - 2019년 8월 23일");
+        $(cT + ".2").text("2019년 5월 6일 - 2019년 8월 30일");
         $duration = $(b).text(dur_kr);
         $(cT + ".2").prepend($duration);
         $(cT + ".3").text("캐나다 온타리오 구웰프");
@@ -80,7 +80,7 @@ $("#lang-setting").on('change', function() {
         $(cT + ".1").text("Centre for Biodiversity Genomics, University of Guelph");
         $organization = $(b).text(org);
         $(cT + ".1").prepend($organization);
-        $(cT + ".2").text("May 6, 2019 - Aug 23, 2019");
+        $(cT + ".2").text("May 6, 2019 - Aug 30, 2019");
         $duration = $(b).text(dur);
         $(cT + ".2").prepend($duration);
         $(cT + ".3").text("Guelph, ON, Canada");
