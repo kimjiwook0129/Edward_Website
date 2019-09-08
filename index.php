@@ -187,7 +187,7 @@ if (!$conn->connect_error) { // when database is connected
                                 $(".jumbotron-below").append($text2);
                                 $(".jumbotron-below").append($text3);
                             }
-                        }, 100); // millisecond
+                        }, 100); // 0.1s
                     }
                 </script>
                 <div class="main-contents">
@@ -330,7 +330,7 @@ if (!$conn->connect_error) { // when database is connected
                         var t1;
                         var loopPointer = setInterval(function() {
                             t1 = performance.now();
-                            if (t1 - t0 >= 3000) { // only update counts when online for at least 3 seconds
+                            if (t1 - t0 >= 3000) { // Updates the count when user online for at least 3 seconds
                                 $.ajax({
                                     url: 'index_count_update.php',
                                     success: function(data) {

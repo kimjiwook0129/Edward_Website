@@ -1,51 +1,42 @@
-generateVisit(0); // start with generating daily visit chart
+generateVisit(0); // Start with generating daily visit chart
 
 function generateVisit(para) {
     d3.select("#delete-me-to-reset").remove();
     fetch('json/counts.json').then((response) => {
         return response.json();
     }).then((data) => {
-        var parsedData = parseData(data, para);
-        drawChart(parsedData);
+        drawChart(data, para);
     }).catch(function (error) {
         console.log(error);
     });
 }
 
-function parseData(data, para = 0) {
-    var arr = [],
+function drawChart(dataOriginal, para = 0) {
+    var data = [],
         dataSet;
     switch(para) {
         case 0:
-            dataSet = data.counts_day;
+            dataSet = dataOriginal.counts_day;
             break;
         case 1:
-            dataSet = data.counts_month;
+            dataSet = dataOriginal.counts_month;
             break;
         default:
-            dataSet = data.counts_year;
+            dataSet = dataOriginal.counts_year;
     }
     for (var i in dataSet) {
-        arr.push({
+        data.push({
             date: new Date(i),
             value: +dataSet[i]
         });
     }
-    return arr;
-}
 
-function drawChart(data) {
     d3.select("#visit-chart").selectAll("g").remove();
     var svgWidth = $("#visit-chart").width(),
         svgHeight = $("#visit-chart").height(),
-        margin = {
-            top: 0,
-            right: 10,
-            bottom: 30,
-            left: 50
-        };
-    var width = svgWidth - margin.left - margin.right;
-    var height = svgHeight - margin.top - margin.bottom;
+        margin = {top: 0, right: 10, bottom: 30, left: 50},
+        width = svgWidth - margin.left - margin.right,
+        height = svgHeight - margin.top - margin.bottom;
 
     var svg = d3.select('.visits-chart')
         .attr("width", svgWidth)
@@ -62,10 +53,18 @@ function drawChart(data) {
         .rangeRound([height, 0]);
 
     var line = d3.line()
-        .x(function(d) { return x(d.date)})
-        .y(function(d) { return y(d.value)})
-        x.domain(d3.extent(data, function(d) { return d.date }));
-        y.domain(d3.extent(data, function(d) { return d.value }));
+        .x(function(d) {
+            return x(d.date);
+        })
+        .y(function(d) {
+            return y(d.value);
+        })
+        x.domain(d3.extent(data, function(d) {
+            return d.date
+        }));
+        y.domain(d3.extent(data, function(d) {
+            return d.value
+        }));
 
     g.append("g")
         .attr("transform", "translate(0," + height + ")")

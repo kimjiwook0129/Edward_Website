@@ -10,7 +10,8 @@ function translate_korean() {
 
         $("#fullTimeText").text("풀타임 (주 35시간 이상 근무)");
         $("#partTimeText").text("파트타임 (주 35시간 이하 근무)");
-        // cbg
+        
+        // Centre for Biodiversity Genomics
         $title = $(b).text("개발자 / 데이터 분석가");
         $(cT + ".positionTitle").text("").append($title);
         $(cT + ".1").text("생물다양성 유전체학 센터, 구웰프 대학 소속");
@@ -24,10 +25,12 @@ function translate_korean() {
         $(cT + ".3").prepend($region);
         $("#c1").text("Google Apps/API를 활용해 DNA 바코드 데이터 워크플로우 시각화를 위한 계기판 개발 및 업무 보고서 작성");
         $("#c2").text("Barcode Of Life Data (BOLD) 시스템 분류학 DNA 자료 수집");
-        $("#c3").text("High-throughput Sequencing(HTS) 기구를 기반으로 한 multiplex 위주 플렛폼 mBRAVE 파일 업로더 UI 개선");
+        $("#c3").text("High-throughput Sequencing(HTS) 기구를 기반으로 한 multiplex 위주 플렛폼 mBRAVE 파일 업로더 UI/UX 개선");
         $("#c4").text("mBRAVE 파일 메타데이터 인증 절차 오류 제거 및 처리 방식 개선");
+        $("#c5").text("D3를 활용해 계층형 분류학 데이터를 파이도표 구성 트리구조로 시각화");
+        $("#c6").text("다양한 버전의 데이터베이스 형식 인식을 위해 데이터 제출/수정 프레임워크 Jupyter Submissions 수정");
 
-        // sheridan
+        // Sheridan College
         $title = $(b).text("컴퓨터 수학 조교");
         $(sT + ".positionTitle").text("").append($title);
         $(sT + ".1").text("셰리든 대학교 교육 센터");
@@ -43,7 +46,7 @@ function translate_korean() {
         $("#s2").text("캠퍼스 교육 센터 데이터베이스 관리 시스템 SharePoint 분석 및 실용성 위주 대안 디자인/모델 구현에 관한 업무 보고서 작성");
         $("#s3").text("응용 위주의 미적분 및 컴퓨터수학 수업 시험대비 문제지 작성, 담당 교수가 수업 내용과 통합 요청");
 
-        // tutor
+        // Private Tutor
         $title = $(b).text("수학/물리 개인 과외");
         $(tT + ".positionTitle").text("").append($title);
         $(tT + ".1").text("개인 과외");
@@ -75,7 +78,7 @@ $("#lang-setting").on('change', function() {
         $("#fullTimeText").text("Full-time Employment");
         $("#partTimeText").text("Part-time Employment");
 
-        // cbg
+        // Centre for Biodiversity Genomics
         $(cT + ".positionTitle").text("Programmer & Data Analyst Intern");
         $(cT + ".1").text("Centre for Biodiversity Genomics, University of Guelph");
         $organization = $(b).text(org);
@@ -88,10 +91,13 @@ $("#lang-setting").on('change', function() {
         $(cT + ".3").prepend($region);
         $("#c1").text("Visualized DNA barcode data workflow by deploying a dashboard using Google Apps/APIs");
         $("#c2").text("Retrieved Barcode Of Life Data (BOLD) System's taxonomy data of DNA-based species");
-        $("#c3").text("Improved the files uploader UI of mBRAVE, platform for the multiplex based on high-throughput sequencing (HTS) instruments");
+        $("#c3").text("Improved the files uploader UI/UX of mBRAVE, platform for the multiplex based on high-throughput sequencing (HTS) instruments");
         $("#c4").text("Debugged files metadata validation process and upgraded error handling ability of mBRAVE");
+        $("#c5").text("Visualized hierarchical taxonomic data as a tree with pie-charted nodes using D3");
+        $("#c6").text("Modified Jupyter Submissions, framework for data submissions and updates, to flexibly receive inputs in different versions");
+        
 
-        // sheridan
+        // Sheridan College
         $(sT + ".positionTitle").text("Computer Mathematics Learning Assistant");
         $(sT + ".1").text("Library and Learning Services, Sheridan College");
         $organization = $(b).text(org);
@@ -106,7 +112,7 @@ $("#lang-setting").on('change', function() {
         $("#s2").text("Analyzed the campus library learning centre's Database Management System (DBMS) SharePoint and redesigned its supplementary models with the representation of their practicalities");
         $("#s3").text("Produced question packets for Calculus and Computer Mathematics courses, which professors requested to incorporate into the course materials, constructing creative applications of the courses");
 
-        // tutor
+        // Private Tutor
         $(tT + ".positionTitle").text("Mathematics/Physics Private Tutor");
         $(tT + ".1").text("Self-employed");
         $organization = $(b).text(org);

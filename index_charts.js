@@ -2,7 +2,7 @@ const dataset_lang = [{lang: "C", value: 3.5},
                 {lang: "C#", value: 1.5},
                 {lang: "C++", value: 5},
                 {lang: "HTML/CSS", value: 4.5},
-                {lang: "Java", value: 1},
+                {lang: "Java", value: 1.5},
                 {lang: "Javascript", value: 4.5},
                 {lang: "MATLAB", value: 3},
                 {lang: "PHP", value: 2.5},
@@ -13,7 +13,7 @@ const dataset_lang = [{lang: "C", value: 3.5},
                 {lang: "Swift", value: 1.5},
                 {lang: "XML", value: 1}]
     dataset_tool = [{tool: "Adobe Photoshop", value: 4},
-                {tool: "Android Studio", value: 1.5},
+                {tool: "Android SDK", value: 2},
                 {tool: "Figma", value: 4},
                 {tool: "Google Apps/API", value: 5},
                 {tool: "Git", value: 2.5},
@@ -31,12 +31,7 @@ const dataset_lang = [{lang: "C", value: 3.5},
     langColorHover = "rgb(17, 0, 255)",
     toolColor = "rgb(255, 100, 100)",
     toolColorHover = "rgb(255,0,0)",
-    margin = {
-        top: 17,
-        left: 90,
-        right: 40,
-        bottom: 10
-    },
+    margin = {top: 17, left: 90, right: 40, bottom: 10},
     l = "#language-chart",
     t = "#tool-chart";
 
@@ -106,21 +101,20 @@ function drawProficiencyChart(para) {
         .attr("fill", theColor);
 
     var someIDs = para == l ? "#langNum" : "#toolNum";
-    var curY;
 
     $("." + idName).hover(function(obj, i) {
-        curY = d3.select(this).attr("y");
+        curY = d3.select(this).attr("height");
         var colorTransition = d3.select(this).transition();
-        colorTransition.style("fill", theHoverColor).attr("y", curY - 2).duration(50);
+        colorTransition.style("fill", theHoverColor).duration(50);
         var index = $(para + " rect").index($(this)),
             x_dist = Number($(this).attr("width")) + margin.left + 5,
-            y_dist = Number($(this).attr("y")) + margin.top + $(this).attr("height") / 2 + 2;
+            y_dist = Number($(this).attr("y")) + margin.top + $(this).attr("height") / 2 + 4;
         var textTransition = d3.select(someIDs).transition();
         textTransition.attr("x", x_dist).attr("y", y_dist).text(dataSets[index].value).style("font-weight","bold");
     }, function() {
         $(someIDs).attr("x", 0).attr("y", 0).text("");
         var colorTransition = d3.select(this).transition();
-        colorTransition.style("fill", theColor).attr("y", curY).duration(50);
+        colorTransition.style("fill", theColor).duration(50);
     });
 }
 

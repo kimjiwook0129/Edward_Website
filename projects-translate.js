@@ -2,22 +2,44 @@ const b = "<b></b>",
     wT = "#websiteText > ",
     cT = "#chessText > ",
     wfT = "#watfoodText > ",
-    sT = "#sudokuText > ";
+    sT = "#sudokuText > ",
+    gT = "#gradeText > ";
 
 function translate_Korean() {
     const dur_kr = "기간: ",
         rol_kr = "담당: ",
         lang_kr = "언어: ",
         frame_kr = "프레임워크/라이브러리: ";
+
+    // Grade Manager
+    $title = $(b).text("?");
+    $(gT + ".gradeTitle").text("").append($title);
+    $(gT + ".1").text("개발 중");
+    $duration = $(b).text(dur_kr);
+    $(gT + ".1").prepend($duration);
+    //$(wT + ".2").text("풀스텍 개발");
+    //$role = $(b).text(rol_kr);
+    //$(wT + ".2").prepend($role);
+    $(gT + ".3").text("?");
+    $language = $(b).text(lang_kr);
+    $(gT + ".3").prepend($language);
+    $(gT + ".4").text("?");
+    $framework = $(b).text(frame_kr);
+    $(gT + ".4").prepend($framework);
+
+    //$("#w1").text("");
+    //$("#w2").text("");
+    //$("#w3").text("");
+
     // Edward Website
     $title = $(b).text("개인 웹사이트");
     $(wT + ".websiteTitle").text("").append($title);
-    $(wT + ".1").text("2019년 6월 12일 - 현재");
+    $(wT + ".1").text("2019년 6월 12일 - 2019년 7월 26일 (공개) | - 현재 (개선 중)");
     $duration = $(b).text(dur_kr);
     $(wT + ".1").prepend($duration);
-    $(wT + ".2").text("풀스텍 개발");
-    $role = $(b).text(rol_kr);
-    $(wT + ".2").prepend($role);
+    //$(wT + ".2").text("풀스텍 개발");
+    //$role = $(b).text(rol_kr);
+    //$(wT + ".2").prepend($role);
     $(wT + ".3").text("HTML/CSS, Javascript, PHP, SQL");
     $language = $(b).text(lang_kr);
     $(wT + ".3").prepend($language);
@@ -102,9 +124,29 @@ $("#lang-setting").on('change', function() {
             lang = "Languages Used: ",
             frame = "Frameworks/Libraries Used: ";
 
+
+        // Grade Manager
+        $(gT + ".gradeTitle").text("?");
+        $(gT + ".1").text("Coming Soon");
+        $duration = $(b).text(dur);
+        $(gT + ".1").prepend($duration);
+        //$(gT + ".2").text("Full-Stack Developer");
+        //$role = $(b).text(rol);
+        //$(gT + ".2").prepend($role);
+        $(gT + ".3").text("?");
+        $language = $(b).text(lang);
+        $(gT + ".3").prepend($language);
+        $(gT + ".4").text("?");
+        $framework = $(b).text(frame);
+        $(gT + ".4").prepend($framework);
+    
+        $("#g1").text("");
+        $("#g2").text("");
+        $("#g3").text("");
+
         // Edward Website
         $(wT + ".websiteTitle").text("Personal Website");
-        $(wT + ".1").text("Jun 12, 2019 - Current");
+        $(wT + ".1").text("Jun 12, 2019 - Jul 26, 2019 (Public) | - Current (Upgrading)");
         $duration = $(b).text(dur);
         $(wT + ".1").prepend($duration);
         $(wT + ".2").text("Full-Stack Developer");

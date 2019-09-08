@@ -27,3 +27,4 @@ $("#lang-setting").on('change', function() {
         $("#PV").text("Place Visited");
     }
 });
+

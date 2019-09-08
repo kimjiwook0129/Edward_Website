@@ -1,66 +1,65 @@
 fetch('json/quotes.json').then((response) => {
     return response.json();
-}).then((data) => { // successfully fetched
+}).then((data) => { // Json successfully fetched
     const genId = "#quote-generate",
         langId = "#lang-setting",
         length_kr = data.quotes_kor.length,
         length_en = data.quotes.length,
         timeInterval = 7000; // 7s
-    var timeLoop; // to clear loop and restart
+    var timeLoop; // For clearing loop and restart [Pointer]
 
-    function getRandomInt(max) { // generates random Int [0, max)
+    function getRandomInt(max) { // Generates random Int [0, max)
         return Math.floor(Math.random() * max);
     }
 
-    function genQuote(fadeInTo, lang) { // generate quote
-        // English default
-        var index = getRandomInt(length_en),
+    function genQuote(fadeInTo, lang) { // Generate quote
+        var index = getRandomInt(length_en), // Default: English
             quo = data.quotes[index].quote,
             who = data.quotes[index].by;
-        if (lang == "k") { // Korean: switching variables
+        if (lang == "k") { // Korean: Switching variables
             index = getRandomInt(length_kr);
             quo = data.quotes_kor[index].quote;
             who = data.quotes_kor[index].by;
         }
         switch (fadeInTo) { 
-            case 0: // when first generating quote
+            case 0: // Generating quote for the first time
                 $(genId).text("\"" + quo + "\" -" + who).fadeIn();
                 break;
-            default: // when replacing with other quote
+            default: // Replacing with other quote
                 $(genId).fadeOut(function() {
                     $(this).text("\"" + quo + "\" -" + who).fadeIn();
                 });
         }
     }
 
-    // Shoot initial Quote
-    if ($(langId).is(':checked')) {
+    if ($(langId).is(':checked')) { // Shoot initial Quote
         genQuote(0, "k"); // Korean
     } else {
         genQuote(0, "e"); // English
     }
-    beginLoop(); // start the loop for generating quotes
 
-    function beginLoop() { // starts the loop of generating quotes
+    beginLoop(); // Start quote generating loop
+
+    function beginLoop() { // Loop for generating quotes
         timeLoop = window.setInterval(function() {
-            if ($(langId).is(':checked')) { // Shoot Korean quote
+            if ($(langId).is(':checked')) { // Korean quote
                 genQuote(1, "k");
-            } else { // Shoot English quote
+            } else { // English quote
                 genQuote(1, "e");
             }
         }, timeInterval);
     }
 
-    $(langId).on('change', function() { // Instant change when language changes
-        if ($(this).is(':checked')) { // In Korean
+    $(langId).on('change', function() { // Instant quote change when language changes
+        if ($(this).is(':checked')) { // Korean
             genQuote(1, "k");
-        } else { // In English
+        } else { // English
             genQuote(1, "e");
         }
-        clearInterval(timeLoop); // clear the existing loop
-        beginLoop(); // start a new one
-        // new one to apply the same Interval after instantenous change
+        clearInterval(timeLoop); // Clear the existing loop
+        beginLoop(); // Start a new loop
+        // New loop to apply the consistent interval after language change
     });
-}).catch(function (error) { // error handling
+}).catch(function (error) { // Error handling
     console.log(error);
 });

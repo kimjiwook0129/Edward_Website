@@ -11,7 +11,10 @@ function initMap() {
     }).then((data) => {
         var options = {
             zoom: 3, // bigger -> more zoomed in
-            center:{lat:data.current.coords.lat,lng:data.current.coords.lng} // my current location: Guelph, ON
+            center: {
+                lat:data.current.coords.lat,
+                lng:data.current.coords.lng
+            } // my current location
         };
         var map = new google.maps.Map(document.getElementById('map'), options);
     

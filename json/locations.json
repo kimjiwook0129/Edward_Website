@@ -1,12 +1,12 @@
 {
     "current": {
         "coords": {
-            "lat": 43.5448,
-            "lng": -80.2482
+            "lat": 35.5384,
+            "lng": 129.3114
         },
-        "content": "<p>Guelph</p>",
-        "country": "Canada",
-        "continent": "NA"
+        "content": "<p>Ulsan</p>",
+        "country": "South Korea",
+        "continent": "AS"
     },
     "placesLived": [
         {
@@ -138,6 +138,83 @@
         }
     ],
     "placesTraveled": [
+        {
+            "coords": {
+                "lat": 37.6431,
+                "lng": 128.6800
+            },
+            "iconImage": "",
+            "content": "<p>Yongpyong</p>",
+            "country": "South Korea",
+            "continent": "AS",
+            "description": "toe hurt..."
+        },
+        {
+            "coords": {
+                "lat": 39.3643,
+                "lng": -74.4229
+            },
+            "iconImage": "",
+            "content": "<p>Atlantic City</p>",
+            "country": "United States",
+            "continent": "NA",
+            "description": "Casino"
+        },
+        {
+            "coords": {
+                "lat": 36.5795,
+                "lng": 126.3293
+            },
+            "iconImage": "",
+            "content": "<p>Anmyeondo</p>",
+            "country": "South Korea",
+            "continent": "AS",
+            "description": ""
+        },
+        {
+            "coords": {
+                "lat": 37.1708,
+                "lng": 126.6242
+            },
+            "iconImage": "",
+            "content": "<p>Jebudo</p>",
+            "country": "South Korea",
+            "continent": "AS",
+            "description": ""
+        },
+        {
+            "coords": {
+                "lat": 37.8746,
+                "lng": 32.4932
+            },
+            "iconImage": "",
+            "content": "<p>Konya</p>",
+            "country": "Turkey",
+            "continent": "AS",
+            "description": "ppl spinning"
+        },
+        {
+            "coords": {
+                "lat": 35.8242,
+                "lng": 127.1480
+            },
+            "iconImage": "",
+            "content": "<p>Jeonju</p>",
+            "country": "South Korea",
+            "continent": "AS",
+            "description": ""
+        },
+        {
+            "coords": {
+                "lat": 37.6431,
+                "lng": 128.6800
+            },
+            "iconImage": "",
+            "content": "<p>Yongpyong</p>",
+            "country": "South Korea",
+            "continent": "AS",
+            "description": "toe hurt..."
+        },
         {
             "coords": {
                 "lat": 41.9029,
@@ -340,11 +417,11 @@
             "continent": "AS"
         },{
             "coords": {
-                "lat": 35.6762,
-                "lng": 139.6503
+                "lat": 37.3834,
+                "lng": 140.1833
             },
             "iconImage": "",
-            "content": "<p>Tokyo</p>",
+            "content": "<p>Fukushima</p>",
             "country": "Japan",
             "continent": "AS"
         },{
@@ -605,6 +682,39 @@
     "placesVisited": [
         {
             "coords": {
+                "lat": 34.8806,
+                "lng": 128.6211
+            },
+            "iconImage": "",
+            "content": "<p>Geoje</p>",
+            "country": "South Korea",
+            "continent": "AS",
+            "description": "tasteless jajangmen"
+        },
+        {
+            "coords": {
+                "lat": 36.0190,
+                "lng": 129.3435
+            },
+            "iconImage": "",
+            "content": "<p>Pohang</p>",
+            "country": "South Korea",
+            "continent": "AS",
+            "description": ""
+        },
+        {
+            "coords": {
+                "lat": 10.9930,
+                "lng": 106.6557
+            },
+            "iconImage": "",
+            "content": "<p>Thủ Dầu Một</p>",
+            "country": "Vietnam",
+            "continent": "AS",
+            "description": "Dai Nam Wonderland"
+        },
+        {
+            "coords": {
                 "lat": 37.6970,
                 "lng": 127.8887
             },
@@ -750,11 +860,11 @@
             "continent": "AS"
         },{
             "coords": {
-                "lat": 25.3548,
-                "lng": 51.1839
+                "lat": 25.2854,
+                "lng": 51.5310
             },
             "iconImage": "",
-            "content": "<p>Qatar</p>",
+            "content": "<p>Doha</p>",
             "country": "Qatar",
             "continent": "AS"
         },{
