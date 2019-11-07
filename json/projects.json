@@ -1,0 +1,209 @@
+{
+    "projects": [
+        {
+            "id": 1,
+            "video": {
+                "src":"",
+                "credit":"© 2019 Edward Jiwook Kim"
+            },
+            "name": {
+                "en": "ToDo",
+                "kr": "ToDo"
+            },
+            "duration": {
+                "en": "Nov 1, 2019 - Nov 6, 2019 (Alpha Version) | - Current (Upgrading)",
+                "kr": "2019년 11월 1일 - 2019년 11월 6일 (알파버전) | - 현재 (개선 중)"
+            },
+            "role": {
+                "en":"",
+                "kr":""
+            },
+            "lang": {
+                "en":"Java, XML",
+                "kr":"Java, XML"
+            },
+            "tool": {
+                "en":"Android Studio",
+                "kr":"Android Studio"
+            },
+            "lib": {
+                "en":"",
+                "kr":""
+            },
+            "description": {
+                "en":"",
+                "kr":""
+            }
+        },
+        {
+            "id": 2,
+            "video": {
+                "src":"videos/personalWebsiteDemo.mp4",
+                "credit":"© 2019 Edward Jiwook Kim"
+            },
+            "name": {
+                "en": "Personal Website",
+                "kr": "개인 웹사이트"
+            },
+            "duration": {
+                "en": "Jun 12, 2019 - Jul 26, 2019 (Public) | - Current (Upgrading)",
+                "kr": "2019년 6월 12일 - 2019년 7월 26일 (공개) | - 현재 (개선 중)"
+            },
+            "role": {
+                "en":"",
+                "kr":""
+            },
+            "lang": {
+                "en":"HTML/CSS, Javascript, PHP, SQL",
+                "kr":"HTML/CSS, Javascript, PHP, SQL"
+            },
+            "tool": {
+                "en":"",
+                "kr":""
+            },
+            "lib": {
+                "en":"D3, jQuery, Bootstrap, particlesjs",
+                "kr":"D3, jQuery, Bootstrap, particlesjs"
+            },
+            "description": {
+                "en":[
+                    "Constructed a personal portfolio/website from scratch and hosted online",
+                    "Applied highly responsive and user-friendly interface",
+                    "Visualized personal and users' data for the users' interests"
+                ],
+                "kr":[
+                    "개인 포트폴리오/웹사이트 개설 및 호스팅",
+                    "다양한 유저를 위한 반응형 인터페이스 디자인",
+                    "다채로운 유저 및 본인 데이터 시각화"
+                ]
+            }
+        },
+        {
+            "id": 3,
+            "video": {
+                "src":"videos/chessDemo.mp4",
+                "credit":"© 2019 Edward Jiwook Kim"
+            },
+            "name": {
+                "en": "Chess",
+                "kr": "체스"
+            },
+            "duration": {
+                "en": "Mar 18, 2019 - Apr 5, 2019",
+                "kr": "2019년 3월 18일 - 2019년 4월 5일"
+            },
+            "role": {
+                "en":"Software Development",
+                "kr":"소프트웨어 개발"
+            },
+            "lang": {
+                "en":"Bash, C++",
+                "kr":"Bash, C++"
+            },
+            "tool": {
+                "en":"",
+                "kr":""
+            },
+            "lib": {
+                "en":"X11",
+                "kr":"X11"
+            },
+            "description": {
+                "en": [
+                    "Developed a Chess game which supports multiple modes collaboratively",
+                    "Deployed computer simulation feature, AI players, at different difficulties",
+                    "Designed graphics and implemented algorithms utilizing Observer pattern"
+                ],
+                "kr": [
+                    "다양한 모드를 지원하는 체스 게임 개발",
+                    "난이도별 AI 플레이어 개발, 컴퓨터와의 경기 모드 지원",
+                    "옵저버 디자인 패턴을 이용한 알고리즘 구상 및 그래픽 디자인 고안"
+                ]
+            }
+        },
+        {
+            "id": 4,
+            "video": {
+                "src":"videos/watfoodDemo.mp4",
+                "credit":"© 2019 Edward Jiwook Kim"
+            },
+            "name": {
+                "en": "WATFood",
+                "kr": "WATFood"
+            },
+            "duration": {
+                "en": "Jan 13, 2019 - Jan 15, 2019",
+                "kr": "2019년 1월 13일 - 2019년 1월 15일"
+            },
+            "role": {
+                "en":"Front-End Development",
+                "kr":"프론트엔드 개발"
+            },
+            "lang": {
+                "en":"HTML/CSS, Javascript",
+                "kr":"HTML/CSS, Javascript"
+            },
+            "tool": {
+                "en":"",
+                "kr":""
+            },
+            "lib": {
+                "en":"",
+                "kr":""
+            },
+            "description": {
+                "en": [
+                    "Co­developed WATFood, a random food picking web application for the users to choose their menu",
+                    "Visualized pragmatic user­ interface",
+                    "Applied Google Maps API to display the restaurants around the users' location for better UX"
+                ],
+                "kr": [
+                    "랜덤 식사 메뉴 선택 웹 애플리케이션 WATFood 공동 개발",
+                    "실용적 유저 인터페이스 디자인 구성",
+                    "Google지도 API를 활용한 유저의 위치 주변 식당 정보 제공"
+                ]
+            }
+        },
+        {
+            "id": 5,
+            "video": {
+                "src":"videos/sudokuDemo.mp4",
+                "credit":"© 2019 Edward Jiwook Kim"
+            },
+            "name": {
+                "en": "Sudoku Solver",
+                "kr": "스토쿠 해결 프로그램"
+            },
+            "duration": {
+                "en": "June 2018",
+                "kr": "2018년 6월"
+            },
+            "role": {
+                "en":"",
+                "kr":""
+            },
+            "lang": {
+                "en":"C, HTML/CSS, Javascript",
+                "kr":"C, HTML/CSS, Javascript"
+            },
+            "tool": {
+                "en":"",
+                "kr":""
+            },
+            "lib": {
+                "en":"Node.js",
+                "kr":"Node.js"
+            },
+            "description": {
+                "en": [
+                    "Utilized backtracking algorithm to develop an efficient Sudoku puzzle solving program",
+                    "Simplified features to maximize the application's primary purpose of displaying solution"
+                ],
+                "kr": [
+                    "Backtracking 알고리즘을 사용한 효율적인 스도쿠 해결 프로그램 개발",
+                    "필수적인 최소한의 기능을 탑재한 디자인 구성"
+                ]
+            }
+        }
+    ]
+}

@@ -140,6 +140,17 @@
     "placesTraveled": [
         {
             "coords": {
+                "lat": 44.0073,
+                "lng": -77.1424
+            },
+            "iconImage": "",
+            "content": "<p>Piction</p>",
+            "country": "Canada",
+            "continent": "NA",
+            "description": "Alex's"
+        },
+        {
+            "coords": {
                 "lat": 37.6431,
                 "lng": 128.6800
             },
