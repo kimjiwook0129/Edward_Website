@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="css/about-studying.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-        <script src="./about-studying.js"></script>
+        <script src="./about-studying1.js"></script>
         <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
@@ -23,144 +23,16 @@
             <div class="navbar-blank" style="height:50px"></div>
             <nav class="navbar navbar-fixed-top" id="navbar"></nav>
             <div class="below-nav-container">
-                <!--div class="dashboard">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <div class="pie-chart">
-                                </div>
-                                <div class="pie-display">
-                                </div>
-                            </div>
-                            <div class="col-sm-8">
-                                <div class="skill-chart">
-                                    <svg id="gpa-line-chart" class="line-chart"></svg>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <hr>-->
                 <br>
                 <div class="main-contents">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <div class="image-container">
-                                    <img id="waterloo-image" class="image-itself" src="./images/schools/waterloo_1.jpg" alt="University of Waterloo" style="width:100%">
-                                </div>
-                                <div class="image-credit">
-                                    <p id="reference">&copy; doublespace photography</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-8" id="waterlooText">
-                                <h4 class="schoolTitle">University of Waterloo</h4>
-                                <p class="exp 1"><b>Duration: </b>Sep 7, 2017 - Current</p>
-                                <p class="exp 2"><b>Region: </b>Waterloo, ON, Canada</p>
-                                <p class="exp 3"><b>Program: </b>Applied Mathematics, Computing Technology Option</p>
-                                <ul>
-                                    <li class="bullet-points" id="w1" style="text-align:left;">Former Korean Student Association (KSA) Executive [Sep 2017 - Dec 2018]</li>
-                                    <li class="bullet-points" id="w2" style="text-align:left;">Developed KidsAbility Portal, an online web platform for user interacion at Starterhacks [Jan 2019]</li>
-                                    <li class="bullet-points" id="w3" style="text-align:left;">Received an entrance scholarship: University of Waterloo President's Scholarship of Distinction [Jul 2017]</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <div class="image-container">
-                                    <img id="cac-image" class="image-itself" src="./images/schools/cac_1.jpg" alt="Cairo American College" style="width:100%">
-                                </div>
-                                <div class="image-credit">
-                                    <p id="reference-cairo">Map data &copy; 2016 Google | Yousef Shabana</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-8" id="cacText">
-                                <h4 class="schoolTitle">Cairo American College</h4>
-                                <p class="exp 1"><b>Duration: </b>Feb 24, 2013 - Jun 2, 2017</p>
-                                <p class="exp 2"><b>Region: </b>Cairo, Egypt</p>
-                                <ul>
-                                    <li class="bullet-points" id="c1" style="text-align:left;">Received Senior Mathematics Department Award at CAC Awards Night [May 2017]</li>
-                                    <li class="bullet-points" id="c2" style="text-align:left;">Received Cayley Mathematics Contest Certificate of Distinction (University of Waterloo) [Apr 2015]</li>
-                                    <li class="bullet-points" id="c3" style="text-align:left;">Received Top Ten Scholar Award Class of 2017 at CAC Awards Night [May 2016, May 2017]</li>
-                                    <li class="bullet-points" id="c4" style="text-align:left;">Scored full marks in all IB, AP courses taken (IB HL Phys 7, IB HL Math 7, AP Stats 5, etc) [Jun 2017]</li>
-                                    <li class="bullet-points" id="c5" style="text-align:left;">Scored 1500 in the new Scholastic Aptitude Test (SAT) [Dec 2016]</li>
-                                    <li class="bullet-points" id="c6" style="text-align:left;">CAC Varsity Dance [Nov 2014 - Feb 2015, Nov 2015 - Feb 2016]</li>
-                                    <li class="bullet-points" id="c7" style="text-align:left;">CAC Cross-Country [Sep 2014 – Nov 2014, Sep 2015 – Nov 2015]</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <div class="image-container">
-                                    <img id="pureun-image" class="image-itself" src="./images/schools/pureun_1.jpg" alt="Pureun Middle School" style="width:100%">
-                                </div>
-                                <div class="image-credit">
-                                    <p id="reference">&copy; 출처 : 경기영상위원회 로케이션DB</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-8" id="pureunText">
-                                <h4 class="schoolTitle">Pureun Middle School</h4>
-                                <p class="exp 1"><b>Duration: </b>Mar 2011 - Jan 16, 2013</p>
-                                <p class="exp 2"><b>Region: </b>Hwaseong, Gyeonggi, South Korea</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <div class="image-container">
-                                    <img id="ishcmc-image" class="image-itself" src="./images/schools/ishcmc_1.jpg" alt="International School Ho Chi Minh City" style="width:100%">
-                                </div>
-                                <div class="image-credit">
-                                    <p id="reference">&copy; International School Ho Chi Minh City (ISHCMC)</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-8" id="hcmcText">
-                                <h4 class="schoolTitle">International School Ho Chi Minh City</h4>
-                                <p class="exp 1"><b>Duration: </b>Aug 10, 2010 - Dec 17, 2010</p>
-                                <p class="exp 2"><b>Region: </b>Ho Chi Minh City, Vietnam</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <div class="image-container">
-                                    <img id="sis-image" class="image-itself" src="./images/schools/sis_1.jpg" alt="Singapore International School" style="width:100%">
-                                </div>
-                                <div class="image-credit">
-                                    <p id="reference">&copy; Singapore International School @ Saigon South</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-8" id="sisText">
-                                <h4 class="schoolTitle">Singapore International School, South Saigon</h4>
-                                <p class="exp 1"><b>Duration: </b>Mar 14, 2008 - Jul 14, 2010</p>
-                                <p class="exp 2"><b>Region: </b>Ho Chi Minh City, Vietnam</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <div class="image-container">
-                                    <img id="daepyong-image" class="image-itself" src="./images/schools/daepyong_1.jpg" alt="Daepyong Elementary School" style="width:100%">
-                                </div>
-                                <div class="image-credit">
-                                    <p id="reference">&copy; 꿈나무기자단 | 한서연</p>
-                                    <p id="reference">본 저작물은 경기도에서 2017년 작성하여 공공누리 제4유형으로 개방한 ‘세계를 품고 꿈을 가꾸는 수원 대평초등학교
-                                        (작성자:한서연/꿈나무기자단)’를 이용하였으며, 해당 저작물은 경기도 홈페이지(http://www.gg.go.kr)에서 무료로 다운받으실 수 있습니다
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="col-sm-8" id="daepyongText">
-                                <h4 class="schoolTitle">Daepyong Elementary School</h4>
-                                <p class="exp 1"><b>Duration: </b>Mar 2005 - Feb 2008</p>
-                                <p class="exp 2"><b>Region: </b>Suwon, Gyeonggi-do, South Korea</p>
-                            </div>
-                        </div>
-                    </div>
+                    <div id="school-container" class="container"></div>
                     <div class="container" style="margin-bottom: 20px;">
                         <p id="reference_total">* All image/icons have been used under each copyright owner's Terms of Service and permitted to be used.</p>
                     </div>
                 <footer class="footer-container"></footer>
                 <script src="./common.js"></script>
                 <script src="./common_lang.js"></script>
-                <script src="./about-studying-charts.js"></script>
-                <script src="./about-studying-translate.js"></script>
+                <script src="./about-studying.js"></script>
             </div>
         </div>
     </body>

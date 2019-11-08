@@ -1,0 +1,224 @@
+{
+    "schools": [
+        {
+            "id": 1,
+            "images": [
+                {
+                    "src": "./images/schools/waterloo_1.jpg",
+                    "credit": "© doublespace photography"
+                },{
+                    "src": "./images/schools/waterloo_2.jpg",
+                    "credit": "© doublespace photography"
+                }                    
+            ],
+            "name": {
+                "en": "University of Waterloo",
+                "kr": "워털루 대학교"
+            },
+            "duration": {
+                "en": "Sep 7, 2017 - Current",
+                "kr": "2017년 9월 7일 - 재학중"
+            },
+            "region": {
+                "en":"Waterloo, ON, Canada",
+                "kr":"캐나다 온타리오 워털루"
+            },
+            "program": {
+                "en": "Applied Mathematics, Computing Technology Option",
+                "kr": "응용수학, 전산학 옵션"
+            },
+            "description": {
+                "en":[
+                    "Former Korean Student Association (KSA) Executive [Sep 2017 - Dec 2018]",
+                    "Developed KidsAbility Portal, an online web platform for user interacion at Starterhacks [Jan 2019]",
+                    "Received an entrance scholarship: University of Waterloo President's Scholarship of Distinction [Jul 2017]"
+                ],
+                "kr":[
+                    "전 한국 학생회 (KSA) 임원 [2017년 9월 - 2018년 12월]",
+                    "Starterhacks에서 원활한 유저 소통을 위한 온라인 웹 플렛폼 KidsAbility Portal 개발, [2019년 1월]",
+                    "입학 장학금: University of Waterloo President's Scholarship of Distinction 수령 [2017년 7월]"
+                ]
+            }
+        },{
+            "id": 2,
+            "images": [
+                {
+                    "src":"./images/schools/cac_1.jpg",
+                    "credit":"Map data © 2016 Google | Yousef Shabana"
+                },{
+                    "src":"./images/schools/cac_2.jpg",
+                    "credit":"Map data © 2015 Google | Cairo American College"
+                }             
+            ],
+            "name": {
+                "en": "Cairo American College",
+                "kr": "카이로 미국학교"
+            },
+            "duration": {
+                "en": "Feb 24, 2013 - Jun 2, 2017",
+                "kr": "2013년 2월 24일 - 2017년 6월 2일"
+            },
+            "region": {
+                "en":"Cairo, Egypt",
+                "kr":"이집트 카이로"
+            },
+            "program": {
+                "en": "",
+                "kr": ""
+            },
+            "description": {
+                "en":[
+                    "Received Senior Mathematics Department Award at CAC Awards Night [May 2017]",
+                    "Received Cayley Mathematics Contest Certificate of Distinction (University of Waterloo) [Apr 2015]",
+                    "Received Top Ten Scholar Award Class of 2017 at CAC Awards Night [May 2016, May 2017]",
+                    "Scored full marks in all IB, AP courses taken (IB HL Phys 7, IB HL Math 7, AP Stats 5, etc) [Jun 2017]",
+                    "Scored 1500 in the new Scholastic Aptitude Test (SAT) [Dec 2016]",
+                    "CAC Varsity Dance [Nov 2014 - Feb 2015, Nov 2015 - Feb 2016]",
+                    "CAC Cross-Country [Sep 2014 – Nov 2014, Sep 2015 – Nov 2015]"
+                ],
+                "kr":[
+                    "Senior Mathematics Department Award 수상 [2017년 5월]",
+                    "Cayley Mathematics Contest Certificate of Distinction 수상 [2015 4월]",
+                    "2017년 졸업생 Top Ten Scholar Award 수상 [2016년 5월, 2017년 5월]",
+                    "수강한 IB, AP 전 과목 만점 (IB HL Phys 7, IB HL Math 7, AP Stats 5, 등) [2017년 6월]",
+                    "미국 대학수학능력시험 New SAT 1500점 [2016년 12월]",
+                    "CAC Varsity Dance [2014년 11월 - 2015년 2월, 2015년 11월 - 2016년 2월]",
+                    "CAC Cross-Country [2014년 9월 - 2014년 11월, 2015년 9월 - 2015년 11월]"
+                ]
+            }
+        },{
+            "id": 3,
+            "images": [
+                {
+                    "src": "./images/schools/pureun_1.jpg",
+                    "credit": "© 출처 : 경기영상위원회 로케이션DB"
+                },{
+                    "src": "./images/schools/pureun_2.jpg",
+                    "credit": "© 출처 : 경기영상위원회 로케이션DB"
+                },{
+                    "src": "./images/schools/pureun_3.jpg",
+                    "credit": "© 출처 : 경기영상위원회 로케이션DB"
+                }             
+            ],
+            "name": {
+                "en": "Pureun Middle School",
+                "kr": "푸른중학교"
+            },
+            "duration": {
+                "en": "Mar 2011 - Jan 16, 2013",
+                "kr": "2011년 3월 - 2013년 1월 16일"
+            },
+            "region": {
+                "en":"Hwaseong, Gyeonggi, South Korea",
+                "kr":"대한민국 경기도 화성시"
+            },
+            "program": {
+                "en": "",
+                "kr": ""
+            },
+            "description": {
+                "en":[],
+                "kr":[]
+            }
+        },{
+            "id": 4,
+            "images": [
+                {
+                    "src":"./images/schools/ishcmc_1.jpg",
+                    "credit":"© International School Ho Chi Minh City (ISHCMC)"
+                },{
+                    "src":"./images/schools/ishcmc_2.jpg",
+                    "credit":"© International School Ho Chi Minh City (ISHCMC)"
+                },{
+                    "src":"./images/schools/ishcmc_3.jpg",
+                    "credit":"© International School Ho Chi Minh City (ISHCMC)"
+                }
+            ],
+            "name": {
+                "en": "International School Ho Chi Minh City",
+                "kr": "호치민시 국제학교"
+            },
+            "duration": {
+                "en": "Aug 10, 2010 - Dec 17, 2010",
+                "kr": "2010년 8월 10일 - 2010년 12월 17일"
+            },
+            "region": {
+                "en":"Ho Chi Minh City, Vietnam",
+                "kr":"베트남 호치민시"
+            },
+            "program": {
+                "en": "",
+                "kr": ""
+            },
+            "description": {
+                "en":[],
+                "kr":[]
+            }
+        },{
+            "id": 5,
+            "images": [
+                {
+                    "src":"./images/schools/sis_1.jpg",
+                    "credit":"© Singapore International School @ Saigon South"
+                },{
+                    "src":"./images/schools/sis_2.jpg",
+                    "credit":"© Singapore International School @ Saigon South"
+                },{
+                    "src":"./images/schools/sis_3.jpg",
+                    "credit":"© Singapore International School @ Saigon South"
+                }
+            ],
+            "name": {
+                "en": "Singapore International School, South Saigon",
+                "kr": "싱가폴 국제학교"
+            },
+            "duration": {
+                "en": "Mar 14, 2008 - Jul 14, 2010",
+                "kr": "2008년 3월 14일 - 2010년 7월 14일"
+            },
+            "region": {
+                "en":"Ho Chi Minh City, Vietnam",
+                "kr":"베트남 호치민시"
+            },
+            "program": {
+                "en": "",
+                "kr": ""
+            },
+            "description": {
+                "en":[],
+                "kr":[]
+            }
+        },{
+            "id": 6,
+            "images": [
+                {
+                    "src":"./images/schools/daepyong_1.jpg",
+                    "credit":"© 꿈나무기자단 | 한서연 본 저작물은 경기도에서 2017년 작성하여 공공누리 제4유형으로 개방한 ‘세계를 품고 꿈을 가꾸는 수원 대평초등학교 (작성자:한서연/꿈나무기자단)’를 이용하였으며, 해당 저작물은 경기도 홈페이지(http://www.gg.go.kr)에서 무료로 다운받으실 수 있습니다"
+                },{
+                    "src":"./images/schools/daepyong_2.jpg",
+                    "credit":"© 꿈나무기자단 | 한서연 본 저작물은 경기도에서 2017년 작성하여 공공누리 제4유형으로 개방한 ‘세계를 품고 꿈을 가꾸는 수원 대평초등학교 (작성자:한서연/꿈나무기자단)’를 이용하였으며, 해당 저작물은 경기도 홈페이지(http://www.gg.go.kr)에서 무료로 다운받으실 수 있습니다"
+                }
+            ],
+            "name": {
+                "en": "Daepyong Elementary School",
+                "kr": "대평초등학교"
+            },
+            "duration": {
+                "en": "Mar 2005 - Feb 2008",
+                "kr": "2005년 3월 - 2008년 2월"
+            },
+            "region": {
+                "en":"Suwon, Gyeonggi-do, South Korea",
+                "kr":"경기도 수원시"
+            },
+            "program": {
+                "en": "",
+                "kr": ""
+            },
+            "description": {
+                "en":[],
+                "kr":[]
+            }
+        }
+    ]
+}
