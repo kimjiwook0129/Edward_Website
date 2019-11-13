@@ -12,7 +12,6 @@
         <link rel="stylesheet" href="css/about-working.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-        <script src="./about-working.js"></script>
         <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
@@ -24,77 +23,17 @@
             <nav class="navbar navbar-fixed-top" id="navbar"></nav>
             <div class="below-nav-container">
                 <div class="main-contents">
-                    <div class="container">
+                    <div id="fulltime-container" class="container">
                         <h3 id="fullTimeText" style="text-align: center;">Full-time Employment</h3>
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <div class="image-container">
-                                    <img id="cbg-image" class="image-itself" src="./images/companies/cbg_1.jpg" alt="Centre for Biodiversity" style="width:100%">
-                                </div>
-                                <div class="image-credit">
-                                    <p id="reference-cbg" class="reference">&copy; 2019 Edward Jiwook Kim</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-8" id="cbgText">
-                                <h4 class="positionTitle">Programmer & Data Analyst Intern</h4>
-                                <p class="exp 1"><b>Organization: </b>Centre for Biodiversity Genomics, University of Guelph</p>
-                                <p class="exp 2"><b>Duration: </b>May 6, 2019 - Aug 30, 2019</p>
-                                <p class="exp 3"><b>Region: </b>Guelph, ON, Canada</p>
-                                <ul>
-                                    <li class="bullet-points" id="c1" style="text-align:left;">Visualized DNA barcode data workflow by deploying a dashboard using Google Apps/APIs</li>
-                                    <li class="bullet-points" id="c2" style="text-align:left;">Retrieved Barcode Of Life Data (BOLD) System's taxonomy data of DNA-based species</li>
-                                    <li class="bullet-points" id="c3" style="text-align:left;">Improved the files uploader UI/UX of mBRAVE, platform for the multiplex based on high-throughput sequencing (HTS) instruments</li>
-                                    <li class="bullet-points" id="c4" style="text-align:left;">Debugged files metadata validation process and upgraded error handling ability of mBRAVE</li>
-                                    <li class="bullet-points" id="c5" style="text-align:left;">Visualized hierarchical taxonomic data as a tree with pie-charted nodes using D3</li>
-                                    <li class="bullet-points" id="c6" style="text-align:left;">Modified framework for data submissions and updates to flexibly receive inputs in different versions</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <div class="image-container">
-                                    <img id="sheridan-image" class="image-itself" src="./images/companies/sheridan_1.jpg" alt="Sheridan College" style="width:100%">
-                                </div>
-                                <div class="image-credit">
-                                    <p id="reference-sheridan" class="reference">Map data &copy; 2016 Google | Sheridan College</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-8" id="sheridanText">
-                                <h4 class="positionTitle">Computer Mathematics Learning Assistant</h4>
-                                <p class="exp 1"><b>Organization: </b>Library and Learning Services, Sheridan College</p>
-                                <p class="exp 2"><b>Duration: </b>May 4, 2018 - Aug 17, 2018</p>
-                                <p class="exp 3"><b>Region: </b>Oakville, ON, Canada</p>
-                                <ul>
-                                    <li class="bullet-points" id="s1" style="text-align:left;">Managed approximately 40% of the campus's computer mathematics course tutorials and 100% of drop-in sessions independently as the only computer mathematics learning assistant</li>
-                                    <li class="bullet-points" id="s2" style="text-align:left;">Analyzed the campus library learning centre's Database Management System (DBMS) SharePoint and redesigned its supplementary models with the representation of their practicalities</li>
-                                    <li class="bullet-points" id="s3" style="text-align:left;">Produced question packets for Calculus and Computer Mathematics courses, which professors requested to incorporate into the course materials, constructing creative applications of the courses</li>
-                                </ul>
-                            </div>
-                        </div>
                     </div>
                     <hr>
-                    <div class="container">
+                    <div id="parttime-container">
                         <h3 id="partTimeText" style="text-align: center;">Part-time Employment</h3>
-                        <div class="row">
-                            <div class="col-sm-4">
-                                <div class="image-container">
-                                    <img id="tutor-image" class="image-itself" src="./images/companies/tutor_1.jpg" alt="Places I tutored" style="width:100%">
-                                </div>
-                                <div class="image-credit">
-                                    <p id="reference-tutor" class="reference">Photo by © John Moeses Bauan on Unsplash</p>
-                                </div>
-                            </div>
-                            <div class="col-sm-8" id="tutorText">
-                                <h4 class="positionTitle">Mathematics/Physics Private Tutor</h4>
-                                <p class="exp 1"><b>Organization: </b>Self-employed</p>
-                                <p class="exp 2"><b>Duration: </b>Nov 2016 - Apr 2018</p>
-                                <p class="exp 3"><b>Region: </b>Cairo, Egypt | Waterloo, ON, Canada</p>
-                                <ul>
-                                    <li class="bullet-points" id="t1" style="text-align:left;">Interacted with students in wide age range from 4th grade to first-year Undergraduate student</li>
-                                    <li class="bullet-points" id="t2" style="text-align:left;">Experienced in teaching calculus, pre-calculus, algebra, physics: mechanics fundamentals, and Python</li>
-                                    <li class="bullet-points" id="t3" style="text-align:left;">Mastered diverse and efficient teaching skills through years of teaching face-to-face and using webcam</li>
-                                </ul>
-                            </div>
+                        <div id="longterm" class="container">
+                            <h3 id="longTermText" style="text-align: left;">Long-term</h3>
+                        </div>
+                        <div id="shortterm" class="container">
+                            <h3 id="shortTermText" style="text-align: left;">Short-term</h3>
                         </div>
                     </div>
                     <div class="container" style="margin-bottom:10px;">
@@ -104,7 +43,7 @@
                 <footer class="footer-container"></footer>
                 <script src="./common.js"></script>
                 <script src="./common_lang.js"></script>
-                <script src="./about-working-translate.js"></script>
+                <script src="./about-working.js"></script>
             </div>
         </div>
     </body>

@@ -80,11 +80,7 @@
     margin-top: 10px;
     overflow: hidden;
 }
-/*
-@media only screen and (min-width: 420px) {
-    .quote-box {height: 80px;}
-}
-*/
+
 .quote-container {
     text-align: center;
 }
