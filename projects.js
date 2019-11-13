@@ -2,57 +2,51 @@ var projectContainer = $("#project-container");
 var projects;
 const category = ["duration", "role", "lang", "tool", "lib"];
 
-
-function renderContext(num = 0) {
+function renderContext(lan = "en") {
     projects.forEach(function (project) {
         var parentRow = $("#project-id-" + project.id);
         var downDiv = $("<div></div>").addClass("col-sm-5");
-        var lan = num == 0 ? "en" : "kr";
 
-        var title = $("<h4></h4>").text(project.name[lan]),
-            label,
-            dur;
+        var title = $("<h4></h4>").text(project.name[lan]);
             
         downDiv.append(title);
         
         category.forEach(function(cate) {
             if (project[cate][lan] != "") {
+                var label = lan == "en" ? "Frameworks/Libraries Used: "  : "프레임워크/라이브러리: "
                 switch (cate) {
                     case "duration":
-                        label = num == 0 ? "Duration: " : "기간: ";
+                        label = lan == "en" ? "Duration: " : "기간: ";
                         break;
                     case "role":
-                        label = num == 0 ? "Role: " : "담당: ";
+                        label = lan == "en" ? "Role: " : "담당: ";
                         break;
                     case "lang":
-                        label = num == 0 ? "Languages Used: " : "언어: ";
+                        label = lan == "en" ? "Languages Used: " : "언어: ";
                         break;
                     case "tool":
-                        label = num == 0 ? "Tools Used: "  : "도구: ";
-                        break;
-                    default: // "lib"
-                        label = num == 0 ? "Frameworks/Libraries Used: "  : "프레임워크/라이브러리: ";
+                        label = lan == "en" ? "Tools Used: "  : "도구: ";
                 }
-                dur = $("<p></p>").addClass("exp").text(project[cate][lan]);
+                var dur = $("<p></p>").addClass("exp").text(project[cate][lan]);
                 $enhanceLabel = $("<b></b>").text(label);
                 dur.prepend($enhanceLabel);
                 downDiv.append(dur);
             }
         });
-        dur = $("<ul></ul>");
+        var ul_ = $("<ul></ul>");
         for (var i = 0; i < project.description[lan].length; ++i) {
             var _lst = $("<li></li>").addClass("bullet-points")
                 .text(project.description[lan][i]).css("text-align", "left");
-            dur.append(_lst);
+            ul_.append(_lst);
         }
-        downDiv.append(dur);
+        downDiv.append(ul_);
         parentRow.append(downDiv);
     });
 }
 
 fetch('json/projects.json').then((response) => {
     return response.json();
-}).then((data) => { // Json successfully fetched
+}).then((data) => {
     projects = data.projects;
     projects.forEach(function (project) {
         var vidRef = $("<p></p>").attr("id", "reference").text(project.video.credit);
@@ -71,12 +65,9 @@ fetch('json/projects.json').then((response) => {
         parentRow.append(upDiv);
         projectContainer.append(parentRow);
     });
-    if (window.location.href.slice(-3) == "kor") {
-        renderContext(1);
-    } else {
-        renderContext();
-    }
-}).catch(function (error) { // Error handling
+    if (window.location.href.slice(-3) == "kor") renderContext("kr");
+    else renderContext();
+}).catch(function (error) {
     console.log(error);
 });
 
@@ -84,9 +75,6 @@ $("#lang-setting").on('change', function() {
     projects.forEach(function(project) {
         $("#project-id-" + project.id).children().last().remove();
     });
-    if ($(this).is(':checked')) { // From English to Korean
-        renderContext(1);
-    } else { // From Korean to English
-        renderContext();
-    }
+    if ($(this).is(':checked')) renderContext("kr");
+    else renderContext();
 });

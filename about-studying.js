@@ -2,28 +2,24 @@ var schoolContainer = $("#school-container");
 var schools;
 const category = ["duration","region","program"];
 
-function renderContext(num = 0) {
+function renderContext(lan = "en") {
     schools.forEach(function (school) {
         var parentRow = $("#school-id-" + school.id);
         var downDiv = $("<div></div>").addClass("col-sm-8");
-        var lan = num == 0 ? "en" : "kr";
         var title = $("<h4></h4>").addClass("schoolTitle").text(school.name[lan]),
-            label,
             dur;
             
         downDiv.append(title);
         
         category.forEach(function(cate) {
             if (school[cate][lan] != "") {
+                var label = lan == "en" ? "Program: " : "전공: ";
                 switch (cate) {
                     case "duration":
-                        label = num == 0 ? "Duration: " : "기간: ";
+                        label = lan == "en" ? "Duration: " : "기간: ";
                         break;
                     case "region":
-                        label = num == 0 ? "Region: " : "지역: ";
-                        break;
-                    default: // "program"
-                        label = num == 0 ? "Program: " : "전공: ";
+                        label = lan == "en" ? "Region: " : "지역: ";
                 }
                 dur = $("<p></p>").addClass("exp").text(school[cate][lan]);
                 $enhanceLabel = $("<b></b>").text(label);
@@ -83,7 +79,7 @@ fetch('json/education.json').then((response) => {
         schoolContainer.append(parentRow);
     });
     if (window.location.href.slice(-3) == "kor") {
-        renderContext(1);
+        renderContext("kr");
     } else {
         renderContext();
     }
@@ -96,7 +92,7 @@ $("#lang-setting").on('change', function() {
         $("#school-id-" + school.id).children().last().remove();
     });
     if ($(this).is(':checked')) { // Korean
-        renderContext(1);
+        renderContext("kr");
     } else { // English
         renderContext();
     }
