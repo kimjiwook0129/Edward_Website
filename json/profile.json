@@ -1,0 +1,44 @@
+{
+  "images": [
+    {
+      "src": "./images/faces/face_1.png",
+      "credit": "© 2019 Edward Jiwook Kim"
+    },
+    {
+      "src": "./images/faces/face_2.png",
+      "credit": "© doublespace photography"
+    },
+    {
+      "src": "./images/faces/face_3.png",
+      "credit": "© 2019 Edward Jiwook Kim"
+    },
+    {
+      "src": "./images/faces/face_4.png",
+      "credit": "© doublespace photography"
+    },
+    {
+      "src": "./images/faces/face_5.png",
+      "credit": "© 2019 Edward Jiwook Kim"
+    },
+    {
+      "src": "./images/faces/face_6.png",
+      "credit": "© doublespace photography"
+    }
+  ],
+  "summary": {
+    "en": [
+      "Current AP/IB, SAT Instructor at ASAP Academy",
+      "Current Member of MENSA Korea",
+      "Former Programmer / Data Analyst at Centre for Biodiversity Genomics",
+      "Former Computer Mathematics Learning Assistant at Sheridan College",
+      "Studies Applied Mathematics/Computing at the University of Waterloo"
+    ],
+    "kr": [
+      "현 ASAP Academy AP/IB, SAT 강사",
+      "현 멘사 코리아 회원",
+      "전 생물다양성 유전체학 센터 개발자/데이터 분석가",
+      "전 셰리든 대학교 컴퓨터 수학 조교",
+      "University of Waterloo 응용수학/전산학 재학생"
+    ]
+  }
+}

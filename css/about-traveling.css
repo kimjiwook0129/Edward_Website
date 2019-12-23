@@ -1,93 +1,146 @@
 .map-holder {
-    margin: 10px;
+  margin: 10px;
 }
 
 #map {
-    height:400px;
-    width:100%;
-    border: 2px solid #000000;
-    border-radius: 10px;
+  height: 400px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.border-solid-black {
+  border: 2px solid #000000;
 }
 
 #map-instruct {
-    margin-top: 5px;
-    width: auto;
-    height: auto;
-    border: 2px solid #000000;
-    border-radius: 5px;
-    width:90%;
+  margin-top: 5px;
+  width: auto;
+  height: auto;
+  border-radius: 5px;
+  width: 90%;
 }
 
 #icon-holder {
-    height: 20px;
-    display: inline-block;
-    top: 0;
-    margin:0;
+  height: 20px;
+  display: inline-block;
+  top: 0;
+  margin: 0;
 }
 
 #icon {
-    width: 16px;
-    height: 16px;
-    margin:0;
-    display: inline-block;
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  display: inline-block;
 }
 
 #icon-instruct {
-    height: 20px;
-    display: inline-block;
+  height: 20px;
+  display: inline-block;
 }
 
 .main-contents {
-    margin-bottom:20px;
+  margin-bottom: 20px;
 }
 
-#outer-box-holder {
-    height: auto;
-    background-color:#ffffff;
+.outer-box-holder {
+  height: auto;
+  background-color: #ffffff;
 }
 
-#inner-box-holder {
-    background-color:#ffffff;
-    margin: auto;
-    height: 200px;
-    margin-top: 15px;
-    width: 100%;
-    border: 2px solid #000000;
-    border-radius: 5px;
-    overflow: hidden;
-    -webkit-transition-duration:0.05s;
-    transition-duration:0.05s;
-    
+.inner-box-holder {
+  background-color: #ffffff;
+  margin: auto;
+  height: 200px;
+  margin-top: 15px;
+  width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+  -webkit-transition-duration: 0.05s;
+  transition-duration: 0.05s;
+}
+
+.inner-box-holder-long {
+  height: 400px;
+}
+
+.inner-box-holder-short {
+  height: 200px;
 }
 
 .box-icon-holder {
-    height: 80px;
-    width: 80px;
-    left: 50%;
-    margin-left: -40px;
-    margin-top: 5px;
-    position: absolute;
-    text-align:center;
-    border-radius: 100%;
-    -webkit-transition-duration: 0.2s;
-    transition-duration: 0.2s;
+  height: 80px;
+  width: 80px;
+  left: 50%;
+  margin-left: -40px;
+  margin-top: 5px;
+  position: absolute;
+  text-align: center;
+  border-radius: 100%;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
 }
 
 .box-icon-holder:hover {
-    background-color: #9c9c9c;
-    -webkit-transition-duration: 0.2s;
-    transition-duration: 0.2s;
+  background-color: #9c9c9c;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
 }
 
 .box-text {
-    width: 280px;
-    left: 50%;
-    margin-left: -140px;
-    text-align:center;
-    margin-top:80px;
-    height:120px;
-    position: absolute;
-    overflow: hidden;
-    -webkit-transition-duration:0.05s;
-    transition-duration:0.05s;
+  width: 280px;
+  left: 50%;
+  margin-left: -140px;
+  text-align: center;
+  margin-top: 80px;
+  height: 120px;
+  position: absolute;
+  overflow: hidden;
+  -webkit-transition-duration: 0.05s;
+  transition-duration: 0.05s;
+}
+
+#cityPerCountryDropdown {
+  margin: auto;
+  height: 310px;
+  width: auto;
+  overflow: hidden;
+  -webkit-transition-duration: 0.05s;
+  transition-duration: 0.05s;
+}
+
+#headerTableWrapper {
+  margin: auto;
+  height: auto;
+  width: auto;
+  overflow: hidden;
+  -webkit-transition-duration: 0.05s;
+  transition-duration: 0.05s;
+}
+
+.headerTable {
+  width: 100%;
+}
+.cityTable {
+  width: 100%;
+  margin: 0px 0px 0px 0px;
+}
+
+.centerText_15 {
+  width: 15%;
+  text-align: center;
+}
+
+.centerText_25 {
+  width: 25%;
+  text-align: center;
+}
+
+.centerText_30 {
+  width: 30%;
+  text-align: center;
+}
+
+.textBold {
+  font-weight: bold;
 }

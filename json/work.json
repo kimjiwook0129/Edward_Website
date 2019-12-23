@@ -1,290 +1,345 @@
 {
-    "works": {
-        "fulltime": [
+  "works": {
+    "fulltime": [
+      {
+        "id": 1,
+        "images": [
+          {
+            "src": "./images/companies/cbg_1.jpg",
+            "credit": "© 2019 Edward Jiwook Kim"
+          },
+          {
+            "src": "./images/companies/cbg_2.jpg",
+            "credit": "© 2019 Edward Jiwook Kim"
+          }
+        ],
+        "position": {
+          "en": "Programmer & Data Analyst Intern",
+          "kr": "개발자 / 데이터 분석가"
+        },
+        "organization": {
+          "en": "Centre for Biodiversity Genomics, University of Guelph",
+          "kr": "생물다양성 유전체학 센터, 구웰프 대학 소속"
+        },
+        "duration": {
+          "en": "May 6, 2019 - Aug 30, 2019",
+          "kr": "2019년 5월 6일 - 2019년 8월 30일"
+        },
+        "region": {
+          "en": "Guelph, ON, Canada",
+          "kr": "캐나다 온타리오 구웰프"
+        },
+        "description": {
+          "en": [
+            "Visualized DNA barcode data workflow by deploying a dashboard using Google Apps/APIs",
+            "Retrieved Barcode Of Life Data (BOLD) System's taxonomy data of DNA-based species",
+            "Improved the files uploader UI/UX of mBRAVE, platform for the multiplex based on high-throughput sequencing (HTS) instruments",
+            "Debugged files metadata validation process and upgraded error handling ability of mBRAVE",
+            "Visualized hierarchical taxonomic data as a tree with pie-charted nodes using D3",
+            "Modified framework for data submissions and updates to flexibly receive inputs in different versions"
+          ],
+          "kr": [
+            "Google Apps/API를 활용해 DNA 바코드 데이터 워크플로우 시각화를 위한 계기판 개발 및 업무 보고서 작성",
+            "Barcode Of Life Data (BOLD) 시스템 분류학 DNA 자료 수집",
+            "High-throughput Sequencing(HTS) 기구를 기반으로 한 multiplex 위주 플렛폼 mBRAVE 파일 업로더 UI/UX 개선",
+            "mBRAVE 파일 메타데이터 인증 절차 오류 제거 및 처리 방식 개선",
+            "D3를 활용해 계층형 분류학 데이터를 파이도표 구성 트리구조로 시각화",
+            "다양한 버전의 데이터베이스 형식 인식을 위해 데이터 제출/수정 프레임워크 Jupyter Submissions 수정"
+          ]
+        }
+      },
+      {
+        "id": 2,
+        "images": [
+          {
+            "src": "./images/companies/sheridan_1.jpg",
+            "credit": "Map data © 2016 Google | Sheridan College"
+          },
+          {
+            "src": "./images/companies/sheridan_2.jpg",
+            "credit": "Map data © 2012 Google | Sheridan College"
+          }
+        ],
+        "position": {
+          "en": "Computer Mathematics Learning Assistant",
+          "kr": "컴퓨터 수학 조교"
+        },
+        "organization": {
+          "en": "Library and Learning Services, Sheridan College",
+          "kr": "셰리든 대학교 교육 센터"
+        },
+        "duration": {
+          "en": "May 4, 2018 - Aug 17, 2018",
+          "kr": "2018년 5월 4일 - 2018년 8월 17일"
+        },
+        "region": {
+          "en": "Oakville, ON, Canada",
+          "kr": "캐나다 온타리오 옥빌"
+        },
+        "description": {
+          "en": [
+            "Managed approximately 40% of the campus's computer mathematics course tutorials and 100% of drop-in sessions independently as the only computer mathematics learning assistant",
+            "Analyzed the campus library learning centre's Database Management System (DBMS) SharePoint and redesigned its supplementary models with the representation of their practicalities",
+            "Produced question packets for Calculus and Computer Mathematics courses, which professors requested to incorporate into the course materials, constructing creative applications of the courses"
+          ],
+          "kr": [
+            "컴퓨터수학 수업 40%의 tutorial 운영 및 강의와 캠퍼스 전 수학 drop-in session 담당",
+            "캠퍼스 교육 센터 데이터베이스 관리 시스템 SharePoint 분석 및 실용성 위주 대안 디자인/모델 구현에 관한 업무 보고서 작성",
+            "응용 위주의 미적분 및 컴퓨터수학 수업 시험대비 문제지 작성, 담당 교수가 수업 내용과 통합 요청"
+          ]
+        }
+      }
+    ],
+    "parttime": {
+      "longterm": [
+        {
+          "id": 1,
+          "images": [
             {
-                "id": 1,
-                "images": [
-                    {
-                        "src": "./images/companies/cbg_1.jpg",
-                        "credit": "© 2019 Edward Jiwook Kim"
-                    },{
-                        "src": "./images/companies/cbg_2.jpg",
-                        "credit": "© 2019 Edward Jiwook Kim"
-                    }
-                ],
-                "position": {
-                    "en": "Programmer & Data Analyst Intern",
-                    "kr": "개발자 / 데이터 분석가"
-                },
-                "organization": {
-                    "en": "Centre for Biodiversity Genomics, University of Guelph",
-                    "kr": "생물다양성 유전체학 센터, 구웰프 대학 소속"
-                },
-                "duration": {
-                    "en": "May 6, 2019 - Aug 30, 2019",
-                    "kr": "2019년 5월 6일 - 2019년 8월 30일"
-                },
-                "region": {
-                    "en": "Guelph, ON, Canada",
-                    "kr": "캐나다 온타리오 구웰프"
-                },
-                "description": {
-                    "en": [
-                        "Visualized DNA barcode data workflow by deploying a dashboard using Google Apps/APIs",
-                        "Retrieved Barcode Of Life Data (BOLD) System's taxonomy data of DNA-based species",
-                        "Improved the files uploader UI/UX of mBRAVE, platform for the multiplex based on high-throughput sequencing (HTS) instruments",
-                        "Debugged files metadata validation process and upgraded error handling ability of mBRAVE",
-                        "Visualized hierarchical taxonomic data as a tree with pie-charted nodes using D3",
-                        "Modified framework for data submissions and updates to flexibly receive inputs in different versions"
-                    ],
-                    "kr": [
-                        "Google Apps/API를 활용해 DNA 바코드 데이터 워크플로우 시각화를 위한 계기판 개발 및 업무 보고서 작성",
-                        "Barcode Of Life Data (BOLD) 시스템 분류학 DNA 자료 수집",
-                        "High-throughput Sequencing(HTS) 기구를 기반으로 한 multiplex 위주 플렛폼 mBRAVE 파일 업로더 UI/UX 개선",
-                        "mBRAVE 파일 메타데이터 인증 절차 오류 제거 및 처리 방식 개선",
-                        "D3를 활용해 계층형 분류학 데이터를 파이도표 구성 트리구조로 시각화",
-                        "다양한 버전의 데이터베이스 형식 인식을 위해 데이터 제출/수정 프레임워크 Jupyter Submissions 수정"
-                    ]
-                }
+              "src": "./images/companies/#",
+              "credit": "Photo by © Edward Jiwook Kim"
             },
             {
-                "id": 2,
-                "images": [
-                    {
-                        "src": "./images/companies/sheridan_1.jpg",
-                        "credit": "Map data © 2016 Google | Sheridan College"
-                    },{
-                        "src": "./images/companies/sheridan_2.jpg",
-                        "credit": "Map data © 2012 Google | Sheridan College"
-                    }
-                ],
-                "position": {
-                    "en": "Computer Mathematics Learning Assistant",
-                    "kr": "컴퓨터 수학 조교"
-                },
-                "organization": {
-                    "en": "Library and Learning Services, Sheridan College",
-                    "kr": "셰리든 대학교 교육 센터"
-                },
-                "duration": {
-                    "en": "May 4, 2018 - Aug 17, 2018",
-                    "kr": "2018년 5월 4일 - 2018년 8월 17일"
-                },
-                "region": {
-                    "en": "Oakville, ON, Canada",
-                    "kr": "캐나다 온타리오 옥빌"
-                },
-                "description": {
-                    "en": [
-                        "Managed approximately 40% of the campus's computer mathematics course tutorials and 100% of drop-in sessions independently as the only computer mathematics learning assistant",
-                        "Analyzed the campus library learning centre's Database Management System (DBMS) SharePoint and redesigned its supplementary models with the representation of their practicalities",
-                        "Produced question packets for Calculus and Computer Mathematics courses, which professors requested to incorporate into the course materials, constructing creative applications of the courses"
-                    ],
-                    "kr": [
-                        "컴퓨터수학 수업 40%의 tutorial 운영 및 강의와 캠퍼스 전 수학 drop-in session 담당",
-                        "캠퍼스 교육 센터 데이터베이스 관리 시스템 SharePoint 분석 및 실용성 위주 대안 디자인/모델 구현에 관한 업무 보고서 작성",
-                        "응용 위주의 미적분 및 컴퓨터수학 수업 시험대비 문제지 작성, 담당 교수가 수업 내용과 통합 요청"
-                    ]
-                }
+              "src": "./images/companies/#",
+              "credit": "Photo by © Edward Jiwook Kim"
             }
-        ],
-        "parttime": {
-            "longterm": [
-                {
-                    "id": 1,
-                    "images": [
-                        {
-                            "src": "./images/companies/tutor_1.jpg",
-                            "credit": "Photo by © John Moeses Bauan on Unsplash"
-                        },{
-                            "src": "./images/companies/tutor_2.jpg",
-                            "credit": "Photo by © Oscar Nord on Unsplash"
-                        }
-                    ],
-                    "position": {
-                        "en": "Mathematics/Physics Private Tutor",
-                        "kr": "수학/물리 개인 과외"
-                    },
-                    "organization": {
-                        "en": "Self-employed",
-                        "kr": "개인 과외"
-                    },
-                    "duration": {
-                        "en": "Nov 2016 - Apr 2018",
-                        "kr": "2016년 11월 - 2018년 4월"
-                    },
-                    "region": {
-                        "en": "Cairo, Egypt | Waterloo, ON, Canada",
-                        "kr": "이집트 카이로 | 캐나다 온타리오 워털루"
-                    },
-                    "description": {
-                        "en": [
-                            "Interacted with students in wide age range from 4th grade to first-year Undergraduate student",
-                            "Experienced in teaching calculus, pre-calculus, algebra, physics: mechanics fundamentals, and Python",
-                            "Mastered diverse and efficient teaching skills through years of teaching face-to-face and using webcam"
-                        ],
-                        "kr": [
-                            "초등학교 4학년부터 대학교 1학년까지 다양한 연령대 학생들과의 과외 경험",
-                            "미적분, 대수학, 물리(역학), 컴퓨터 공학(파이썬), 연령대별 수학 과외 경험",
-                            "2년간의 원정 과외와 웹캠을 이용한 원격 과외를 통한 효율적이고 다양한 수업 방식 습득"
-                        ]
-                    }
-                }
+          ],
+          "position": {
+            "en": "AP, IB, SAT Instructor",
+            "kr": "AP, IB, SAT 강사"
+          },
+          "organization": {
+            "en": "ASAP Academy",
+            "kr": "프리미엄 맞춤수업 학원"
+          },
+          "duration": {
+            "en": "Dec 9, 2019 - 현재",
+            "kr": "2019년 12월 9일 - Current"
+          },
+          "region": {
+            "en": "Gangnam, Seoul, South Korea",
+            "kr": "대한민국 서울시 강남구"
+          },
+          "description": {
+            "en": ["Subjects: SAT Maths, IB SL/HL Maths, IB SL Physics"],
+            "kr": ["담당 과목들: SAT 수학, IB SL/HL 수학, IB SL 물리"]
+          }
+        },
+        {
+          "id": 2,
+          "images": [
+            {
+              "src": "./images/companies/tutor_1.jpg",
+              "credit": "Photo by © John Moeses Bauan on Unsplash"
+            },
+            {
+              "src": "./images/companies/tutor_2.jpg",
+              "credit": "Photo by © Oscar Nord on Unsplash"
+            }
+          ],
+          "position": {
+            "en": "Mathematics/Physics Private Tutor",
+            "kr": "수학/물리 개인 과외"
+          },
+          "organization": {
+            "en": "Self-employed",
+            "kr": "개인 과외"
+          },
+          "duration": {
+            "en": "Nov 2016 - Apr 2018",
+            "kr": "2016년 11월 - 2018년 4월"
+          },
+          "region": {
+            "en": "Cairo, Egypt | Waterloo, ON, Canada",
+            "kr": "이집트 카이로 | 캐나다 온타리오 워털루"
+          },
+          "description": {
+            "en": [
+              "Interacted with students in wide age range from 4th grade to first-year Undergraduate student",
+              "Experienced in teaching calculus, pre-calculus, algebra, physics: mechanics fundamentals, and Python",
+              "Mastered diverse and efficient teaching skills through years of teaching face-to-face and using webcam"
             ],
-            "shortterm": [
-                {
-                    "id": 1,
-                    "role": {
-                        "en":"Promotional Gifts Event Staff",
-                        "kr":"사은품 이벤트 스텝"
-                    },
-                    "organization": {
-                        "en": "Double S Company (Hyundai Department Store)",
-                        "kr": "더블에스컴퍼니 (현대백화점)"
-                    },
-                    "duration": {
-                        "en":"Nov 11, 2019 - Nov 12, 2019",
-                        "kr":"2019년 11월 11일 - 2019년 11월 12일"
-                    },
-                    "region": {
-                        "en":"Ulsan, South Korea",
-                        "kr":"대한민국 울산"
-                    }
-                },
-                {
-                    "id": 2,
-                    "role": {
-                        "en":"Parking Guidance",
-                        "kr":"주차안내"
-                    },
-                    "organization": {
-                        "en":"Co Be Plan (TECHNO HOBAN VERTIUM)",
-                        "kr":"코비플랜 (테크노호반베르디움)"
-                    },
-                    "duration": {
-                        "en":"Oct 26, 2019 - Oct 28, 2019",
-                        "kr":"2019년 10월 26일 - 2019년 10월 28일"
-                    },
-                    "region": {
-                        "en":"Ulsan, South Korea",
-                        "kr":"대한민국 울산"
-                    }
-                },
-                {
-                    "id": 3,
-                    "role": {
-                        "en":"Interpreter & Information Staff",
-                        "kr":"통역 및 인포메이션"
-                    },
-                    "organization": {
-                        "en":"신세대 Entertainment (Korea Leading Market EXPO 2019)",
-                        "kr":"신세대엔터테이먼트 (전국우수시장박람회 2019)"
-                    },
-                    "duration": {
-                        "en":"Oct 17, 2019 - Oct 20, 2019",
-                        "kr":"2019년 10월 17일 - 2019년 10월 20일"
-                    },
-                    "region": {
-                        "en":"Ulsan, South Korea",
-                        "kr":"대한민국 울산"
-                    }
-                },
-                {
-                    "id": 4,
-                    "role": {
-                        "en":"Cafeteria",
-                        "kr":"카페테리아"
-                    },
-                    "organization": {
-                        "en":"Co Be Plan (KCC Switzen)",
-                        "kr":"코비플랜 (KCC 스위첸)"
-                    },
-                    "duration": {
-                        "en":"Oct 11, 2019 - Oct 13, 2019",
-                        "kr":"2019년 10월 11일 - 2019년 10월 13일"
-                    },
-                    "region": {
-                        "en":"Ulsan, South Korea",
-                        "kr":"대한민국 울산"
-                    }
-                },
-                {
-                    "id": 5,
-                    "role": {
-                        "en":"Local Festival Mentor",
-                        "kr":"신바람에너지 놀이터 지역축제 멘토"
-                    },
-                    "organization": {
-                        "en":"Chehumfactory (Korea Energy Agency)",
-                        "kr":"체험팩토리 (한국에너지공단)"
-                    },
-                    "duration": {
-                        "en":"Oct 4, 2019 - Oct 5, 2019",
-                        "kr":"2019년 10월 4일 - 2019년 10월 5일"
-                    },
-                    "region": {
-                        "en":"Ulsan, South Korea",
-                        "kr":"대한민국 울산"
-                    }
-                },
-                {
-                    "id": 6,
-                    "role": {
-                        "en":"Doll Mask & Withdrawal",
-                        "kr":"인형탈 및 철수"
-                    },
-                    "organization": {
-                        "en":"taucompany (Penterium)",
-                        "kr":"타우컴퍼니 (금강펜테리움)"
-                    },
-                    "duration": {
-                        "en":"Sep 21, 2019 - Sep 22, 2019",
-                        "kr":"2019년 9월 21일 - 2019년 9월 22일"
-                    },
-                    "region": {
-                        "en":"Ulsan, South Korea",
-                        "kr":"대한민국 울산"
-                    }
-                },
-                {
-                    "id": 7,
-                    "role": {
-                        "en":"Concert MR Delivery, PD Assistance",
-                        "kr":"콘서트 진행요원, MR전달, 출연PD 보조 및 무대관리"
-                    },
-                    "organization": {
-                        "en":"Ludicrum (Korean Federation of Community Credit Cooperatives)",
-                        "kr":"루디크럼 (MG새마을금고)"
-                    },
-                    "duration": {
-                        "en":"Sep 18, 2019",
-                        "kr":"2019년 9월 18일"
-                    },
-                    "region": {
-                        "en":"Ulsan, South Korea",
-                        "kr":"대한민국 울산"
-                    }
-                },
-                {
-                    "id": 8,
-                    "role": {
-                        "en":"Cargo Labour",
-                        "kr":"소형화물단순 하차"
-                    },
-                    "organization": {
-                        "en":"다원 Logistics (CJ Logistics)",
-                        "kr":"다원로지스틱스 (CJ 대한통운)"
-                    },
-                    "duration": {
-                        "en":"Sep 10, 2019",
-                        "kr":"2019년 9월 10일"
-                    },
-                    "region": {
-                        "en":"Ulsan, South Korea",
-                        "kr":"대한민국 울산"
-                    }
-                }
+            "kr": [
+              "초등학교 4학년부터 대학교 1학년까지 다양한 연령대 학생들과의 과외 경험",
+              "미적분, 대수학, 물리(역학), 컴퓨터 공학(파이썬), 연령대별 수학 과외 경험",
+              "2년간의 원정 과외와 웹캠을 이용한 원격 과외를 통한 효율적이고 다양한 수업 방식 습득"
             ]
+          }
         }
+      ],
+      "shortterm": [
+        {
+          "id": 1,
+          "role": {
+            "en": "Promotional Gifts Event Staff",
+            "kr": "사은품 이벤트 스텝"
+          },
+          "organization": {
+            "en": "Double S Company (Hyundai Department Store)",
+            "kr": "더블에스컴퍼니 (현대백화점)"
+          },
+          "duration": {
+            "en": "Nov 11, 2019 - Nov 12, 2019",
+            "kr": "2019년 11월 11일 - 2019년 11월 12일"
+          },
+          "region": {
+            "en": "Ulsan, South Korea",
+            "kr": "대한민국 울산"
+          }
+        },
+        {
+          "id": 2,
+          "role": {
+            "en": "Parking Guidance",
+            "kr": "주차안내"
+          },
+          "organization": {
+            "en": "Co Be Plan (Techno Hoban Vertium Complex 1)",
+            "kr": "코비플랜 (테크노호반베르디움 1차)"
+          },
+          "duration": {
+            "en": "Oct 26, 2019 - Oct 28, 2019",
+            "kr": "2019년 10월 26일 - 2019년 10월 28일"
+          },
+          "region": {
+            "en": "Ulsan, South Korea",
+            "kr": "대한민국 울산"
+          }
+        },
+        {
+          "id": 3,
+          "role": {
+            "en": "Interpreter & Information Staff",
+            "kr": "통역 및 인포메이션"
+          },
+          "organization": {
+            "en": "신세대 Entertainment (Korea Leading Market EXPO 2019)",
+            "kr": "신세대엔터테이먼트 (전국우수시장박람회 2019)"
+          },
+          "duration": {
+            "en": "Oct 17, 2019 - Oct 20, 2019",
+            "kr": "2019년 10월 17일 - 2019년 10월 20일"
+          },
+          "region": {
+            "en": "Ulsan, South Korea",
+            "kr": "대한민국 울산"
+          }
+        },
+        {
+          "id": 4,
+          "role": {
+            "en": "Cafeteria",
+            "kr": "카페테리아"
+          },
+          "organization": {
+            "en": "Co Be Plan (KCC Switzen)",
+            "kr": "코비플랜 (KCC 스위첸)"
+          },
+          "duration": {
+            "en": "Oct 11, 2019 - Oct 13, 2019",
+            "kr": "2019년 10월 11일 - 2019년 10월 13일"
+          },
+          "region": {
+            "en": "Ulsan, South Korea",
+            "kr": "대한민국 울산"
+          }
+        },
+        {
+          "id": 5,
+          "role": {
+            "en": "Local Festival Mentor",
+            "kr": "신바람에너지 놀이터 지역축제 멘토"
+          },
+          "organization": {
+            "en": "Chehumfactory (Korea Energy Agency)",
+            "kr": "체험팩토리 (한국에너지공단)"
+          },
+          "duration": {
+            "en": "Oct 4, 2019 - Oct 5, 2019",
+            "kr": "2019년 10월 4일 - 2019년 10월 5일"
+          },
+          "region": {
+            "en": "Ulsan, South Korea",
+            "kr": "대한민국 울산"
+          }
+        },
+        {
+          "id": 6,
+          "role": {
+            "en": "Doll Mask & Withdrawal",
+            "kr": "인형탈 및 철수"
+          },
+          "organization": {
+            "en": "taucompany (Penterium)",
+            "kr": "타우컴퍼니 (금강펜테리움)"
+          },
+          "duration": {
+            "en": "Sep 21, 2019 - Sep 22, 2019",
+            "kr": "2019년 9월 21일 - 2019년 9월 22일"
+          },
+          "region": {
+            "en": "Ulsan, South Korea",
+            "kr": "대한민국 울산"
+          }
+        },
+        {
+          "id": 7,
+          "role": {
+            "en": "Concert MR Delivery, PD Assistance",
+            "kr": "콘서트 진행요원, MR전달, 출연PD 보조 및 무대관리"
+          },
+          "organization": {
+            "en": "Ludicrum (Korean Federation of Community Credit Cooperatives)",
+            "kr": "루디크럼 (MG새마을금고)"
+          },
+          "duration": {
+            "en": "Sep 18, 2019",
+            "kr": "2019년 9월 18일"
+          },
+          "region": {
+            "en": "Ulsan, South Korea",
+            "kr": "대한민국 울산"
+          }
+        },
+        {
+          "id": 8,
+          "role": {
+            "en": "Cargo Labour",
+            "kr": "소형화물단순 하차"
+          },
+          "organization": {
+            "en": "다원 Logistics (CJ Logistics)",
+            "kr": "다원로지스틱스 (CJ 대한통운)"
+          },
+          "duration": {
+            "en": "Sep 10, 2019",
+            "kr": "2019년 9월 10일"
+          },
+          "region": {
+            "en": "Ulsan, South Korea",
+            "kr": "대한민국 울산"
+          }
+        },
+        {
+          "id": 9,
+          "role": {
+            "en": "Installation / Photo Studio Assistance",
+            "kr": "설치 / 사진관 보조"
+          },
+          "organization": {
+            "en": "Co Be Plan (Techno Hoban Vertium Complex 3)",
+            "kr": "코비플랜 (테크노호반베르디움 3차)"
+          },
+          "duration": {
+            "en": "Nov 29, 2019 - Dec 1, 2019",
+            "kr": "2019년 11월 29일 - 2019년 12월 1일"
+          },
+          "region": {
+            "en": "Ulsan, South Korea",
+            "kr": "대한민국 울산"
+          }
+        }
+      ]
     }
+  }
 }

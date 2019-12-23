@@ -49,6 +49,9 @@ li {
     text-align: center;
     width: 50px;
 }
+.exp {
+    margin: 0 0 0 0;
+  }
 
 .switch {
     border-radius: 20px;

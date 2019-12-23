@@ -135,6 +135,8 @@ if (!$conn->connect_error) { // when database is connected
 		<meta name="keywords" content="HTML,CSS,JavaScript">
 		<meta name="author" content="Edward Jiwook Kim">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="css/common.css">
         <link rel="stylesheet" href="css/index.css">
         <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
@@ -145,52 +147,28 @@ if (!$conn->connect_error) { // when database is connected
         <script src="https://cdnjs.cloudflare.com/ajax/libs/particlesjs/2.2.3/particles.min.js"></script>
         <script src="https://d3js.org/d3.v5.min.js"></script>
     </head>
-    <body>
+    <body id="particle_background">
+        <!--<canvas class="background">            
+        </canvas>-->
         <div class="page-container">
             <div class="navbar-blank" style="height:50px"></div>
             <nav class="navbar navbar-fixed-top" id="navbar"></nav>
             <div class="below-nav-container">
-                <div class="jumbotron-blank">
-                </div>
-                <div class="jumbotron" style="padding:0; margin-top: 50px; margin-bottom:0px; top: 0;">
-                    <div class="jumbotron-content">
-                        <img class="my-face" src="./images/face.png" alt="Edward's face" height="90" width="90">
-                        <div class="jumbotron-below">
-                            <button id="click-me" onclick="infoUp()"type="button" class="btn btn-default"><h4 id="clickMeText">Click Me!</h4></button>
+                <div class="main-contents" style="margin-top:20px; z-index:100">
+                    <div id="profile" class="row container" style="margin: 0 auto">
+                        <div class="col-sm-4">
+                            <div class="image-container">
+                                <img id="my-face" class="image-itself" src="./images/faces/face_1" alt="Edward Jiwook Kim" style="width:100%">
+                            </div>
+                            <div class="image-credit">
+                                <p id="reference">© 2019 Edward Jiwook Kim</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-8">
+                            <h4 id="myName">Edward Jiwook Kim</h4>
+                            <ul id="summary"></ul>
                         </div>
                     </div>
-                    <div class="particles-container">
-                        <canvas class="background">
-                        </canvas>
-                        <script src="index.js"></script>
-                    </div>
-                </div>
-                <script>
-                    function infoUp() {
-                        $("#click-me").remove();
-                        $(".jumbotron-content").css("width","260px");
-                        $(".jumbotron-content").css("margin-left","-130px");
-                        $(".jumbotron-below").css("height","80px");
-                        setTimeout(function() {
-                            if ($("#lang-setting").is(':checked')) {
-                                $text1 = $("<h3></h3>").attr("id", "clickText1").text("에드워드, 김지욱");
-                                $text2 = $("<h4></h4>").attr("id", "clickText2").text("안녕하세요? 이곳에선 저에 대해서");
-                                $text3 = $("<h4></h4>").attr("id", "clickText3").text("더 자세히 아실 수 있어요!");
-                                $(".jumbotron-below").append($text1);
-                                $(".jumbotron-below").append($text2);
-                                $(".jumbotron-below").append($text3);
-                            } else {
-                                $text1 = $("<h3></h3>").attr("id", "clickText1").text("Edward Jiwook Kim");
-                                $text2 = $("<h4></h4>").attr("id", "clickText2").text("Welcome to my website,");
-                                $text3 = $("<h4></h4>").attr("id", "clickText3").text("You'll find more about me here!");
-                                $(".jumbotron-below").append($text1);
-                                $(".jumbotron-below").append($text2);
-                                $(".jumbotron-below").append($text3);
-                            }
-                        }, 100); // 0.1s
-                    }
-                </script>
-                <div class="main-contents">
                     <div class="quote-box">
                         <div class="quote-container">
                             <h4 id="quote-generate"></h4>
@@ -397,6 +375,8 @@ if (!$conn->connect_error) { // when database is connected
                 <br>
                 <footer class="footer-container"></footer>
                 <script src="./common.js"></script>
+                <!--<script src="./index.js"></script>-->
+                <script src="./profile.js"></script>
                 <script src="./index_quotes.js"></script>
                 <script src="./index_visit_charts.js"></script>
                 <script src="./index_charts.js"></script>

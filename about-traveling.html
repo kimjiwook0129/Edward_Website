@@ -1,171 +1,292 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Edward Jiwook Kim</title>
-        <meta charset="UTF-8">
-        <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
-		<meta name="description" content="Personal Website">
-		<meta name="keywords" content="HTML,CSS,JavaScript">
-		<meta name="author" content="Edward Jiwook Kim">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/common.css">
-        <link rel="stylesheet" href="css/about-traveling.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-        <script src="https://d3js.org/d3.v5.min.js"></script>
-    </head>
-    <body>
-        <div class="page-container">
-            <div class="navbar-blank" style="height:50px"></div>
-            <nav class="navbar navbar-fixed-top" id="navbar"></nav>
-            <div class="below-nav-container">
-                <div class="map-holder">
-                    <div id="map"></div>
-                    <div class="container" id="map-instruct">
-                        <div class="row">
-                            <div class="col-sm-3" style="text-align: center;">
-                                <div id="icon-holder">
-                                    <img id="icon"src='http://maps.google.com/mapfiles/ms/icons/red-dot.png'>
-                                </div>
-                                <div id="icon-instruct">
-                                    <b><p id="CL" style="margin-bottom:0;">Current Location</p></b>
-                                </div>
-                            </div>
-                            <div class="col-sm-3" style="text-align: center;">
-                                <div id="icon-holder">
-                                    <img id="icon"src='http://maps.google.com/mapfiles/ms/icons/green-dot.png'>
-                                </div>
-                                <div id="icon-instruct">
-                                    <b><p id="PL" style="margin-bottom:0;">Place Lived</p></b>
-                                </div>
-                            </div>
-                            <div class="col-sm-3" style="text-align: center;">
-                                <div id="icon-holder">
-                                    <img id="icon"src='http://maps.google.com/mapfiles/ms/icons/blue-dot.png'>
-                                </div>
-                                <div id="icon-instruct">
-                                    <b><p id="PT" style="margin-bottom:0;">Place Traveled</p></b>
-                                </div>
-                            </div>
-                            <div class="col-sm-3" style="text-align: center;">
-                                <div id="icon-holder">
-                                    <img id="icon"src='http://maps.google.com/mapfiles/ms/icons/yellow-dot.png'>
-                                </div>
-                                <div id="icon-instruct">
-                                    <b><p id="PV" style="margin-bottom:0;">Place Visited</p></b>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+  <head>
+    <title>Edward Jiwook Kim</title>
+    <meta charset="UTF-8" />
+    <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE" />
+    <meta name="description" content="Personal Website" />
+    <meta name="keywords" content="HTML,CSS,JavaScript" />
+    <meta name="author" content="Edward Jiwook Kim" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/about-traveling.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+  </head>
+  <body>
+    <div class="page-container">
+      <div class="navbar-blank" style="height:50px"></div>
+      <nav class="navbar navbar-fixed-top" id="navbar"></nav>
+      <div class="below-nav-container">
+        <div class="map-holder">
+          <div id="map" class="border-solid-black"></div>
+          <div class="container border-solid-black" id="map-instruct">
+            <div class="row">
+              <div class="col-sm-3" style="text-align: center;">
+                <div id="icon-holder">
+                  <img
+                    id="icon"
+                    src="http://maps.google.com/mapfiles/ms/icons/red-dot.png"
+                  />
                 </div>
-                <script src="about-traveling.js"></script>
-                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPzgr8J19VMbYnPpb4arHfMKyAkmzK1nQ&callback=initMap" async defer>
-                </script>
-                <div class="main-contents">
-                    <h2 id="so-far-statement" style="text-align:center;">So far, I have been to...</h2>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-sm-4" id="outer-box-holder">
-                                <div id="inner-box-holder">
-                                    <div class="box-icon-holder">
-                                        <img style="margin: 0 auto; margin-top: 15%; width:70%; height: 70%;"src='images/earth.png'>
-                                    </div>
-                                    <div class="box-text">
-                                        <div id="continent-count"><h2 class="num"></h2></div>
-                                        <h2 id="continents-text">CONTINENTS</h2>
-                                        <div>Icons made by 
-                                            <a href="https://www.freepik.com/" title="Freepik">
-                                                Freepik
-                                            </a>from
-                                            <a href="https://www.flaticon.com/" title="Flaticon">
-                                                www.flaticon.com
-                                            </a><br>is licensed by
-                                            <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">
-                                                CC 3.0 BY
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-4" id="outer-box-holder">
-                                <div id="inner-box-holder">
-                                    <div class="box-icon-holder">
-                                        <img style="margin: 0 auto; margin-top: 15%; width:70%; height: 70%;" src='images/country.png'>
-                                    </div>
-                                    <div class="box-text">
-                                        <div id="country-count"><h2 class="num"></h2></div>
-                                        <h2 id="countries-text">COUNTRIES</h2>
-                                        <div>Icons made by
-                                            <a href="https://www.freepik.com/" title="Freepik">
-                                                Freepik
-                                            </a> from 
-                                            <a href="https://www.flaticon.com/" title="Flaticon">
-                                                www.flaticon.com
-                                            </a><br>is licensed by 
-                                            <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">
-                                                CC 3.0 BY
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-4" id="outer-box-holder">
-                                <div id="inner-box-holder">
-                                    <div class="box-icon-holder">
-                                        <img style="margin: 0 auto; margin-top: 15%; width:70%; height: 70%;"src='images/city.png'>
-                                    </div>
-                                    <div class="box-text" style="overflow: hidden;">
-                                        <div id="city-count"><h2 class="num"></h2></div>
-                                        <h2 id="cities-text">CITIES</h2>
-                                        <div>Icons made by
-                                            <a href="https://www.flaticon.com/authors/recep-kutuk" title="Recep Kutuk">
-                                                Recep Kutuk
-                                            </a> from 
-                                            <a href="https://www.flaticon.com/" title="Flaticon">
-                                                www.flaticon.com
-                                            </a><br> is licensed by 
-                                            <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <script>
-                        $(".box-icon-holder").hover(function(obj, i) {
-                            $parent = $(this).parent();
-                            $child = $parent.find(".box-text");
-                            $parent.css('transition-delay','0s');
-                            $parent.css('-webkit-transition-delay','0s');
-                            $parent.css('height',260);
-                            $child.css('height',180);
-                            $child.css('transition-delay','0s');
-                            $child.css('-webkit-transition-delay','0s');
-                        }, function() {
-                            $parent = $(this).parent();
-                            $child = $parent.find(".box-text");
-                            $parent.css('transition-delay','1.2s');
-                            $parent.css('-webkit-transition-delay','1.2s');
-                            $parent.css('height',200);
-                            $child.css('height',120);
-                            $child.css('transition-delay','1.2s');
-                            $child.css('-webkit-transition-delay','1.2s');
-                        });
-                    </script>
-                    <br>
-                    <div class="container">
-                        <p id="reference_total">* All image/icons have been used under each copyright owner's Terms of Service and permitted to be used.</p>
-                    </div>
+                <div id="icon-instruct">
+                  <b
+                    ><p id="CL" style="margin-bottom:0;">Current Location</p></b
+                  >
                 </div>
-                <footer class="footer-container"></footer>
-                <script src="./common.js"></script>
-                <script src="./common_lang.js"></script>
-                <script src="./about-traveling-translate.js"></script>
+              </div>
+              <div class="col-sm-3" style="text-align: center;">
+                <div id="icon-holder">
+                  <img
+                    id="icon"
+                    src="http://maps.google.com/mapfiles/ms/icons/green-dot.png"
+                  />
+                </div>
+                <div id="icon-instruct">
+                  <b><p id="PL" style="margin-bottom:0;">Place Lived</p></b>
+                </div>
+              </div>
+              <div class="col-sm-3" style="text-align: center;">
+                <div id="icon-holder">
+                  <img
+                    id="icon"
+                    src="http://maps.google.com/mapfiles/ms/icons/blue-dot.png"
+                  />
+                </div>
+                <div id="icon-instruct">
+                  <b><p id="PT" style="margin-bottom:0;">Place Traveled</p></b>
+                </div>
+              </div>
+              <div class="col-sm-3" style="text-align: center;">
+                <div id="icon-holder">
+                  <img
+                    id="icon"
+                    src="http://maps.google.com/mapfiles/ms/icons/yellow-dot.png"
+                  />
+                </div>
+                <div id="icon-instruct">
+                  <b><p id="PV" style="margin-bottom:0;">Place Visited</p></b>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-    </body>
-</html>
+        <script src="about-traveling.js"></script>
+        <script
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAPzgr8J19VMbYnPpb4arHfMKyAkmzK1nQ&callback=initMap"
+          async
+          defer
+        ></script>
+        <div class="main-contents">
+          <h2 id="so-far-statement" style="text-align:center;">
+            So far, I have been to...
+          </h2>
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-4 outer-box-holder">
+                <div
+                  class="inner-box-holder inner-box-holder-short border-solid-black"
+                >
+                  <div class="box-icon-holder">
+                    <img
+                      style="margin: 0 auto; margin-top: 15%; width:70%; height: 70%;"
+                      src="images/earth.png"
+                    />
+                  </div>
+                  <div class="box-text">
+                    <div id="continent-count"><h2 class="num"></h2></div>
+                    <h2 id="continents-text">CONTINENTS</h2>
+                    <div>
+                      Icons made by
+                      <a href="https://www.freepik.com/" title="Freepik">
+                        Freepik </a
+                      >from
+                      <a href="https://www.flaticon.com/" title="Flaticon">
+                        www.flaticon.com </a
+                      ><br />is licensed by
+                      <a
+                        href="http://creativecommons.org/licenses/by/3.0/"
+                        title="Creative Commons BY 3.0"
+                        target="_blank"
+                      >
+                        CC 3.0 BY
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4 outer-box-holder">
+                <div
+                  class="inner-box-holder inner-box-holder-short border-solid-black"
+                >
+                  <div class="box-icon-holder">
+                    <img
+                      style="margin: 0 auto; margin-top: 15%; width:70%; height: 70%;"
+                      src="images/country.png"
+                    />
+                  </div>
+                  <div class="box-text">
+                    <div id="country-count"><h2 class="num"></h2></div>
+                    <h2 id="countries-text">COUNTRIES</h2>
+                    <div>
+                      Icons made by
+                      <a href="https://www.freepik.com/" title="Freepik">
+                        Freepik
+                      </a>
+                      from
+                      <a href="https://www.flaticon.com/" title="Flaticon">
+                        www.flaticon.com </a
+                      ><br />is licensed by
+                      <a
+                        href="http://creativecommons.org/licenses/by/3.0/"
+                        title="Creative Commons BY 3.0"
+                        target="_blank"
+                      >
+                        CC 3.0 BY
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-4 outer-box-holder">
+                <div
+                  class="inner-box-holder inner-box-holder-short border-solid-black"
+                >
+                  <div class="box-icon-holder">
+                    <img
+                      style="margin: 0 auto; margin-top: 15%; width:70%; height: 70%;"
+                      src="images/city.png"
+                    />
+                  </div>
+                  <div class="box-text" style="overflow: hidden;">
+                    <div id="city-count"><h2 class="num"></h2></div>
+                    <h2 id="cities-text">CITIES</h2>
+                    <div>
+                      Icons made by
+                      <a
+                        href="https://www.flaticon.com/authors/recep-kutuk"
+                        title="Recep Kutuk"
+                      >
+                        Recep Kutuk
+                      </a>
+                      from
+                      <a href="https://www.flaticon.com/" title="Flaticon">
+                        www.flaticon.com </a
+                      ><br />
+                      is licensed by
+                      <a
+                        href="http://creativecommons.org/licenses/by/3.0/"
+                        title="Creative Commons BY 3.0"
+                        target="_blank"
+                        >CC 3.0 BY
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-sm-6 outer-box-holder">
+                <div
+                  class="inner-box-holder inner-box-holder-long border-solid-black"
+                >
+                  <h2 style="text-align:center">Counts per Continent</h2>
+                  <div style="text-align:center" id="countPerContinentPieChart">
+                    <form style="text-align:center">
+                      <label>
+                        <input
+                          type="radio"
+                          name="dataset"
+                          value="city"
+                          checked
+                        />
+                        City
+                      </label>
+                      <label>
+                        <input type="radio" name="dataset" value="country" />
+                        Country
+                      </label>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 outer-box-holder">
+                <div
+                  class="inner-box-holder inner-box-holder-long border-solid-black"
+                >
+                  <h2 style="text-align: center;" id="countries-text">
+                    City Count per Country
+                  </h2>
+                  <div id="headerTableWrapper">
+                    <table class="headerTable" style="overflow: auto;">
+                      <tr>
+                        <th class="centerText_15">Rank</th>
+                        <th class="centerText_30">Country</th>
+                        <th class="centerText_25">
+                          City Count
+                        </th>
+                        <th class="centerText_30">
+                          Proportion
+                        </th>
+                      </tr>
+                    </table>
+                  </div>
 
+                  <div id="cityPerCountryDropdown" style="overflow: auto;">
+                    <table class="cityTable" style="overflow: auto;"></table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <script>
+            $(".box-icon-holder").hover(
+              function(obj, i) {
+                $parent = $(this).parent();
+                $child = $parent.find(".box-text");
+                $parent.css("transition-delay", "0s");
+                $parent.css("-webkit-transition-delay", "0s");
+                $parent.css("height", 260);
+                $child.css("height", 180);
+                $child.css("transition-delay", "0s");
+                $child.css("-webkit-transition-delay", "0s");
+              },
+              function() {
+                $parent = $(this).parent();
+                $child = $parent.find(".box-text");
+                $parent.css("transition-delay", "1.2s");
+                $parent.css("-webkit-transition-delay", "1.2s");
+                $parent.css("height", 200);
+                $child.css("height", 120);
+                $child.css("transition-delay", "1.2s");
+                $child.css("-webkit-transition-delay", "1.2s");
+              }
+            );
+          </script>
+          <br />
+          <div class="container">
+            <p id="reference_total">
+              * All image/icons have been used under each copyright owner's
+              Terms of Service and permitted to be used.
+            </p>
+          </div>
+        </div>
+        <footer class="footer-container"></footer>
+        <script src="./common.js"></script>
+        <script src="./common_lang.js"></script>
+        <script src="./about-traveling-translate.js"></script>
+      </div>
+    </div>
+  </body>
+</html>
