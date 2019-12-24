@@ -15,7 +15,7 @@
         ],
         "position": {
           "en": "Programmer & Data Analyst Intern",
-          "kr": "개발자 / 데이터 분석가"
+          "kr": "개발자 / 데이터 분석 인턴"
         },
         "organization": {
           "en": "Centre for Biodiversity Genomics, University of Guelph",
@@ -96,12 +96,8 @@
           "id": 1,
           "images": [
             {
-              "src": "./images/companies/#",
-              "credit": "Photo by © Edward Jiwook Kim"
-            },
-            {
-              "src": "./images/companies/#",
-              "credit": "Photo by © Edward Jiwook Kim"
+              "src": "./images/companies/asap_1.jpg",
+              "credit": "Photo by © 프리미엄 맞춤수업학원"
             }
           ],
           "position": {

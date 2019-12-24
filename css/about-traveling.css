@@ -48,6 +48,10 @@
   background-color: #ffffff;
 }
 
+.row {
+  margin-bottom: 0;
+}
+
 .inner-box-holder {
   background-color: #ffffff;
   margin: auto;

@@ -158,14 +158,14 @@ if (!$conn->connect_error) { // when database is connected
                     <div id="profile" class="row container" style="margin: 0 auto">
                         <div class="col-sm-4">
                             <div class="image-container">
-                                <img id="my-face" class="image-itself" src="./images/faces/face_1" alt="Edward Jiwook Kim" style="width:100%">
+                                <img id="my-face" class="image-itself" src="./images/faces/face_1.jpg" alt="Edward Jiwook Kim" style="width:100%">
                             </div>
                             <div class="image-credit">
                                 <p id="reference">© 2019 Edward Jiwook Kim</p>
                             </div>
                         </div>
                         <div class="col-sm-8">
-                            <h4 id="myName">Edward Jiwook Kim</h4>
+                            <h4 id="myName"></h4>
                             <ul id="summary"></ul>
                         </div>
                     </div>

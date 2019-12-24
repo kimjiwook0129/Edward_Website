@@ -1,11 +1,3 @@
-  .row {
-    margin-bottom: 20px;
-  }
-
-  video {
-      border-radius: 5px;
-  }
-  
-  .exp {
-    margin: 0 0 0 0;
-  }
+video {
+  border-radius: 5px;
+}

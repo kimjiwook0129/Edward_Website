@@ -1,46 +1,20 @@
-
-  .column {
-    padding: 5px;
-    overflow: hidden;
-    float: left;
-  }
-  
-  .image-container {
-    border: 2px solid #000000;
-    border-radius: 5px;
-    margin: 0 auto;
-    display: absolute;
-    width: 100%;
-    height: auto;
-    overflow: hidden;
-  }
-  
-.reference {
-  font-size: 10px;
-  color: #707070;
-  margin: 0 0 0 0;
+.column {
+  padding: 5px;
+  overflow: hidden;
+  float: left;
 }
-  
-  .row {
-    margin-bottom: 20px;
-  }
-  
-  .image-credit {
-    margin-right: 5px;
-    text-align: center;
-  }
-  
-  .exp {
-    margin: 0 0 0 0;
-  }
 
-  .shortterm-container {
-    padding: 5px 5px 5px 5px;
-    
-  }
+.image-credit {
+  margin-right: 5px;
+  text-align: center;
+}
 
-  .inner-shortterm-container {
-    border: 2px solid #000000;
-    border-radius: 5px;
-    padding: 5px 5px 5px 5px;
-  }
+.shortterm-container {
+  padding: 5px 5px 5px 5px;
+}
+
+.inner-shortterm-container {
+  border: 2px solid #000000;
+  border-radius: 5px;
+  padding: 5px 5px 5px 5px;
+}
