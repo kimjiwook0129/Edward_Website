@@ -1,19 +1,19 @@
 <?php
 error_reporting(0); // removes all PHP errors (localhost: no access to database)
 
-$servernameFile = fopen("servername.txt", "r");
+$servernameFile = fopen("config_data/servername.txt", "r");
 $servername = fread($servernameFile, filesize("servername.txt"));
 fclose($servernameFile);
 
-$databaseFile = fopen("database.txt", "r");
+$databaseFile = fopen("config_data/database.txt", "r");
 $database = fread($databaseFile, filesize("database.txt"));
 fclose($databaseFile);
 
-$usernameFile = fopen("username.txt", "r");
+$usernameFile = fopen("config_data/username.txt", "r");
 $username = fread($usernameFile, filesize("username.txt"));
 fclose($usernameFile);
 
-$passwordFile = fopen("password.txt", "r");
+$passwordFile = fopen("config_data/password.txt", "r");
 $password = fread($passwordFile,filesize("password.txt"));
 fclose($passwordFile);
 
