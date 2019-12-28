@@ -1,28 +1,7 @@
 <?php
-error_reporting(0); // removes all PHP errors (localhost: no access to database)
+include("php/config.php");
 
-$servernameFile = fopen("servername.txt", "r");
-$servername = fread($servernameFile, filesize("servername.txt"));
-fclose($servernameFile);
-
-$databaseFile = fopen("database.txt", "r");
-$database = fread($databaseFile, filesize("database.txt"));
-fclose($databaseFile);
-
-$usernameFile = fopen("username.txt", "r");
-$username = fread($usernameFile, filesize("username.txt"));
-fclose($usernameFile);
-
-$passwordFile = fopen("password.txt", "r");
-$password = fread($passwordFile,filesize("password.txt"));
-fclose($passwordFile);
-
-$tb_count = "user_count"; // tables in the database
-$tb_day = "day_record";
-$tb_month = "month_record";
-$tb_year = "year_record";
-
-$conn = new mysqli($servername, $username, $password, $database); // connection to database
+$conn = new mysqli($SERVER, $USERNAME, $PASSWORD, $DATABASE); // connection to database
 
 if (!$conn->connect_error) { // when database is connected
     $sql_count = "SELECT * FROM $tb_count";
