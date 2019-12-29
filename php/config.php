@@ -1,24 +1,16 @@
 <?php
-error_reporting(0); // removes all PHP errors (localhost: no access to database)
+$_DBACCESS_FILE = file_get_contents("config_data/dbaccess.json");
+$_DB_JSON = json_decode($_DBACCESS_FILE, true);
+define('_DB_HOSTNAME', $_DB_JSON['hostname']); // Hostname
+define('_DB_USERNAME', $_DB_JSON['username']); // Username
+define('_DB_PASSWORD', $_DB_JSON['password']); // Password
+define('_DB_DATABASE', $_DB_JSON['database']); // Database
 
-$servernameFile = fopen("config_data/servername.txt", "r");
-$SERVER = fread($servernameFile, filesize("config_data/servername.txt"));
-fclose($servernameFile);
+// GLOBALS
+$CONN = new mysqli(_DB_HOSTNAME,_DB_USERNAME,_DB_PASSWORD,_DB_DATABASE); // CONNECTION
 
-$databaseFile = fopen("config_data/database.txt", "r");
-$DATABASE = fread($databaseFile, filesize("config_data/database.txt"));
-fclose($databaseFile);
-
-$usernameFile = fopen("config_data/username.txt", "r");
-$USERNAME = fread($usernameFile, filesize("config_data/username.txt"));
-fclose($usernameFile);
-
-$passwordFile = fopen("config_data/password.txt", "r");
-$PASSWORD = fread($passwordFile,filesize("config_data/password.txt"));
-fclose($passwordFile);
-
-$tb_count = "user_count"; // tables in the database
-$tb_day = "day_record";
-$tb_month = "month_record";
-$tb_year = "year_record";
+$TB_COUNT = "user_count"; // tables in the database
+$TB_DAY = "day_record";
+$TB_MONTH = "month_record";
+$TB_YEAR = "year_record";
 ?>

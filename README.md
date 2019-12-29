@@ -19,7 +19,7 @@ This project is both my personal website and porfolio. [이 프로젝트는 제 
 
 ## Missing .txt Files [존재하지 않는 .txt 파일들]
 
-In index.php, 4 .txt files responsible for the database connection used below are not included in this repository due to security reason. [밑과 같이 index.php에 언급되어 있는 총 4개의 데이터베이스 연결을 위한 .txt 파일들은 보안상 문제로 이 저장소에 존재하지 않습니다.]
+In php/config.php, 4 .txt files responsible for the database connection used below are not included in this repository due to security reason. [밑과 같이 index.php에 언급되어 있는 총 4개의 데이터베이스 연결을 위한 .txt 파일들은 보안상 문제로 이 저장소에 존재하지 않습니다.]
 
         $servernameFile = fopen("servername.txt", "r");
         $servername = fread($servernameFile, filesize("servername.txt"));

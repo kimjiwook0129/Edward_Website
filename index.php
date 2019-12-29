@@ -1,17 +1,15 @@
 <?php
 include("php/config.php");
 
-$conn = new mysqli($SERVER, $USERNAME, $PASSWORD, $DATABASE); // connection to database
-
-if (!$conn->connect_error) { // when database is connected
-    $sql_count = "SELECT * FROM $tb_count";
-    $sql_recent_day = "SELECT * FROM $tb_day WHERE `id` = (SELECT max(id) FROM $tb_day)"; // last row only (most recent)
-    $sql_recent_month = "SELECT * FROM $tb_month WHERE `id` = (SELECT max(id) FROM $tb_month)";
-    $sql_recent_year = "SELECT * FROM $tb_year WHERE `id` = (SELECT max(id) FROM $tb_year)";
-    $find_counts = $conn->query($sql_count);
-    $find_day = $conn->query($sql_recent_day);
-    $find_month = $conn->query($sql_recent_month);
-    $find_year = $conn->query($sql_recent_year);
+if (!$CONN->connect_error) { // when database is connected
+    $sql_count = "SELECT * FROM $TB_COUNT";
+    $sql_recent_day = "SELECT * FROM $TB_DAY WHERE `id` = (SELECT max(id) FROM $TB_DAY)"; // last row only (most recent)
+    $sql_recent_month = "SELECT * FROM $TB_MONTH WHERE `id` = (SELECT max(id) FROM $TB_MONTH)";
+    $sql_recent_year = "SELECT * FROM $TB_YEAR WHERE `id` = (SELECT max(id) FROM $TB_YEAR)";
+    $find_counts = $CONN->query($sql_count);
+    $find_day = $CONN->query($sql_recent_day);
+    $find_month = $CONN->query($sql_recent_month);
+    $find_year = $CONN->query($sql_recent_year);
     
     $count_row = mysqli_fetch_assoc($find_counts);
     $day_row = mysqli_fetch_assoc($find_day);
@@ -35,66 +33,67 @@ if (!$conn->connect_error) { // when database is connected
     if ($present_date != $past_date) { // only when present and past dates are different
         ++$day_id_store;
         $day_count = $count_row['day_count'];
-        $conn->query("INSERT INTO $tb_day(`id`, `date`, `count`) VALUES ($day_id_store,'{$present_date}',$day_count)");
+        $CONN->query("INSERT INTO $TB_DAY(`id`, `date`, `count`) VALUES ($day_id_store,'{$present_date}',$day_count)");
         $count_row['day_count'] = 0;
-        $conn->query("UPDATE $tb_day SET `count` = 0 WHERE `id` = $day_id_store");
-        $conn->query("UPDATE $tb_count SET `day_count` = 0");
+        $CONN->query("UPDATE $TB_DAY SET `count` = 0 WHERE `id` = $day_id_store");
+        $CONN->query("UPDATE $TB_COUNT SET `day_count` = 0");
         
 
         if ($past_year != $present_year) {
             ++$year_id_store;
             $year_count = $count_row['year_count'];
-            $conn->query("INSERT INTO $tb_year(`id`, `date`, `count`) VALUES ($year_id_store,'{$present_date}',$year_count)");
+            $CONN->query("INSERT INTO $TB_YEAR(`id`, `date`, `count`) VALUES ($year_id_store,'{$present_date}',$year_count)");
             $count_row['year_count'] = 0;
-            $conn->query("UPDATE $tb_year SET `count` = 0 WHERE `id` = $year_id_store");
-            $conn->query("UPDATE $tb_count SET `year_count` = 0");
+            $CONN->query("UPDATE $TB_YEAR SET `count` = 0 WHERE `id` = $year_id_store");
+            $CONN->query("UPDATE $TB_COUNT SET `year_count` = 0");
         } 
         if ($past_month != $present_month || $past_year != $present_year) {
             ++$month_id_store;
             $month_count = $count_row['month_count'];
-            $conn->query("INSERT INTO $tb_month(`id`, `date`, `count`) VALUES ($month_id_store,'{$present_date}',$month_count)");
+            $CONN->query("INSERT INTO $TB_MONTH(`id`, `date`, `count`) VALUES ($month_id_store,'{$present_date}',$month_count)");
             $count_row['month_count'] = 0;
-            $conn->query("UPDATE $tb_month SET `count` = 0 WHERE `id` = $month_id_store");
-            $conn->query("UPDATE $tb_count SET `month_count` = 0");
+            $CONN->query("UPDATE $TB_MONTH SET `count` = 0 WHERE `id` = $month_id_store");
+            $CONN->query("UPDATE $TB_COUNT SET `month_count` = 0");
         }
-        $conn->query("UPDATE $tb_count SET `last_date` = '{$present_date}'");
+        $CONN->query("UPDATE $TB_COUNT SET `last_date` = '{$present_date}'");
     }
         
     $counts = array($count_row['day_count'], $count_row['month_count'], $count_row['year_count'],$count_row['total_count']);
 
     // Data from record tables -> JSON
     $json_file = 'json/counts.json';
+//    $json_contents = generateCountJson($json_file);
     $json_contents = "{\"counts_day\": {";
-    $last_row = $conn->query($sql_recent_day);
+    $last_row = $CONN->query($sql_recent_day);
     $day_rows_length = mysqli_fetch_assoc($last_row);
     $day_length = $day_rows_length['id'];
     for ($x = 1; $x <= $day_length; $x++) {
-        $sql_day = "SELECT * FROM $tb_day WHERE `id` = $x";
-        $find_day = $conn->query($sql_day);
+        $sql_day = "SELECT * FROM $TB_DAY WHERE `id` = $x";
+        $find_day = $CONN->query($sql_day);
         $day_row = mysqli_fetch_assoc($find_day);
         $json_contents .= "\"{$day_row['date']}\": {$day_row['count']}";
         if ($x < $day_length) $json_contents .= ",";
     }
 
     $json_contents .= "}, \"counts_month\": {";
-    $last_row = $conn->query($sql_recent_month);
+    $last_row = $CONN->query($sql_recent_month);
     $month_rows_length = mysqli_fetch_assoc($last_row);
     $month_length = $month_rows_length['id'];
     for ($x = 1; $x <= $month_length; $x++) {
-        $sql_month = "SELECT * FROM $tb_month WHERE `id` = $x";
-        $find_month = $conn->query($sql_month);
+        $sql_month = "SELECT * FROM $TB_MONTH WHERE `id` = $x";
+        $find_month = $CONN->query($sql_month);
         $month_row = mysqli_fetch_assoc($find_month);
         $json_contents .= "\"{$month_row['date']}\": {$month_row['count']}";
         if ($x < $month_length) $json_contents .= ",";
     }
 
     $json_contents .= "}, \"counts_year\": {";
-    $last_row = $conn->query($sql_recent_year);
+    $last_row = $CONN->query($sql_recent_year);
     $year_rows_length = mysqli_fetch_assoc($last_row);
     $year_length = $year_rows_length['id'];
     for ($x = 1; $x <= $year_length; $x++) {
-        $sql_year = "SELECT * FROM $tb_year WHERE `id` = $x";
-        $find_year = $conn->query($sql_year);
+        $sql_year = "SELECT * FROM $TB_YEAR WHERE `id` = $x";
+        $find_year = $CONN->query($sql_year);
         $year_row = mysqli_fetch_assoc($find_year);
         $json_contents .= "\"{$year_row['date']}\": {$year_row['count']}";
         if ($x < $year_length) $json_contents .= ",";
@@ -118,7 +117,6 @@ if (!$conn->connect_error) { // when database is connected
         <link rel="icon" href="images/favicon.ico" type="image/x-icon">
         <link rel="stylesheet" href="css/common.css">
         <link rel="stylesheet" href="css/index.css">
-        <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
@@ -127,8 +125,6 @@ if (!$conn->connect_error) { // when database is connected
         <script src="https://d3js.org/d3.v5.min.js"></script>
     </head>
     <body id="particle_background">
-        <!--<canvas class="background">            
-        </canvas>-->
         <div class="page-container">
             <div class="navbar-blank" style="height:50px"></div>
             <nav class="navbar navbar-fixed-top" id="navbar"></nav>
@@ -247,8 +243,6 @@ if (!$conn->connect_error) { // when database is connected
                     </div>
                     <script>
                         $(".box-icon-holder").hover(function(obj, i) {
-                            $(".theBox").css('transition-delay','0s');
-                            $(".theBox").css('-webkit-transition-delay','0s');
                             $(".theBox").css('height',200);
                             $(".box-text").css('height',180);
                             $(".credit-box").css("display", "");
@@ -270,12 +264,27 @@ if (!$conn->connect_error) { // when database is connected
                         const kilo = 1000,
                             mil = kilo * kilo,
                             bil = kilo * mil;
+
+                        function labelNum(_num) {
+                            _num = parseInt(_num);
+                            if (_num < kilo) return _num;
+                            else {
+                                var numScale = " K";
+                                if (_num >= bil) {
+                                    numScale = " B";
+                                    _num /= bil;
+                                } else if (_num >= mil){
+                                    numScale = " M";
+                                    _num /= mil;
+                                } else {
+                                    _num /= kilo;
+                                }
+                                return (_num).toFixed(2).toString().concat(numScale);
+                            }
+                        }
                         
                         array_visits = array_visits.map(function(n) {
-                            if (n >= bil) return (n / bil).toFixed(2).toString().concat(" B");
-                            else if (n >= mil) return (n / mil).toFixed(2).toString().concat(" M");
-                            else if (n >= kilo) return (n / kilo).toFixed(2).toString().concat(" K");
-                            return n;
+                            return labelNum(n);
                         });
                         
                         $("#visits-today").text(array_visits[0]);
@@ -293,10 +302,7 @@ if (!$conn->connect_error) { // when database is connected
                                     success: function(data) {
                                         var dataArray = data.split(".");
                                         dataArray = dataArray.map(function(n) {
-                                            if (n >= bil) return (n / bil).toFixed(2).toString().concat(" B");
-                                            else if (n >= mil) return (n / mil).toFixed(2).toString().concat(" M");
-                                            else if (n >= kilo) return (n / kilo).toFixed(2).toString().concat(" K");
-                                            return n;
+                                            return labelNum(n);
                                         });
                                         if (dataArray[0] == "") {
                                             dataArray = dataArray.map(function(n) {
@@ -354,7 +360,6 @@ if (!$conn->connect_error) { // when database is connected
                 <br>
                 <footer class="footer-container"></footer>
                 <script src="./common.js"></script>
-                <!--<script src="./index.js"></script>-->
                 <script src="./profile.js"></script>
                 <script src="./index_quotes.js"></script>
                 <script src="./index_visit_charts.js"></script>
@@ -365,5 +370,3 @@ if (!$conn->connect_error) { // when database is connected
         </div>
     </body>
 </html>
-
-
