@@ -6,12 +6,13 @@ if (!$CONN->connect_error) { // when database is connected
     $sql_recent_day = "SELECT * FROM $TB_DAY WHERE `id` = (SELECT max(id) FROM $TB_DAY)"; // last row only (most recent)
     $sql_recent_month = "SELECT * FROM $TB_MONTH WHERE `id` = (SELECT max(id) FROM $TB_MONTH)";
     $sql_recent_year = "SELECT * FROM $TB_YEAR WHERE `id` = (SELECT max(id) FROM $TB_YEAR)";
-    $find_counts = $CONN->query($sql_count);
+    
+    $USER_COUNTS = $CONN->query($sql_count);
     $find_day = $CONN->query($sql_recent_day);
     $find_month = $CONN->query($sql_recent_month);
     $find_year = $CONN->query($sql_recent_year);
     
-    $count_row = mysqli_fetch_assoc($find_counts);
+    $count_row = mysqli_fetch_assoc($USER_COUNTS);
     $day_row = mysqli_fetch_assoc($find_day);
     $month_row = mysqli_fetch_assoc($find_month);
     $year_row = mysqli_fetch_assoc($find_year);
@@ -33,26 +34,23 @@ if (!$CONN->connect_error) { // when database is connected
     if ($present_date != $past_date) { // only when present and past dates are different
         ++$day_id_store;
         $day_count = $count_row['day_count'];
-        $CONN->query("INSERT INTO $TB_DAY(`id`, `date`, `count`) VALUES ($day_id_store,'{$present_date}',$day_count)");
+        $CONN->query("INSERT INTO $TB_DAY(`id`, `date`, `count`) VALUES ($day_id_store,'{$present_date}',0)");
         $count_row['day_count'] = 0;
-        $CONN->query("UPDATE $TB_DAY SET `count` = 0 WHERE `id` = $day_id_store");
         $CONN->query("UPDATE $TB_COUNT SET `day_count` = 0");
-        
-
         if ($past_year != $present_year) {
             ++$year_id_store;
             $year_count = $count_row['year_count'];
-            $CONN->query("INSERT INTO $TB_YEAR(`id`, `date`, `count`) VALUES ($year_id_store,'{$present_date}',$year_count)");
+            $tempDate = $present_year."-01-01";
+            $CONN->query("INSERT INTO $TB_YEAR(`id`, `date`, `count`) VALUES ($year_id_store,'{$tempDate}',0)");
             $count_row['year_count'] = 0;
-            $CONN->query("UPDATE $TB_YEAR SET `count` = 0 WHERE `id` = $year_id_store");
             $CONN->query("UPDATE $TB_COUNT SET `year_count` = 0");
         } 
         if ($past_month != $present_month || $past_year != $present_year) {
             ++$month_id_store;
             $month_count = $count_row['month_count'];
-            $CONN->query("INSERT INTO $TB_MONTH(`id`, `date`, `count`) VALUES ($month_id_store,'{$present_date}',$month_count)");
+            $tempDate = $present_year."-".$present_month."-01";
+            $CONN->query("INSERT INTO $TB_MONTH(`id`, `date`, `count`) VALUES ($month_id_store,'{$tempDate}',0)");
             $count_row['month_count'] = 0;
-            $CONN->query("UPDATE $TB_MONTH SET `count` = 0 WHERE `id` = $month_id_store");
             $CONN->query("UPDATE $TB_COUNT SET `month_count` = 0");
         }
         $CONN->query("UPDATE $TB_COUNT SET `last_date` = '{$present_date}'");
@@ -62,10 +60,8 @@ if (!$CONN->connect_error) { // when database is connected
 
     // Data from record tables -> JSON
     $json_file = 'json/counts.json';
-//    $json_contents = generateCountJson($json_file);
     $json_contents = "{\"counts_day\": {";
-    $last_row = $CONN->query($sql_recent_day);
-    $day_rows_length = mysqli_fetch_assoc($last_row);
+    $day_rows_length = mysqli_fetch_assoc($find_day);
     $day_length = $day_rows_length['id'];
     for ($x = 1; $x <= $day_length; $x++) {
         $sql_day = "SELECT * FROM $TB_DAY WHERE `id` = $x";
@@ -76,8 +72,7 @@ if (!$CONN->connect_error) { // when database is connected
     }
 
     $json_contents .= "}, \"counts_month\": {";
-    $last_row = $CONN->query($sql_recent_month);
-    $month_rows_length = mysqli_fetch_assoc($last_row);
+    $month_rows_length = mysqli_fetch_assoc($find_month);
     $month_length = $month_rows_length['id'];
     for ($x = 1; $x <= $month_length; $x++) {
         $sql_month = "SELECT * FROM $TB_MONTH WHERE `id` = $x";
@@ -88,8 +83,7 @@ if (!$CONN->connect_error) { // when database is connected
     }
 
     $json_contents .= "}, \"counts_year\": {";
-    $last_row = $CONN->query($sql_recent_year);
-    $year_rows_length = mysqli_fetch_assoc($last_row);
+    $year_rows_length = mysqli_fetch_assoc($find_year);
     $year_length = $year_rows_length['id'];
     for ($x = 1; $x <= $year_length; $x++) {
         $sql_year = "SELECT * FROM $TB_YEAR WHERE `id` = $x";

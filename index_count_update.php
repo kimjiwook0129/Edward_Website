@@ -21,14 +21,14 @@ if (!$CONN->connect_error) { // when database is connected
     $month_row = mysqli_fetch_assoc($find_month);
     $year_row = mysqli_fetch_assoc($find_year);
 
-    $day_id_store = $day_row['id'];
-    $month_id_store = $month_row['id'];
-    $year_id_store = $year_row['id'];
+    $day_id = $day_row['id'];
+    $month_id = $month_row['id'];
+    $year_id = $year_row['id'];
 
     // Updating counts in the last row of each record for day, month, year
-    $CONN->query("UPDATE $TB_DAY SET `count` = $counts[0] WHERE `id` = $day_id_store");
-    $CONN->query("UPDATE $TB_MONTH SET `count` = $counts[1] WHERE `id` = $month_id_store");
-    $CONN->query("UPDATE $TB_YEAR SET `count` = $counts[2] WHERE `id` = $year_id_store");
+    $CONN->query("UPDATE $TB_DAY SET `count` = $counts[0] WHERE `id` = $day_id");
+    $CONN->query("UPDATE $TB_MONTH SET `count` = $counts[1] WHERE `id` = $month_id");
+    $CONN->query("UPDATE $TB_YEAR SET `count` = $counts[2] WHERE `id` = $year_id");
 
     // Updating the realtime values for day, month, year, total
     $CONN->query("UPDATE $TB_COUNT SET `total_count` = $counts[3], `day_count` = $counts[0], `month_count` = $counts[1], `year_count` = $counts[2]");
