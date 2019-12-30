@@ -1,99 +1,46 @@
 <?php
 include("php/config.php");
+include("php/globals.php");
 
 if (!$CONN->connect_error) { // when database is connected
-    $sql_count = "SELECT * FROM $TB_COUNT";
-    $sql_recent_day = "SELECT * FROM $TB_DAY WHERE `id` = (SELECT max(id) FROM $TB_DAY)"; // last row only (most recent)
-    $sql_recent_month = "SELECT * FROM $TB_MONTH WHERE `id` = (SELECT max(id) FROM $TB_MONTH)";
-    $sql_recent_year = "SELECT * FROM $TB_YEAR WHERE `id` = (SELECT max(id) FROM $TB_YEAR)";
+    $_PAST_DATE = $COUNT_ROW['last_date'];
+    $_PRESENT_DATE = date("Y-m-d"); // ex. '2019-07-04' = July 4, 2019
+    $_PAST_YEAR = substr($_PAST_DATE, 0, 4); // type: string
+    $_PRESENT_YEAR = substr($_PRESENT_DATE, 0, 4);
+    $_PAST_MONTH = substr($_PAST_DATE, 5, -3);
+    $_PRESENT_MONTH = substr($_PRESENT_DATE, 5, -3);
     
-    $USER_COUNTS = $CONN->query($sql_count);
-    $find_day = $CONN->query($sql_recent_day);
-    $find_month = $CONN->query($sql_recent_month);
-    $find_year = $CONN->query($sql_recent_year);
-    
-    $count_row = mysqli_fetch_assoc($USER_COUNTS);
-    $day_row = mysqli_fetch_assoc($find_day);
-    $month_row = mysqli_fetch_assoc($find_month);
-    $year_row = mysqli_fetch_assoc($find_year);
-    
-    $past_date = $count_row['last_date'];
-    $present_date = date("Y-m-d"); // ex. '2019-07-04' = July 4, 2019
-        
-    $past_year = substr($past_date, 0, 4); // type: string
-    $present_year = substr($present_date, 0, 4);
-    $past_month = substr($past_date, 5, -3);
-    $present_month = substr($present_date, 5, -3);
-    $past_day = substr($past_date, 8, 10);
-    $present_day = substr($present_date, 8, 10);
-    
-    $day_id_store = $day_row['id'];
-    $month_id_store = $month_row['id'];
-    $year_id_store = $year_row['id'];
+    $day_id_store = $DAY_ROW['id'];
+    $month_id_store = $MONTH_ROW['id'];
+    $year_id_store = $YEAR_ROW['id'];
 
-    if ($present_date != $past_date) { // only when present and past dates are different
+    if ($_PRESENT_DATE != $_PAST_DATE) { // only when present and past dates are different
         ++$day_id_store;
-        $day_count = $count_row['day_count'];
-        $CONN->query("INSERT INTO $TB_DAY(`id`, `date`, `count`) VALUES ($day_id_store,'{$present_date}',0)");
-        $count_row['day_count'] = 0;
+        $CONN->query("INSERT INTO $TB_DAY(`id`, `date`, `count`) VALUES ($day_id_store,'{$_PRESENT_DATE}',0)");
+        $COUNT_ROW['day_count'] = 0;
         $CONN->query("UPDATE $TB_COUNT SET `day_count` = 0");
-        if ($past_year != $present_year) {
+        if ($past_year != $_PRESENT_YEAR) {
             ++$year_id_store;
-            $year_count = $count_row['year_count'];
-            $tempDate = $present_year."-01-01";
-            $CONN->query("INSERT INTO $TB_YEAR(`id`, `date`, `count`) VALUES ($year_id_store,'{$tempDate}',0)");
-            $count_row['year_count'] = 0;
+            $date_modifier = $_PRESENT_YEAR."-01-01";
+            $CONN->query("INSERT INTO $TB_YEAR(`id`, `date`, `count`) VALUES ($year_id_store,'{$date_modifier}',0)");
+            $COUNT_ROW['year_count'] = 0;
             $CONN->query("UPDATE $TB_COUNT SET `year_count` = 0");
         } 
-        if ($past_month != $present_month || $past_year != $present_year) {
+        if ($_PAST_MONTH != $_PRESENT_MONTH || $past_year != $_PRESENT_YEAR) {
             ++$month_id_store;
-            $month_count = $count_row['month_count'];
-            $tempDate = $present_year."-".$present_month."-01";
-            $CONN->query("INSERT INTO $TB_MONTH(`id`, `date`, `count`) VALUES ($month_id_store,'{$tempDate}',0)");
-            $count_row['month_count'] = 0;
+            $date_modifier = $_PRESENT_YEAR."-".$_PRESENT_MONTH."-01";
+            $CONN->query("INSERT INTO $TB_MONTH(`id`, `date`, `count`) VALUES ($month_id_store,'{$date_modifier}',0)");
+            $COUNT_ROW['month_count'] = 0;
             $CONN->query("UPDATE $TB_COUNT SET `month_count` = 0");
         }
-        $CONN->query("UPDATE $TB_COUNT SET `last_date` = '{$present_date}'");
+        $CONN->query("UPDATE $TB_COUNT SET `last_date` = '{$_PRESENT_DATE}'");
     }
         
-    $counts = array($count_row['day_count'], $count_row['month_count'], $count_row['year_count'],$count_row['total_count']);
+    $counts = array($COUNT_ROW['day_count'], $COUNT_ROW['month_count'], $COUNT_ROW['year_count'],$COUNT_ROW['total_count']);
 
-    // Data from record tables -> JSON
-    $json_file = 'json/counts.json';
-    $json_contents = "{\"counts_day\": {";
-    $day_rows_length = mysqli_fetch_assoc($find_day);
-    $day_length = $day_rows_length['id'];
-    for ($x = 1; $x <= $day_length; $x++) {
-        $sql_day = "SELECT * FROM $TB_DAY WHERE `id` = $x";
-        $find_day = $CONN->query($sql_day);
-        $day_row = mysqli_fetch_assoc($find_day);
-        $json_contents .= "\"{$day_row['date']}\": {$day_row['count']}";
-        if ($x < $day_length) $json_contents .= ",";
-    }
-
-    $json_contents .= "}, \"counts_month\": {";
-    $month_rows_length = mysqli_fetch_assoc($find_month);
-    $month_length = $month_rows_length['id'];
-    for ($x = 1; $x <= $month_length; $x++) {
-        $sql_month = "SELECT * FROM $TB_MONTH WHERE `id` = $x";
-        $find_month = $CONN->query($sql_month);
-        $month_row = mysqli_fetch_assoc($find_month);
-        $json_contents .= "\"{$month_row['date']}\": {$month_row['count']}";
-        if ($x < $month_length) $json_contents .= ",";
-    }
-
-    $json_contents .= "}, \"counts_year\": {";
-    $year_rows_length = mysqli_fetch_assoc($find_year);
-    $year_length = $year_rows_length['id'];
-    for ($x = 1; $x <= $year_length; $x++) {
-        $sql_year = "SELECT * FROM $TB_YEAR WHERE `id` = $x";
-        $find_year = $CONN->query($sql_year);
-        $year_row = mysqli_fetch_assoc($find_year);
-        $json_contents .= "\"{$year_row['date']}\": {$year_row['count']}";
-        if ($x < $year_length) $json_contents .= ",";
-    }
-    $json_contents .= "}}";
-    file_put_contents($json_file, $json_contents); // sql database to json
+    include("php/functions/generateChartJson.php");
+    $jsonContents = generateJsonContents($CONN, $day_id_store,$month_id_store, $year_id_store, $TB_DAY, $TB_MONTH, $TB_YEAR);
+    file_put_contents('json/counts.json', $jsonContents); // sql database to json
 }
 ?>
 
@@ -250,33 +197,14 @@ if (!$CONN->connect_error) { // when database is connected
                             $(".credit-box").css("display", "none");
                         });
                     </script>
+                    <script src="js/functions/labelnum.js"></script>
+                    <script src="js/functions/path.js"></script>
                     <script>
                         var array_visits = [<?php echo "{$counts[0]}"?>,
                                             <?php echo "{$counts[1]}"?>,
                                             <?php echo "{$counts[2]}"?>,
                                             <?php echo "{$counts[3]}"?>];
-                        const kilo = 1000,
-                            mil = kilo * kilo,
-                            bil = kilo * mil;
-
-                        function labelNum(_num) {
-                            _num = parseInt(_num);
-                            if (_num < kilo) return _num;
-                            else {
-                                var numScale = " K";
-                                if (_num >= bil) {
-                                    numScale = " B";
-                                    _num /= bil;
-                                } else if (_num >= mil){
-                                    numScale = " M";
-                                    _num /= mil;
-                                } else {
-                                    _num /= kilo;
-                                }
-                                return (_num).toFixed(2).toString().concat(numScale);
-                            }
-                        }
-                        
+                    
                         array_visits = array_visits.map(function(n) {
                             return labelNum(n);
                         });
