@@ -281,12 +281,12 @@ if (!$CONN->connect_error) { // when database is connected
                 </div>
                 <br>
                 <footer class="footer-container"></footer>
-                <script src="./common.js"></script>
+                <script src="./js/common.js"></script>
                 <script src="./js/profile.js"></script>
                 <script src="./js/index_quotes.js"></script>
                 <script src="./js/index_visit_charts.js"></script>
-                <script src="./index_charts.js"></script>
-                <script src="./common_lang.js"></script>
+                <script src="./js/index_charts.js"></script>
+                <script src="./js/common_lang.js"></script>
                 <script src="./js/index-translate.js"></script>
             </div>
         </div>

@@ -1,5 +1,5 @@
 <?php
-$_DBACCESS_FILE = file_get_contents("dbaccess.json");
+$_DBACCESS_FILE = file_get_contents("config_data/dbaccess.json");
 $_DB_JSON = json_decode($_DBACCESS_FILE, true);
 define('_DB_HOSTNAME', $_DB_JSON['hostname']); // Hostname
 define('_DB_USERNAME', $_DB_JSON['username']); // Username
