@@ -9,13 +9,13 @@ function renderContext(lan = "en") {
   SUMMARY[lan].forEach(element => {
     $_li = $("<li></li>")
       .addClass("bullet-points")
-      .text(element.context)
+      .text(element.context + (element.link == null ? "" : "..."))
       .css("text-align", "left");
     if (element.link) {
       $_lan_setting = lan == "en" ? "eng" : "kor";
       $_a = $("<a></a>")
         .attr("href", element.link + "?lang=" + $_lan_setting)
-        .text("...more");
+        .text(lan == "en" ? "more" : "더 보기");
       $_li.append($_a);
     }
     $("#summary").append($_li);

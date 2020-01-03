@@ -1,6 +1,6 @@
 {
   "name": "edward_website",
-  "version": "2.0.1",
+  "version": "2.1.4",
   "description": "Edward's website",
   "main": "index.php",
   "scripts": {
