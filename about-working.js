@@ -20,53 +20,55 @@ function renderContext(lan = "en") {
   $("#shortTermText").text(lan == "en" ? "Short-term" : "단기");
 
   sections.forEach(function(section) {
-    (section == "works_fulltime" ? works_fulltime : works_partLong).forEach(
-      function(work) {
-        var idVal =
-          section == "works_fulltime" ? "#fulltime-id-" : "#parttime-long-id-";
-        var parentRow = $(idVal + work.id);
-        var downDiv = $("<div></div>").addClass("col-sm-8");
-        var title = $("<h4></h4>")
-          .addClass("positionTitle")
-          .text(work.position[lan]);
+    var idVal = "#parttime-long-id-";
+    var _works = works_partLong;
+    if (section == "works_fulltime") {
+      idVal = "#fulltime-id-";
+      _works = works_fulltime;
+    }
+    _works.forEach(function(work) {
+      var parentRow = $(idVal + (_works.indexOf(work) + 1));
+      var downDiv = $("<div></div>").addClass("col-sm-8");
+      var title = $("<h4></h4>")
+        .addClass("positionTitle")
+        .text(work.position[lan]);
 
-        downDiv.append(title);
+      downDiv.append(title);
 
-        category.forEach(function(cate) {
-          if (work[cate][lan] != "") {
-            var label = lan == "en" ? "Region: " : "지역: ";
-            switch (cate) {
-              case "organization":
-                label = lan == "en" ? "Organization: " : "회사/단체: ";
-                break;
-              case "duration":
-                label = lan == "en" ? "Duration: " : "기간: ";
-            }
-            var dur = $("<p></p>")
-              .addClass("exp")
-              .text(work[cate][lan]);
-            $enhanceLabel = $("<b></b>").text(label);
-            dur.prepend($enhanceLabel);
-            downDiv.append(dur);
+      category.forEach(function(cate) {
+        if (work[cate][lan] != "") {
+          var label = lan == "en" ? "Region: " : "지역: ";
+          switch (cate) {
+            case "organization":
+              label = lan == "en" ? "Organization: " : "회사/단체: ";
+              break;
+            case "duration":
+              label = lan == "en" ? "Duration: " : "기간: ";
           }
-        });
-        var ul = $("<ul></ul>");
-        for (var i = 0; i < work.description[lan].length; ++i) {
-          var _lst = $("<li></li>")
-            .addClass("bullet-points")
-            .text(work.description[lan][i])
-            .css("text-align", "left");
-          ul.append(_lst);
+          var dur = $("<p></p>")
+            .addClass("exp")
+            .text(work[cate][lan]);
+          $enhanceLabel = $("<b></b>").text(label);
+          dur.prepend($enhanceLabel);
+          downDiv.append(dur);
         }
-        downDiv.append(ul);
-        parentRow.append(downDiv);
+      });
+      var ul = $("<ul></ul>");
+      for (var i = 0; i < work.description[lan].length; ++i) {
+        var _lst = $("<li></li>")
+          .addClass("bullet-points")
+          .text(work.description[lan][i])
+          .css("text-align", "left");
+        ul.append(_lst);
       }
-    );
+      downDiv.append(ul);
+      parentRow.append(downDiv);
+    });
   });
 
   works_partShort.forEach(function(work) {
-    var row_num = Math.floor((work.id - 1) / 3) + 1;
-    if (work.id % 3 == 1) {
+    var row_num = Math.floor(works_partShort.indexOf(work) / 3) + 1;
+    if ((works_partShort.indexOf(work) + 1) % 3 == 1) {
       shortterm_rows_arr.push("#row-id-" + row_num);
       var newRow = $("<div></div>")
         .addClass("row")
@@ -141,38 +143,39 @@ fetch("json/work.json")
     works_partShort = data.works.parttime.shortterm;
 
     sections.forEach(function(section) {
-      (section == "works_fulltime" ? works_fulltime : works_partLong).forEach(
-        function(work) {
-          var imgRef = $("<p></p>")
-            .attr("id", "reference")
-            .text(work.images[0].credit);
-          var imgCredit = $("<div></div>").addClass("image-credit");
-          imgCredit.append(imgRef);
+      var _works = works_partLong;
+      var idVal = "parttime-long-id-";
+      if (section == "works_fulltime") {
+        _works = works_fulltime;
+        idVal = "fulltime-id-";
+      }
+      _works.forEach(function(work) {
+        var imgRef = $("<p></p>")
+          .attr("id", "reference")
+          .text(work.images[0].credit);
+        var imgCredit = $("<div></div>").addClass("image-credit");
+        imgCredit.append(imgRef);
 
-          var img = $("<img>")
-            .addClass("image-itself")
-            .attr("src", work.images[0].src)
-            .css("width", "100%")
-            .attr("alt", work.position.en);
-          var imgContainer = $("<div></div>").addClass("image-container");
-          imgContainer.append(img);
+        var img = $("<img>")
+          .addClass("image-itself")
+          .attr("src", work.images[0].src)
+          .css("width", "100%")
+          .attr("alt", work.position.en);
+        var imgContainer = $("<div></div>").addClass("image-container");
+        imgContainer.append(img);
 
-          var upDiv = $("<div></div>").addClass("col-sm-4");
-          upDiv.append(imgContainer);
-          upDiv.append(imgCredit);
+        var upDiv = $("<div></div>").addClass("col-sm-4");
+        upDiv.append(imgContainer);
+        upDiv.append(imgCredit);
 
-          setImageInterval(upDiv, work);
-
-          var idVal =
-            section == "works_fulltime" ? "fulltime-id-" : "parttime-long-id-";
-          var parentRow = $("<div></div>")
-            .addClass("row")
-            .attr("id", idVal + work.id);
-          parentRow.append(upDiv);
-          if (section == "works_fulltime") fulltimeContainer.append(parentRow);
-          else parttimeLongtermContainer.append(parentRow);
-        }
-      );
+        setImageInterval(upDiv, work);
+        var parentRow = $("<div></div>")
+          .addClass("row")
+          .attr("id", idVal + (_works.indexOf(work) + 1));
+        parentRow.append(upDiv);
+        if (section == "works_fulltime") fulltimeContainer.append(parentRow);
+        else parttimeLongtermContainer.append(parentRow);
+      });
     });
     if (window.location.href.slice(-3) == "kor") renderContext("kr");
     else renderContext();
@@ -183,16 +186,18 @@ fetch("json/work.json")
 
 $("#lang-setting").on("change", function() {
   sections.forEach(function(section) {
-    var idVal =
-      section == "works_fulltime" ? "#fulltime-id-" : "#parttime-long-id-";
-    (section == "works_fulltime" ? works_fulltime : works_partLong).forEach(
-      function(work) {
-        $(idVal + work.id)
-          .children()
-          .last()
-          .remove();
-      }
-    );
+    var idVal = "#parttime-long-id-";
+    var _works = works_partLong;
+    if (section == "works_fulltime") {
+      idVal = "#fulltime-id-";
+      _works = works_fulltime;
+    }
+    _works.forEach(function(work) {
+      $(idVal + (_works.indexOf(work) + 1))
+        .children()
+        .last()
+        .remove();
+    });
   });
   while (shortterm_rows_arr.length != 0) $(shortterm_rows_arr.pop()).remove();
   if ($(this).is(":checked")) renderContext("kr");

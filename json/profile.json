@@ -5,44 +5,78 @@
   },
   "images": [
     {
-      "src": "./images/faces/face_1.png",
+      "src": "./images/faces/face_1.jpg",
       "credit": "© 2019 Edward Jiwook Kim"
     },
     {
-      "src": "./images/faces/face_2.png",
-      "credit": "© doublespace photography"
-    },
-    {
-      "src": "./images/faces/face_3.png",
+      "src": "./images/faces/face_2.jpg",
       "credit": "© 2019 Edward Jiwook Kim"
     },
     {
-      "src": "./images/faces/face_4.png",
-      "credit": "© doublespace photography"
-    },
-    {
-      "src": "./images/faces/face_5.png",
+      "src": "./images/faces/face_3.jpg",
       "credit": "© 2019 Edward Jiwook Kim"
     },
     {
-      "src": "./images/faces/face_6.png",
-      "credit": "© doublespace photography"
+      "src": "./images/faces/face_4.jpg",
+      "credit": "© 2019 Edward Jiwook Kim"
+    },
+    {
+      "src": "./images/faces/face_5.jpg",
+      "credit": "© 2019 Edward Jiwook Kim"
+    },
+    {
+      "src": "./images/faces/face_6.jpg",
+      "credit": "© 2019 Edward Jiwook Kim"
+    },
+    {
+      "src": "./images/faces/face_7.jpg",
+      "credit": "© 2019 Edward Jiwook Kim"
     }
   ],
   "summary": {
     "en": [
-      "Current AP/IB, SAT Instructor at ASAP Academy",
-      "Current Member of MENSA Korea",
-      "Former Programmer / Data Analyst at Centre for Biodiversity Genomics",
-      "Former Computer Mathematics Learning Assistant at Sheridan College",
-      "Studies Applied Mathematics/Computing at the University of Waterloo"
+      {
+        "context": "Current AP/IB, SAT Instructor at ASAP Academy",
+        "link": "about-working.html"
+      },
+      {
+        "context": "Current Member of MENSA Korea",
+        "link": null
+      },
+      {
+        "context": "Former Programmer / Data Analyst at Centre for Biodiversity Genomics",
+        "link": "about-working.html"
+      },
+      {
+        "context": "Former Computer Mathematics Learning Assistant at Sheridan College",
+        "link": "about-working.html"
+      },
+      {
+        "context": "Studies Applied Mathematics/Computing at the University of Waterloo",
+        "link": "about-studying.html"
+      }
     ],
     "kr": [
-      "현 ASAP Academy AP/IB, SAT 강사",
-      "현 멘사 코리아 회원",
-      "전 생물다양성 유전체학 센터 개발자/데이터 분석가",
-      "전 셰리든 대학교 컴퓨터 수학 조교",
-      "University of Waterloo 응용수학/전산학 재학생"
+      {
+        "context": "현 ASAP Academy AP/IB, SAT 강사",
+        "link": "about-working.html"
+      },
+      {
+        "context": "현 멘사 코리아 회원",
+        "link": null
+      },
+      {
+        "context": "전 생물다양성 유전체학 센터 개발자/데이터 분석가",
+        "link": "about-working.html"
+      },
+      {
+        "context": "전 셰리든 대학교 컴퓨터 수학 조교",
+        "link": "about-working.html"
+      },
+      {
+        "context": "University of Waterloo 응용수학/전산학 재학생",
+        "link": "about-studying.html"
+      }
     ]
   }
 }

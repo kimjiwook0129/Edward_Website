@@ -9,23 +9,23 @@ This project is both my personal website and porfolio. [이 프로젝트는 제 
 
 ## Development Environment [개발환경 구축]
 
-Instructions to get the development environment up and running.
+Instructions to get the development environment up and running. [개발환경 구축을 위한 설명]
 
-Clone the repository:
+Clone the repository: [저장소 복제]
 
     git clone https://github.com/j533kim/Edward_Website.git
 
-Navigate to the website directory:
+Navigate to the website directory: [웹사이트 디렉터리]
 
     cd Edward_Website
 
-Install required packages:
+Install required packages: [필수 package들 설치]
 
     npm install
 
-### Setting Up Local Database Server
+### Setting Up Local Database Server [로컬 데이터베이스 구축]
 
-Within the root directory, create a file called 'dbaccess.json' with the contents:
+Within the root directory, create a file called 'dbaccess.json' with the contents: [루트 디렉터리에 해당 내용을 지닌 'dbaccess.json' 이름의 파일 생성]
 
     {
         "hostname": "XXX.X.X.X",
@@ -34,7 +34,7 @@ Within the root directory, create a file called 'dbaccess.json' with the content
         "database": "XXXXXXX"
     }
 
-Please do not push credentials and secrets to the repository ('.gitignore' file is set to not push 'dbaccess.json' by default).
+Please do not push credentials and secrets to the repository ('.gitignore' file is set to not push 'dbaccess.json' by default). [credentials 및 암호는 저장소에 push 하지말것 ('.gitignore' 파일이 'dbaccess.json'을 push하지 않도록 이미 설정됨)]
 
 ### Notes on CDNs & npm packages [CDN 사용과 npm 패키지 관련]
 

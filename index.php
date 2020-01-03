@@ -77,7 +77,7 @@ if (!$CONN->connect_error) { // when database is connected
                                 <img id="my-face" class="image-itself" src="./images/faces/face_1.jpg" alt="Edward Jiwook Kim" style="width:100%">
                             </div>
                             <div class="image-credit">
-                                <p id="reference">© 2019 Edward Jiwook Kim</p>
+                                <p id="face-reference">© 2019 Edward Jiwook Kim</p>
                             </div>
                         </div>
                         <div class="col-sm-8">
@@ -282,12 +282,12 @@ if (!$CONN->connect_error) { // when database is connected
                 <br>
                 <footer class="footer-container"></footer>
                 <script src="./common.js"></script>
-                <script src="./profile.js"></script>
-                <script src="./index_quotes.js"></script>
-                <script src="./index_visit_charts.js"></script>
+                <script src="./js/profile.js"></script>
+                <script src="./js/index_quotes.js"></script>
+                <script src="./js/index_visit_charts.js"></script>
                 <script src="./index_charts.js"></script>
                 <script src="./common_lang.js"></script>
-                <script src="./index-translate.js"></script>
+                <script src="./js/index-translate.js"></script>
             </div>
         </div>
     </body>

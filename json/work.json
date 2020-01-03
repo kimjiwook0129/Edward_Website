@@ -2,7 +2,6 @@
   "works": {
     "fulltime": [
       {
-        "id": 1,
         "images": [
           {
             "src": "./images/companies/cbg_1.jpg",
@@ -49,7 +48,6 @@
         }
       },
       {
-        "id": 2,
         "images": [
           {
             "src": "./images/companies/sheridan_1.jpg",
@@ -93,7 +91,34 @@
     "parttime": {
       "longterm": [
         {
-          "id": 1,
+          "images": [
+            {
+              "src": "./images/companies/topstar_1.jpg",
+              "credit": "Photo by © Top Star Entertainment"
+            }
+          ],
+          "position": {
+            "en": "Extra, Minor Role",
+            "kr": "보조출연, 이미지 단역, 단역 배우"
+          },
+          "organization": {
+            "en": "Top Star Entertainment",
+            "kr": "탑스타엔터테인먼트"
+          },
+          "duration": {
+            "en": "Dec 30, 2019 - 현재",
+            "kr": "2019년 12월 30일 - Current"
+          },
+          "region": {
+            "en": "Seocho, Seoul, South Korea",
+            "kr": "대한민국 서울시 서초구"
+          },
+          "description": {
+            "en": ["Plays: Dr. Romantic"],
+            "kr": ["작품들: 낭만닥터"]
+          }
+        },
+        {
           "images": [
             {
               "src": "./images/companies/asap_1.jpg",
@@ -122,7 +147,6 @@
           }
         },
         {
-          "id": 2,
           "images": [
             {
               "src": "./images/companies/tutor_1.jpg",
@@ -165,7 +189,6 @@
       ],
       "shortterm": [
         {
-          "id": 1,
           "role": {
             "en": "Promotional Gifts Event Staff",
             "kr": "사은품 이벤트 스텝"
@@ -184,7 +207,6 @@
           }
         },
         {
-          "id": 2,
           "role": {
             "en": "Parking Guidance",
             "kr": "주차안내"
@@ -203,7 +225,6 @@
           }
         },
         {
-          "id": 3,
           "role": {
             "en": "Interpreter & Information Staff",
             "kr": "통역 및 인포메이션"
@@ -222,7 +243,6 @@
           }
         },
         {
-          "id": 4,
           "role": {
             "en": "Cafeteria",
             "kr": "카페테리아"
@@ -241,7 +261,6 @@
           }
         },
         {
-          "id": 5,
           "role": {
             "en": "Local Festival Mentor",
             "kr": "신바람에너지 놀이터 지역축제 멘토"
@@ -260,7 +279,6 @@
           }
         },
         {
-          "id": 6,
           "role": {
             "en": "Doll Mask & Withdrawal",
             "kr": "인형탈 및 철수"
@@ -279,7 +297,6 @@
           }
         },
         {
-          "id": 7,
           "role": {
             "en": "Concert MR Delivery, PD Assistance",
             "kr": "콘서트 진행요원, MR전달, 출연PD 보조 및 무대관리"
@@ -298,7 +315,6 @@
           }
         },
         {
-          "id": 8,
           "role": {
             "en": "Cargo Labour",
             "kr": "소형화물단순 하차"
@@ -317,7 +333,6 @@
           }
         },
         {
-          "id": 9,
           "role": {
             "en": "Installation / Photo Studio Assistance",
             "kr": "설치 / 사진관 보조"
