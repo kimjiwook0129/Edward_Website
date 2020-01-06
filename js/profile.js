@@ -15,7 +15,7 @@ function renderContext(lan = "en") {
       $_lan_setting = lan == "en" ? "eng" : "kor";
       $_a = $("<a></a>")
         .attr("href", element.link + "?lang=" + $_lan_setting)
-        .text(lan == "en" ? "more" : "더 보기");
+        .text(lan == "en" ? "See More" : "더 보기");
       $_li.append($_a);
     }
     $("#summary").append($_li);

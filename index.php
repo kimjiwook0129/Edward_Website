@@ -19,14 +19,14 @@ if (!$CONN->connect_error) { // when database is connected
         $CONN->query("INSERT INTO $TB_DAY(`id`, `date`, `count`) VALUES ($day_id_store,'{$_PRESENT_DATE}',0)");
         $COUNT_ROW['day_count'] = 0;
         $CONN->query("UPDATE $TB_COUNT SET `day_count` = 0");
-        if ($past_year != $_PRESENT_YEAR) {
+        if ($_PAST_YEAR != $_PRESENT_YEAR) {
             ++$year_id_store;
             $date_modifier = $_PRESENT_YEAR."-01-01";
             $CONN->query("INSERT INTO $TB_YEAR(`id`, `date`, `count`) VALUES ($year_id_store,'{$date_modifier}',0)");
             $COUNT_ROW['year_count'] = 0;
             $CONN->query("UPDATE $TB_COUNT SET `year_count` = 0");
         } 
-        if ($_PAST_MONTH != $_PRESENT_MONTH || $past_year != $_PRESENT_YEAR) {
+        if ($_PAST_MONTH != $_PRESENT_MONTH || $_PAST_YEAR != $_PRESENT_YEAR) {
             ++$month_id_store;
             $date_modifier = $_PRESENT_YEAR."-".$_PRESENT_MONTH."-01";
             $CONN->query("INSERT INTO $TB_MONTH(`id`, `date`, `count`) VALUES ($month_id_store,'{$date_modifier}',0)");
