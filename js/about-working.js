@@ -108,6 +108,7 @@ function renderContext(lan = "en") {
 }
 
 function setImageInterval(imgContents, eachWork) {
+  eachWork.images = eachWork.images.filter(image => image.active === true);
   var imgItself = imgContents.find(".image-container > .image-itself");
   var imgCred = imgContents.find(".image-credit > #reference");
   if (eachWork.images.length > 1) {

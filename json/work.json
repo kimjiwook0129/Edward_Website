@@ -5,11 +5,18 @@
         "images": [
           {
             "src": "./images/companies/cbg_1.jpg",
-            "credit": "© 2019 Edward Jiwook Kim"
+            "credit": "© 2019 Centre for Biodiversity Genomics",
+            "active": true
           },
           {
             "src": "./images/companies/cbg_2.jpg",
-            "credit": "© 2019 Edward Jiwook Kim"
+            "credit": "© 2019-2020 Edward Jiwook Kim",
+            "active": true
+          },
+          {
+            "src": "./images/companies/cbg_3.jpg",
+            "credit": "© 2019-2020 Edward Jiwook Kim",
+            "active": false
           }
         ],
         "position": {
@@ -45,17 +52,35 @@
             "D3를 활용해 계층형 분류학 데이터를 파이도표 구성 트리구조로 시각화",
             "다양한 버전의 데이터베이스 형식 인식을 위해 데이터 제출/수정 프레임워크 Jupyter Submissions 수정"
           ]
-        }
+        },
+        "yyyy-mm-dd": {
+          "start": "2019-05-06",
+          "end": "2019-08-30"
+        },
+        "pay": [
+          {
+            "date": "2019-08-30",
+            "currency": "CAD",
+            "amount": 11846.45
+          }
+        ]
       },
       {
         "images": [
           {
             "src": "./images/companies/sheridan_1.jpg",
-            "credit": "Map data © 2016 Google | Sheridan College"
+            "credit": "© 2015 Sheridan College",
+            "active": true
           },
           {
             "src": "./images/companies/sheridan_2.jpg",
-            "credit": "Map data © 2012 Google | Sheridan College"
+            "credit": "Map data © 2012 Google | Sheridan College",
+            "active": true
+          },
+          {
+            "src": "./images/companies/sheridan_3.jpg",
+            "credit": "Map data © 2016 Google | Sheridan College",
+            "active": true
           }
         ],
         "position": {
@@ -85,7 +110,18 @@
             "캠퍼스 교육 센터 데이터베이스 관리 시스템 SharePoint 분석 및 실용성 위주 대안 디자인/모델 구현에 관한 업무 보고서 작성",
             "응용 위주의 미적분 및 컴퓨터수학 수업 시험대비 문제지 작성, 담당 교수가 수업 내용과 통합 요청"
           ]
-        }
+        },
+        "yyyy-mm-dd": {
+          "start": "2018-05-04",
+          "end": "2018-08-17"
+        },
+        "pay": [
+          {
+            "date": "2018-08-17",
+            "currency": "CAD",
+            "amount": 9450
+          }
+        ]
       }
     ],
     "parttime": {
@@ -94,12 +130,18 @@
           "images": [
             {
               "src": "./images/companies/topstar_1.jpg",
-              "credit": "Photo by © Top Star Entertainment"
+              "credit": "Photo by © Top Star Entertainment",
+              "active": true
+            },
+            {
+              "src": "./images/companies/topstar_2.jpg",
+              "credit": "© 2020 SBS",
+              "active": true
             }
           ],
           "position": {
-            "en": "Extra, Minor Role",
-            "kr": "보조출연, 이미지 단역, 단역 배우"
+            "en": "Extra, Minor Role, AD Assistance",
+            "kr": "보조연기자, 이미지 단역, AD보조"
           },
           "organization": {
             "en": "Top Star Entertainment",
@@ -114,15 +156,48 @@
             "kr": "대한민국 서울시 서초구"
           },
           "description": {
-            "en": ["Plays: Dr. Romantic"],
-            "kr": ["작품들: 낭만닥터"]
-          }
+            "en": [
+              "Plays: Dr. Romantic, Crash Landing on You, Welcome",
+              "Roles: College Student, Office Worker, Reporter"
+            ],
+            "kr": [
+              "작품들: 낭만닥터, 사랑의 불시착, 어서와",
+              "배역들: 대학생, 직장인, 기자"
+            ]
+          },
+          "yyyy-mm-dd": {
+            "start": "2019-12-30",
+            "end": null
+          },
+          "pay": [
+            {
+              "date": "2020-01-10",
+              "currency": "WON",
+              "amount": 61096
+            },
+            {
+              "date": "2020-01-10",
+              "currency": "WON",
+              "amount": 161096
+            },
+            {
+              "date": "2020-01-10",
+              "currency": "WON",
+              "amount": 261096
+            }
+          ]
         },
         {
           "images": [
             {
               "src": "./images/companies/asap_1.jpg",
-              "credit": "Photo by © 프리미엄 맞춤수업학원"
+              "credit": "Photo by © 프리미엄 맞춤수업학원",
+              "active": true
+            },
+            {
+              "src": "./images/companies/asap_2.jpg",
+              "credit": "© 2020 Edward Jiwook Kim",
+              "active": true
             }
           ],
           "position": {
@@ -134,8 +209,8 @@
             "kr": "프리미엄 맞춤수업 학원"
           },
           "duration": {
-            "en": "Dec 9, 2019 - 현재",
-            "kr": "2019년 12월 9일 - Current"
+            "en": "Dec 16, 2019 - Jan 22, 2020",
+            "kr": "2019년 12월 16일 - 2020년 1월 22일"
           },
           "region": {
             "en": "Gangnam, Seoul, South Korea",
@@ -144,17 +219,30 @@
           "description": {
             "en": ["Subjects: SAT Maths, IB SL/HL Maths, IB SL Physics"],
             "kr": ["담당 과목들: SAT 수학, IB SL/HL 수학, IB SL 물리"]
-          }
+          },
+          "yyyy-mm-dd": {
+            "start": "2019-12-16",
+            "end": "2020-01-22"
+          },
+          "pay": [
+            {
+              "date": "2020-01-12",
+              "currency": "WON",
+              "amount": 1280000
+            }
+          ]
         },
         {
           "images": [
             {
               "src": "./images/companies/tutor_1.jpg",
-              "credit": "Photo by © John Moeses Bauan on Unsplash"
+              "credit": "Photo by © John Moeses Bauan on Unsplash",
+              "active": true
             },
             {
               "src": "./images/companies/tutor_2.jpg",
-              "credit": "Photo by © Oscar Nord on Unsplash"
+              "credit": "Photo by © Oscar Nord on Unsplash",
+              "active": true
             }
           ],
           "position": {
@@ -184,7 +272,33 @@
               "미적분, 대수학, 물리(역학), 컴퓨터 공학(파이썬), 연령대별 수학 과외 경험",
               "2년간의 원정 과외와 웹캠을 이용한 원격 과외를 통한 효율적이고 다양한 수업 방식 습득"
             ]
-          }
+          },
+          "yyyy-mm-dd": {
+            "start": "2016-11-01",
+            "end": "2018-04-30"
+          },
+          "pay": [
+            {
+              "date": "2016-11-01",
+              "currency": "EGP",
+              "date": 3000
+            },
+            {
+              "date": "2018-04-01",
+              "currency": "WON",
+              "amount": 800000
+            },
+            {
+              "date": "2018-04-01",
+              "currency": "CAD",
+              "amount": 420
+            },
+            {
+              "date": "2018-04-01",
+              "currency": "CAD",
+              "amount": 140
+            }
+          ]
         }
       ],
       "shortterm": [
@@ -204,7 +318,18 @@
           "region": {
             "en": "Ulsan, South Korea",
             "kr": "대한민국 울산"
-          }
+          },
+          "yyyy-mm-dd": {
+            "start": "2019-11-11",
+            "end": "2019-11-12"
+          },
+          "pay": [
+            {
+              "date": "2019-11-15",
+              "currency": "WON",
+              "amount": 104380
+            }
+          ]
         },
         {
           "role": {
@@ -222,7 +347,19 @@
           "region": {
             "en": "Ulsan, South Korea",
             "kr": "대한민국 울산"
-          }
+          },
+
+          "yyyy-mm-dd": {
+            "start": "2019-10-26",
+            "end": "2019-10-28"
+          },
+          "pay": [
+            {
+              "date": "2019-10-31",
+              "currency": "WON",
+              "amount": 230000
+            }
+          ]
         },
         {
           "role": {
@@ -240,7 +377,18 @@
           "region": {
             "en": "Ulsan, South Korea",
             "kr": "대한민국 울산"
-          }
+          },
+          "yyyy-mm-dd": {
+            "start": "2019-10-17",
+            "end": "2019-10-20"
+          },
+          "pay": [
+            {
+              "date": "2019-10-31",
+              "currency": "WON",
+              "amount": 342000
+            }
+          ]
         },
         {
           "role": {
@@ -258,7 +406,18 @@
           "region": {
             "en": "Ulsan, South Korea",
             "kr": "대한민국 울산"
-          }
+          },
+          "yyyy-mm-dd": {
+            "start": "2019-10-11",
+            "end": "2019-10-13"
+          },
+          "pay": [
+            {
+              "date": "2019-10-16",
+              "currency": "WON",
+              "amount": 225000
+            }
+          ]
         },
         {
           "role": {
@@ -276,7 +435,18 @@
           "region": {
             "en": "Ulsan, South Korea",
             "kr": "대한민국 울산"
-          }
+          },
+          "yyyy-mm-dd": {
+            "start": "2019-10-04",
+            "end": "2019-10-05"
+          },
+          "pay": [
+            {
+              "date": "2019-10-30",
+              "currency": "WON",
+              "amount": 102585
+            }
+          ]
         },
         {
           "role": {
@@ -294,7 +464,18 @@
           "region": {
             "en": "Ulsan, South Korea",
             "kr": "대한민국 울산"
-          }
+          },
+          "yyyy-mm-dd": {
+            "start": "2019-09-21",
+            "end": "2019-09-22"
+          },
+          "pay": [
+            {
+              "date": "2019-09-25",
+              "currency": "WON",
+              "amount": 120000
+            }
+          ]
         },
         {
           "role": {
@@ -312,7 +493,18 @@
           "region": {
             "en": "Ulsan, South Korea",
             "kr": "대한민국 울산"
-          }
+          },
+          "yyyy-mm-dd": {
+            "start": "2019-09-18",
+            "end": "2019-09-18"
+          },
+          "pay": [
+            {
+              "date": "2019-09-22",
+              "currency": "WON",
+              "amount": 65000
+            }
+          ]
         },
         {
           "role": {
@@ -330,7 +522,18 @@
           "region": {
             "en": "Ulsan, South Korea",
             "kr": "대한민국 울산"
-          }
+          },
+          "yyyy-mm-dd": {
+            "start": "2019-09-10",
+            "end": "2019-09-10"
+          },
+          "pay": [
+            {
+              "date": "2019-09-15",
+              "currency": "WON",
+              "amount": 64350
+            }
+          ]
         },
         {
           "role": {
@@ -348,7 +551,54 @@
           "region": {
             "en": "Ulsan, South Korea",
             "kr": "대한민국 울산"
-          }
+          },
+
+          "yyyy-mm-dd": {
+            "start": "2019-11-29",
+            "end": "2019-12-01"
+          },
+          "pay": [
+            {
+              "date": "2019-11-29",
+              "currency": "WON",
+              "amount": 210000
+            }
+          ]
+        },
+        {
+          "role": {
+            "en": "Audience Role",
+            "kr": "수산물사용설명서2, 불후의 명곡 방청객"
+          },
+          "organization": {
+            "en": "월드기획",
+            "kr": "월드기획"
+          },
+          "duration": {
+            "en": "Jan 10, 2020; Jan 20, 2020",
+            "kr": "2020년 1월 10일; 2020년 1월 20일"
+          },
+
+          "region": {
+            "en": "Geumcheon, Seoul, South Korea",
+            "kr": "대한민국 서울 금천구"
+          },
+          "yyyy-mm-dd": {
+            "start": "2020-01-10",
+            "end": "2020-01-10"
+          },
+          "pay": [
+            {
+              "date": "2020-01-10",
+              "currency": "WON",
+              "amount": 28000
+            },
+            {
+              "date": "2020-01-20",
+              "currency": "WON",
+              "amount": 10000
+            }
+          ]
         }
       ]
     }

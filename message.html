@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Send Message to Jiwook!</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Cache-control" content="no-cache" />
+    <meta name="description" content="Personal Website" />
+    <meta name="keywords" content="HTML,CSS,JavaScript" />
+    <meta name="author" content="Edward Jiwook Kim" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/parsley.js/2.9.2/parsley.min.js"></script>
+  </head>
+  <body style="text-align:center;">
+    <script>
+      $(document).ready(function() {
+        $(window).keydown(function(event) {
+          if (event.keyCode == 13) {
+            event.preventDefault();
+            return false;
+          }
+        });
+      });
+    </script>
+    <br />
+    <div style="width: 100%;text-align: left; ">
+      <a
+        style="margin-left: 20px"
+        href="https://thecamp.or.kr/login/main.do"
+        target="_blank"
+      >
+        <img
+          id="theCampTop"
+          src="./images/top.jpg"
+          alt="The Camp Top"
+          style="width: 300px;"
+        />
+      </a>
+    </div>
+
+    <h1>Please Send Message to Jiwook at Bootcamp!</h1>
+    <h1>훈련소에 있는 지욱이에게 편지를 보내주세요!</h1>
+    <div
+      style="width: 50%; margin: 0 auto; border: 4px solid black; border-radius: 5px"
+    >
+      <img
+        id="JiwookFace"
+        src="./images/faces/please.jpg"
+        alt="Jiwook's' Face"
+        style="width: 100%;"
+      />
+    </div>
+
+    <form action="./send_message.php" method="get" id="nameform">
+      <h4>이름(Your Name):</h4>
+      <input
+        required=""
+        style="height: 30px; width: 90%;border: 1px solid black; border-radius: 2px"
+        type="text"
+        name="sender_name"
+      /><br />
+      <h4>편지내용(Message):</h4>
+      <textarea
+        required=""
+        style="width: 90%; height: 300px;border: 1px solid black; border-radius: 2px"
+        type="text"
+        name="msg"
+      ></textarea>
+      <br />
+    </form>
+    <br />
+    <button
+      style="height: 70px; width: 250px; border: 2px solid black; border-radius: 4px"
+      type="submit"
+      form="nameform"
+      value="Submit"
+    >
+      <h2>보내기 (Send!)</h2>
+    </button>
+    <br />
+    <br />
+    <br />
+    <img
+      id="theCampBottom"
+      src="./images/bottom.jpg"
+      alt="The Camp Bottom"
+      style="width: 100%;"
+    />
+  </body>
+</html>
