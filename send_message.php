@@ -1,5 +1,5 @@
 <?php
-    $toMom = "hjhwang7974@gmail.com";
+    $toKwang = "kysg0511@gmail.com";
     $toHui = "iamhuiseongkim@gmail.com";
     $toWook = "kimjiwook0129@gmail.com";
     $name = $_GET['sender_name'];
@@ -8,7 +8,7 @@
     $txt = "보낸 사람: ".$name."\n"."내용:\n".$context;
     $headers = "From: kimjiwook0129@gmail.com"."\r\n"."CC: kimjiwook0129@gmail.com";
     if(mail($toHui,$subject,$txt,$headers)){
-        mail($toMom,$subject,$txt,$headers);
+        mail($toKwang,$subject,$txt,$headers);
         echo 'Your message has been sent successfully.<br>';
         echo '메세지를 성공적으로 보냈습니다.';
     } else {

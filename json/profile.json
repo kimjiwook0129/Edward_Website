@@ -31,10 +31,18 @@
     {
       "src": "./images/faces/face_7.jpg",
       "credit": "© 2019 Edward Jiwook Kim"
+    },
+    {
+      "src": "./images/faces/face_8.jpg",
+      "credit": "© 2019 Edward Jiwook Kim"
     }
   ],
   "summary": {
     "en": [
+      {
+        "context": "Current Administrative Clerk at MND (Ministry of National Defense) Welfare Agency",
+        "link": "about-working.html"
+      },
       {
         "context": "Former AP/IB, SAT Instructor at ASAP Academy",
         "link": "about-working.html"
@@ -57,6 +65,10 @@
       }
     ],
     "kr": [
+      {
+        "context": "현 육군소속 국군복지단 행정병",
+        "link": "about-working.html"
+      },
       {
         "context": "현 ASAP Academy AP/IB, SAT 강사",
         "link": "about-working.html"
